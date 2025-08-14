@@ -141,5 +141,5 @@ cython_debug/
 
 # Project specific
 sebi_circulars_pdfs/
-sebi_circulars_paginated/
+test_enhanced_metadata/
 metadata.json
