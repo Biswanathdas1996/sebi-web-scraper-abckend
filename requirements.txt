@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langgraph
+requests
+beautifulsoup4
+httpx
+tqdm
+pypdf
+fastapi
+uvicorn
