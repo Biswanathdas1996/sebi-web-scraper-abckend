@@ -141,4 +141,5 @@ cython_debug/
 
 # Project specific
 sebi_circulars_pdfs/
+sebi_circulars_paginated/
 metadata.json
