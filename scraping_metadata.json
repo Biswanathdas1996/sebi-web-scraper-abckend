@@ -1,5 +1,5 @@
 {
-  "scrape_timestamp": "2025-08-15T00:56:46.088052",
+  "scrape_timestamp": "2025-08-15T01:08:38.634382",
   "scraper_version": "ajax_v2.0",
   "base_url": "https://www.sebi.gov.in",
   "ajax_endpoint": "https://www.sebi.gov.in/sebiweb/ajax/home/getnewslistinfo.jsp",
