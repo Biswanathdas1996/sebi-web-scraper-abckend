@@ -5,7 +5,7 @@ An efficient AJAX-based scraper for downloading PDFs from SEBI (Securities and E
 ## Features
 
 - **AJAX-based scraping** for efficient pagination
-- **Dynamic functions** for flexible page selection  
+- **Dynamic functions** for flexible page selection
 - **Enhanced metadata extraction** with dates and circular numbers
 - **PDF detection** from multiple sources (links, iframes, embeds)
 - **Respectful scraping** with appropriate delays
@@ -23,6 +23,7 @@ pip install -r requirements.txt
 ## Quick Usage
 
 ### Scrape a single page
+
 ```python
 from ajax_scraper import scrape_page
 
@@ -31,6 +32,7 @@ print(f"Downloaded {result['downloaded_files']} PDFs from page 5")
 ```
 
 ### Scrape multiple specific pages
+
 ```python
 from ajax_scraper import scrape_pages
 
@@ -39,6 +41,7 @@ print(f"Total PDFs downloaded: {results['total_downloaded_files']}")
 ```
 
 ### Get links without downloading
+
 ```python
 from ajax_scraper import get_page_links_only
 
@@ -49,11 +52,13 @@ print(f"Found {len(links)} links on page 7")
 ## Run Examples
 
 ### Pre-configured Scraper
+
 ```powershell
 python run_ajax_scraper.py
 ```
 
 ### Direct Usage
+
 ```powershell
 python ajax_scraper.py
 ```
