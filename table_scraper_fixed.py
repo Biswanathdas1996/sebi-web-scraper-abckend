@@ -13,6 +13,154 @@ from bs4 import BeautifulSoup
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36"}
 
+def extract_circular_metadata(session: requests.Session, url: str) -> dict:
+    """Extract date and circular number from a SEBI circular page, focusing on m_section bottom_space2 div."""
+    try:
+        resp = session.get(url, timeout=30)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        
+        # Initialize metadata
+        metadata = {
+            "date": "Unknown",
+            "circular_no": "Unknown"
+        }
+        
+        # First, look specifically in the div with class="m_section bottom_space2"
+        target_div = soup.find("div", class_="m_section bottom_space2")
+        if target_div:
+            print(f"   [TARGET] Found target div with class 'm_section bottom_space2'")
+            div_text = target_div.get_text()
+            div_html = str(target_div)
+            
+            # Enhanced date patterns - more comprehensive
+            date_patterns = [
+                r'Date\s*:?\s*(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9}\s*,?\s*\d{4})',  # Date: 14th August, 2025
+                r'Date\s*:?\s*([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})',  # Date: August 14th, 2025
+                r'Date\s*:?\s*(\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4})',  # Date: 14/08/2025 or 14-08-2025
+                r'Date\s*:?\s*(\d{4}[-/\.]\d{1,2}[-/\.]\d{1,2})',  # Date: 2025/08/14
+                r'Dated\s*:?\s*(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9}\s*,?\s*\d{4})',  # Dated: 14th August, 2025
+                r'Dated\s*:?\s*([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})',  # Dated: August 14th, 2025
+                r'Dated\s*:?\s*(\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4})',  # Dated: 14/08/2025
+                # Look for dates without "Date:" prefix
+                r'(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9}\s*,?\s*\d{4})',  # 14th August, 2025
+                r'([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})',  # August 14th, 2025
+                r'(\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4})',  # 14/08/2025 or 14-08-2025
+            ]
+            
+            # Try to find date in div text
+            for pattern in date_patterns:
+                match = re.search(pattern, div_text, re.IGNORECASE)
+                if match:
+                    metadata["date"] = match.group(1).strip()
+                    print(f"   [DATE] Found date in target div: {metadata['date']}")
+                    break
+            
+            # Enhanced circular number patterns - more comprehensive
+            circular_patterns = [
+                # Complete SEBI circular formats with optional spaces
+                r'(SEBI/HO/[A-Z0-9\-_/\s]+/P?/?CIR[A-Z0-9\-_/\s]*\d{4}/[A-Z0-9\-_/\s]+)',
+                r'(SEBI/HO/[A-Z0-9\-_/\s]+/CIR/P/\d{4}/[A-Z0-9\-_/\s]+)',
+                r'(SEBI/HO/[A-Z0-9\-_/\s]+/[A-Z0-9\-_/\s]*CIR[A-Z0-9\-_/\s]*\d+)',
+                r'Circular\s+No\.?\s*:?\s*(SEBI/HO/[A-Z0-9\-_/\s]+)',
+                r'Circular\s+Number\s*:?\s*(SEBI/HO/[A-Z0-9\-_/\s]+)',
+                # Look for any SEBI reference number with spaces
+                r'(SEBI/[A-Z0-9\-_/\s]+/\d{4}/[A-Z0-9\-_/\s]*)',
+                r'Circular\s+No\.?\s*:?\s*([A-Z0-9/\-_.\s]{10,})',
+                r'Circular\s+Number\s*:?\s*([A-Z0-9/\-_.\s]{10,})',
+            ]
+            
+            # Try to find circular number in div text
+            for pattern in circular_patterns:
+                match = re.search(pattern, div_text, re.IGNORECASE)
+                if match:
+                    circular_found = match.group(1).strip()
+                    # Clean up the circular number by removing extra spaces
+                    circular_found = re.sub(r'\s+', ' ', circular_found)  # Replace multiple spaces with single space
+                    circular_found = re.sub(r'(?<=/)\s+', '', circular_found)  # Remove spaces after slashes
+                    circular_found = re.sub(r'\s+(?=/)', '', circular_found)  # Remove spaces before slashes
+                    
+                    # Only accept if it's reasonably long and looks like a circular number
+                    if len(circular_found) > 8 and ('SEBI' in circular_found.upper() or 'CIR' in circular_found.upper()):
+                        metadata["circular_no"] = circular_found
+                        print(f"   [CIRCULAR] Found circular no in target div: {metadata['circular_no']}")
+                        break
+            
+            # Also search in HTML content for better pattern matching
+            for pattern in circular_patterns:
+                match = re.search(pattern, div_html, re.IGNORECASE)
+                if match and metadata["circular_no"] == "Unknown":
+                    circular_found = match.group(1).strip()
+                    # Clean up the circular number
+                    circular_found = re.sub(r'\s+', ' ', circular_found)  # Replace multiple spaces with single space
+                    circular_found = re.sub(r'(?<=/)\s+', '', circular_found)  # Remove spaces after slashes
+                    circular_found = re.sub(r'\s+(?=/)', '', circular_found)  # Remove spaces before slashes
+                    
+                    if len(circular_found) > 8 and ('SEBI' in circular_found.upper() or 'CIR' in circular_found.upper()):
+                        metadata["circular_no"] = circular_found
+                        print(f"   [CIRCULAR] Found circular no in target div HTML: {metadata['circular_no']}")
+                        break
+        
+        else:
+            print(f"   [WARNING] Target div with class 'm_section bottom_space2' not found, using full page search")
+            # Fallback to searching the entire page
+            page_text = soup.get_text()
+            
+            # Search for date patterns in the full page
+            date_patterns = [
+                r'Date\s*:?\s*(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9}\s*,?\s*\d{4})',
+                r'Date\s*:?\s*([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})',
+                r'Date\s*:?\s*(\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4})',
+                r'Dated\s*:?\s*(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9}\s*,?\s*\d{4})',
+                r'Dated\s*:?\s*([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*\d{4})',
+                r'(\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4})',
+                r'(\d{1,2}\s+[A-Za-z]{3,9}\s+\d{4})',
+            ]
+            
+            for pattern in date_patterns:
+                match = re.search(pattern, page_text, re.IGNORECASE)
+                if match:
+                    metadata["date"] = match.group(1).strip()
+                    print(f"   [DATE] Found date in full page: {metadata['date']}")
+                    break
+            
+            # Search for circular number patterns in full page
+            circular_patterns = [
+                r'(SEBI/HO/[A-Z0-9\-_/\s]+/P?/?CIR[A-Z0-9\-_/\s]*\d{4}/[A-Z0-9\-_/\s]+)',
+                r'Circular\s+No\.?\s*:?\s*(SEBI/HO/[A-Z0-9\-_/\s]+)',
+                r'(SEBI/[A-Z0-9\-_/\s]+/\d{4}/[A-Z0-9\-_/\s]*)',
+                r'Circular\s+No\.?\s*:?\s*([A-Z0-9/\-_.\s]{10,})',
+            ]
+            
+            for pattern in circular_patterns:
+                match = re.search(pattern, page_text, re.IGNORECASE)
+                if match:
+                    circular_found = match.group(1).strip()
+                    # Clean up the circular number
+                    circular_found = re.sub(r'\s+', ' ', circular_found)  # Replace multiple spaces with single space
+                    circular_found = re.sub(r'(?<=/)\s+', '', circular_found)  # Remove spaces after slashes
+                    circular_found = re.sub(r'\s+(?=/)', '', circular_found)  # Remove spaces before slashes
+                    if len(circular_found) > 8:
+                        metadata["circular_no"] = circular_found
+                        print(f"   [CIRCULAR] Found circular no in full page: {metadata['circular_no']}")
+                        break
+        
+        # If still no date found, try URL extraction with more specific patterns
+        if metadata["date"] == "Unknown":
+            url_date_match = re.search(r'/(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[-_]?(\d{4})', url.lower())
+            if url_date_match:
+                month = url_date_match.group(1).capitalize()
+                year = url_date_match.group(2)
+                metadata["date"] = f"{month} {year}"
+                print(f"   [DATE] Extracted date from URL: {metadata['date']}")
+        
+        return metadata
+        
+    except Exception as e:
+        print(f"   [WARNING] Error extracting metadata from page: {e}")
+        return {"date": "Unknown", "circular_no": "Unknown"}
+
+
 def scrape_sample_table(base_url: str, download_folder: str = "sample_table_pdfs"):
     """
     Scrape table with id='sample_1', extract links from td > a elements, 
