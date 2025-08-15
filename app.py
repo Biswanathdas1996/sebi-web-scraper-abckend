@@ -18,14 +18,6 @@ def main():
         print("🔧 Running in CUSTOM mode...")
         result = run_custom_sebi_workflow([2])    
         
-        # Print final summary
-        print("\n" + "="*60)
-        print("🎉 WORKFLOW COMPLETED SUCCESSFULLY!")
-        print(f"🆔 Workflow ID: {result.get('workflow_id', 'N/A')}")
-        print(f"📊 Current Stage: {result.get('current_stage', 'N/A')}")
-        print(f"❌ Errors: {len(result.get('errors', []))}")
-        print(f"💬 Messages: {len(result.get('messages', []))}")
-        
         if config['tracing_enabled']:
             print(f"📈 LangSmith Project: {config['project']}")
             print("🔗 Check LangSmith dashboard for detailed traces")
