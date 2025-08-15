@@ -2,9 +2,17 @@
 from langgraph_workflow import (
     run_custom_sebi_workflow
 )
+from langsmith_config import get_langsmith_config
 
 def main():
-    
+    # Display LangSmith status
+    config = get_langsmith_config()
+    print("📊 LangSmith Status:")
+    print(f"   Tracing Enabled: {config['tracing_enabled']}")
+    if config['tracing_enabled']:
+        print(f"   Project: {config['project']}")
+        print(f"   Has API Key: {config['has_api_key']}")
+    print()
     
     try:
         print("🔧 Running in CUSTOM mode...")
@@ -18,6 +26,10 @@ def main():
         print(f"📊 Current Stage: {result.get('current_stage', 'N/A')}")
         print(f"❌ Errors: {len(result.get('errors', []))}")
         print(f"💬 Messages: {len(result.get('messages', []))}")
+        
+        if config['tracing_enabled']:
+            print(f"📈 LangSmith Project: {config['project']}")
+            print("🔗 Check LangSmith dashboard for detailed traces")
         
         if result.get('errors'):
             print("\n⚠️  ERRORS ENCOUNTERED:")

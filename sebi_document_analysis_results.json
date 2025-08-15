@@ -1,8 +1,8 @@
 {
   "metadata": {
     "total_files": 25,
-    "scrape_timestamp": "2025-08-15T11:46:26.849152",
-    "analysis_timestamp": "2025-08-15T11:48:33.857091"
+    "scrape_timestamp": "2025-08-15T12:09:22.950784",
+    "analysis_timestamp": "2025-08-15T12:11:30.989830"
   },
   "documents": [
     {
@@ -17,10 +17,9 @@
         "Regulation 28 (2) read with Part–C of Schedule II of the Securities Contracts (Regulation) (Stock Exchanges and Clearing Corporations) Regulations, 2018 (SECC Regulations, 2018)",
         "Clause 3.3.2.1.1 of Chapter 5 of the SEBI Master Circular for Stock Exchanges and Clearing Corporations dated December 30, 2024",
         "Clause 3.3.2.1.2.1 of Chapter 5 of the SEBI Master Circular dated December 30, 2024",
-        "Section 11(1) read with Section 11(2)(a) of the SEBI Act, 1992",
-        "Regulation 51 of SECC Regulations, 2018",
+        "Section 11(1) read with Section 11(2)(a) of the SEBI Act, 1992, read with Regulation 51 of SECC Regulations, 2018",
         "Clauses 1.3.2, 1.3.3, 1.3.4 and 1.3.5 of Chapter 5 of SEBI Master Circular for Stock Exchanges and Clearing Corporations dated December 30, 2024",
-        "Clauses 2.3.2, 2.3.3 and 2.3.4 provide for position limits for index options.",
+        "Clauses 2.3.2, 2.3.3 and 2.3.4 of Chapter 5 of SEBI Master Circular for Stock Exchanges and Clearing Corporations dated December 30, 2024",
         "Clause 1.1.2 of Chapter 5 of SEBI Master Circular for Stock Exchanges and Clearing Corporations dated December 30, 2024",
         "Clause 3.3.2 and 4.3.2 of Chapter 5 of SEBI Master Circular for Stock Exchanges and Clearing Corporations dated December 30, 2024"
       ],
@@ -31,19 +30,17 @@
         "10% of free float",
         "₹1,500 cr. net end of day FutEq OI limit for options",
         "₹10,000 cr. gross FutEq OI",
-        "15% of futures OI for that index or ₹500 cr.",
-        "10% of futures OI or ₹500 cr.",
-        "5% of futures OI or ₹500 cr.",
-        "10% of MWPL (Client / NRI)",
-        "20% of MWPL (Trading Member (Proprietary))",
-        "30% of MWPL (Trading Member (Proprietary + Client) / FPI (Category I) / MF)",
-        "20% of MWPL (FPI (Category II - other than FPIs in sub-category individuals, family offices, corporates))",
-        "10% of MWPL (FPI (Category II - FPIs in sub-category individuals, family offices, corporates))"
+        "15% of futures OI or ₹500 cr (FPI Category I / Mutual Funds / Trading Member (Proprietary) / Clients)",
+        "10% of futures OI or ₹500 cr (FPI Category II)",
+        "5% of futures OI or ₹500 cr (FPI Category II - Individuals, family offices and corporates)",
+        "Minimum of 14 constituents (for non-benchmark indices)",
+        "Top constituent’s weight ≤ 20% (for non-benchmark indices)",
+        "Combined weight of the top three constituents ≤ 45% (for non-benchmark indices)"
       ],
       "actionable_items": [
-        "CCs to continue disseminating FutEq OI for all the scrips/indices on their websites and intimating entity level FutEq OI to participants through their portal.",
+        "CCs to continue disseminating FutEq OI for all the scrips/indices on their websites.",
         "Stock Exchanges/CCs shall test whether the market wide FutEq OI for any scrip exceeds 95% of the proposed MWPL for that scrip.",
-        "CCs to prepare a joint SOP, in consultation with SEBI, for monitoring the end of day delta position of entities and penalty structure thereof in this regard within one month from the date of the circular.",
+        "CCs to prepare a joint SOP, in consultation with SEBI, for monitoring the end of day delta position of entities and penalty structure thereof within one month from the date of the circular.",
         "Stock Exchanges shall perform intraday monitoring of MWPL utilization at least four random times during the trading session.",
         "Stock Exchanges shall prepare a joint SOP, in consultation with SEBI, in this regard within one month from date of the circular.",
         "Stock Exchanges shall prepare a joint SOP, in consultation with SEBI, to strictly monitor intraday positions and trading activities of major participants from the perspective of market integrity / surveillance concerns and take appropriate measures.",
@@ -148,30 +145,29 @@
     {
       "department": "Market Intermediaries Regulation and Supervision Department",
       "intermediary": [
+        "KYC (Know Your Client) Registration Agency registered with SEBI",
+        "Registered Mutual Funds",
+        "Registered Portfolio Managers",
         "Registered Stock Brokers in equity segment",
         "Registered Stock Brokers in Equity Derivative Segment",
-        "Registered Stock Brokers in Currency Derivative Segment",
-        "Registered Portfolio Managers",
-        "Registered Mutual Funds"
+        "Registered Stock Brokers in Currency Derivative Segment"
       ],
       "key_clauses": [
         "Section 12 of the Securities and Exchange Board of India Act, 1992",
         "Section 11(1) of the Securities and Exchange Board of India Act, 1992",
+        "Accessibility and Inclusiveness of Digital KYC to Persons with Disabilities",
         "Equal and accessible inclusion of persons with disabilities for availing financial services",
         "Digital KYC process accessible to persons with disabilities"
       ],
       "key_metrics": [
-        "2025",
-        "74",
         "May 23, 2025",
-        "April 30, 2025",
-        "022-2644 9748"
+        "April 30, 2025"
       ],
       "actionable_items": [
         "Intermediaries shall extend their services enabling digital accessibility to client including persons with disabilities",
         "Intermediaries shall be guided by the FAQ on Account opening by Person with Disabilities",
-        "Ensure that the process of digital KYC is accessible to persons with disabilities",
-        "Revise digital KYC processes to be inclusive and accessible to persons with disabilities"
+        "Revise FAQ on Account opening by Persons with Disabilities",
+        "Ensure that the process of digital KYC is accessible to persons with disabilities"
       ],
       "filename": "page_2_4_1_Accessibility_and_In.pdf",
       "content_length": 1764,
@@ -246,39 +242,35 @@
       ],
       "key_clauses": [
         "Review of provisions pertaining to Electronic Book Provider (EBP) platform to increase its efficacy and utility",
-        "Private placement of debt securities and NCRPS and municipal debt securities through EBP if single issue of Rs. 20 crore or more",
-        "Shelf issue consisting of multiple tranches cumulatively amounting to Rs. 20 crore or more in a financial year through EBP",
-        "Subsequent issue where aggregate of all previous issues by an issuer in a financial year equals or exceeds Rs. 20 crore through EBP",
-        "Issuer may choose to access EBP platform for private placement of securitised debt instruments or security receipts or CPs or CDs, and units of REITs, SM REITs and InvITs",
-        "Placement Memorandum and term sheet to be provided to EBP at least two working days prior to issue opening date (three days for first-time issuers)",
-        "Green shoe portion shall not exceed five times the base issue size",
-        "If there are two or more bids at cut-off coupon/ price/ spread, then allotment shall be done on ‘pro-rata’ basis",
-        "Quantum of allocation to anchor investors at the discretion of the issuer, subject to total allocation not exceeding the base issue size",
-        "Issuer shall disclose details of the anchor investor(s) and the corresponding quantum allocated, to the EBP, along with the Placement Memorandum and the term sheet"
+        "Issues of debt securities and NCRPS as per SEBI NCS Regulations, 2021 and municipal debt securities as per SEBI (Issue and Listing of Municipal Debt Securities) Regulations, 2015 shall be made through the EBP platform if it is a single issue of Rs. 20 crore or more.",
+        "An issuer may choose to access EBP platform for private placement of securitised debt instruments or security receipts or CPs or CDs, and issuers constituted as REITs, SM REITs and InvITs may also access the EBP platform for private placement of units of REITs, SM REITs and InvITs.",
+        "Issuers of debt securities, NCRPS and municipal debt securities on private placement basis of issue size less than Rs. 20 crore may also choose to access the EBP platform for such issuances.",
+        "The Issuer shall provide the Placement Memorandum and term sheet to the EBP at least two working days prior to the issue opening date.",
+        "The green shoe portion shall not exceed five times the base issue size.",
+        "If there are two or more bids at cut-off coupon/ price/ spread, then allotment shall be done on ‘pro-rata’ basis.",
+        "The quantum of allocation(s) to the anchor investor(s) shall be at the discretion of the issuer, subject to total allocation to the anchor(s) not exceeding the base issue size.",
+        "Anchor Portion (%) of base size for AAA/ AA+/AA/AA- rating is Not exceeding 30%",
+        "Anchor Portion (%) of base size for A+/A- rating is Not exceeding 40%"
       ],
       "key_metrics": [
         "Rs. 20 crore",
-        "5 times",
-        "30% (Anchor Portion for AAA/ AA+/AA/AA-)",
-        "40% (Anchor Portion for A+/A-)",
-        "50% (Anchor Portion for Others)",
-        "T-2/ T-3 (EBP)",
-        "T (Non-EBP)",
+        "five times",
+        "30%",
+        "40%",
+        "50%",
         "T-1 day",
-        "1 p.m. on T+1 day",
+        "T-day",
+        "1 p.m.",
+        "T+1 day",
         "May 22, 2024"
       ],
       "actionable_items": [
-        "Issuers to use EBP platform for private placement of debt securities and NCRPS and municipal debt securities if issue size meets specified thresholds.",
-        "Issuers to provide Placement Memorandum and term sheet to EBP within specified timelines.",
-        "Issuers to disclose details of anchor investors and corresponding quantum allocated to EBP.",
-        "EBPs to update issuance details on their website by end of T-day or 1 p.m. on T+1 day.",
-        "Issuers to ensure prior receipt of in-principle approval from the stock exchange(s) where it wishes to list its proposed debt issuance/ securities, prior to issue open date.",
+        "Issuers to comply with revised EBP platform provisions for private placement of securities.",
+        "Issuers to provide Placement Memorandum and term sheet to EBP at least two working days prior to issue opening.",
+        "EBPs shall ensure that details regarding the issuance is updated on its website by end of T-day for issues closing upto 1 p.m. on T-day and by 1 p.m. on T+1 day for the remaining issues.",
+        "Issuers to disclose details of anchor investor(s) and the corresponding quantum allocated, to the EBP, along with the Placement Memorandum and the term sheet.",
         "Anchor investors shall provide electronic confirmation on the EBP platform of their participation by T-1 day.",
-        "Amount not confirmed by any such investor shall be added back to the base issue size.",
-        "Disclose issue-wise green shoe option exercised vis-a-vis the base issue size and green shoe portion as specified in issues undertaken in the previous financial year.",
-        "Implement pro-rata allotment if there are two or more bids at cut-off coupon/ price/ spread.",
-        "Comply with the effective dates for the specified clauses."
+        "Issuer shall ensure prior receipt of in-principle approval from the stock exchange(s) where it wishes to list its proposed debt issuance/ securities, prior to the date of providing the Placement Memorandum and term sheet to the EBP(s)."
       ],
       "filename": "page_2_6_1_Review_of_provisions.pdf",
       "content_length": 10297,
@@ -297,28 +289,31 @@
         "Registered Custodians"
       ],
       "key_clauses": [
-        "Extension of timeline for implementation of provisions of SEBI circular dated December 17, 2024",
-        "Measures to address regulatory arbitrage with respect to Offshore Derivative Instruments (ODIs) and FPIs with segregated portfolios vis-à-vis FPIs",
-        "Additional disclosures to be made by ODI subscribers and FPIs with segregated portfolios",
-        "Section 11(1) of the Securities and Exchange Board of India Act, 1992",
-        "Regulations 21, 22(1), 22(6), 22(7) and 44 of SEBI (Foreign Portfolio Investors) Regulations, 2019",
-        "Sub-rule 14 (i) of Rule 9 of the Prevention of Money-laundering (Maintenance of Records) Rules, 2005"
+        "Extension of timeline for implementation of provisions of SEBI circular dated December 17, 2024 on Measures to address regulatory arbitrage with respect to Offshore Derivative Instruments (ODIs) and FPIs with segregated portfolios vis-à-vis FPIs",
+        "Additional disclosures to be made by ODI subscribers and FPIs with segregated portfolios as per circular dated December 17, 2024.",
+        "Provisions contained in paragraphs 2.2 to 2.7 of circular dated December 17, 2024.",
+        "Exercise of powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992.",
+        "Regulations 21, 22(1), 22(6), 22(7) and 44 of SEBI (Foreign Portfolio Investors) Regulations, 2019.",
+        "Sub-rule 14 (i) of Rule 9 of the Prevention of Money-laundering (Maintenance of Records) Rules, 2005.",
+        "All other provisions of SEBI circular dated December 17, 2024 shall remain unchanged."
       ],
       "key_metrics": [
         "SEBI/HO/AFD/AFD-POD-3/P/CIR/2025/71",
         "May 16, 2025",
-        "December 17, 2024",
         "SEBI/HO/AFD/AFD-POD-3/P/CIR/2024/176",
+        "December 17, 2024",
         "5 months",
         "November 17, 2025",
         "022 –26449024"
       ],
       "actionable_items": [
-        "Ensure compliance with the provisions of the Circular within the extended timeline.",
-        "Depositories are advised to put in place appropriate systems, procedures and mechanisms to ensure compliance",
-        "FPIs to adhere to the extended timeline for additional disclosures",
-        "Refer to SEBI circular dated December 17, 2024 for original provisions",
-        "DDPs to ensure compliance by FPIs"
+        "Depositories are advised to put in place appropriate systems, procedures and mechanisms to ensure compliance with the provisions of the Circular within the extended timeline.",
+        "Ensure compliance with the provisions of SEBI circular dated December 17, 2024.",
+        "Implement additional disclosures by ODI subscribers and FPIs with segregated portfolios as per circular dated December 17, 2024.",
+        "Market participants to note the extension of timeline for implementation.",
+        "Compliance with Section 11(1) of the Securities and Exchange Board of India Act, 1992.",
+        "Compliance with Regulations 21, 22(1), 22(6), 22(7) and 44 of SEBI (Foreign Portfolio Investors) Regulations, 2019.",
+        "Compliance with Sub-rule 14 (i) of Rule 9 of the Prevention of Money-laundering (Maintenance of Records) Rules, 2005."
       ],
       "filename": "page_2_7_1_Extension_of_timelin.pdf",
       "content_length": 2335,
@@ -421,17 +416,16 @@
         "Para 33.1.3 of the Master Circular for Credit Rating Agencies (CRAs) dated May 16, 2024",
         "Section 11 (1) of Securities and Exchange Board of India Act, 1992",
         "Regulation 20 of SEBI (Credit Rating Agencies) Regulations, 1999",
-        "Internal Audit of CRAs",
-        "Composition of the Internal Audit team for CRAs",
-        "The audit team must be composed of at least a Chartered Accountant (ACA/ FCA) or a Cost Accountant (ACMA/ FCMA) and a Certified Information Systems Auditor/ Diploma in Information System Auditor/ Diploma in Information System Security Audit (CISA/ DISA/ DISSA)."
+        "Internal Audit requirements for CRAs",
+        "Composition of the Internal Audit team for CRAs"
       ],
       "key_metrics": [
         "May 16, 2024",
         "May 14, 2025"
       ],
       "actionable_items": [
-        "CRAs to ensure the internal audit team composition adheres to the modified requirements.",
-        "CRAs to include Cost Accountants (ACMA/ FCMA) and professionals with Diploma in Information System Security Audit (DISSA) qualifications in the internal audit team.",
+        "CRAs to note the modified composition requirements for the Internal Audit team.",
+        "CRAs to ensure the audit team is composed of at least a Chartered Accountant (ACA/ FCA) or a Cost Accountant (ACMA/ FCMA) and a Certified Information Systems Auditor/ Diploma in Information System Auditor/ Diploma in Information System Security Audit (CISA/ DISA/ DISSA).",
         "Implement the circular with immediate effect."
       ],
       "filename": "page_2_10_1_Composition_of_the_I.pdf",
@@ -447,10 +441,10 @@
     {
       "department": "Department of Debt and Hybrid Securities",
       "intermediary": [
+        "Debentures Trustee",
         "Registered Stock Brokers in equity segment",
         "Registered Stock Brokers in Equity Derivative Segment",
-        "Registered Stock Brokers in Currency Derivative Segment",
-        "Debentures Trustee"
+        "Registered Stock Brokers in Currency Derivative Segment"
       ],
       "key_clauses": [
         "Chapter XXII of the SEBI Master Circular for issue and listing of Non-convertible Securities, Securitised Debt Instruments, Security Receipts, Municipal Debt Securities and Commercial Paper dated May 22, 2024",
@@ -458,9 +452,9 @@
         "Chapter XIV of the NCS Master Circular",
         "Section 11(1) of the Securities and Exchange Board of India Act, 1992",
         "Regulation 55 (1) of the SEBI (Issue and Listing of Non-convertible Securities) Regulations, 2021",
-        "Yield to Price computation for non-convertible securities on RFQ platform shall not be adjusted for day count convention",
-        "Cash flow schedule regarding payment of interest/ dividend/ redemption in the centralized corporate bond database at the time of activation of ISIN",
-        "Information pertaining to cash flow regarding interest/ dividend/ redemption during the tenure of the securities, the same shall be updated within one working day in the centralized corporate bond database."
+        "Yield to Price computation for non-convertible securities on RFQ platform shall not be adjusted for day count convention.",
+        "Cash flow schedule regarding payment of interest/ dividend/ redemption in the centralized corporate bond database at the time of activation of ISIN.",
+        "Any change in the information pertaining to cash flow regarding interest/ dividend/ redemption during the tenure of the securities, the same shall be updated within one working day in the centralized corporate bond database."
       ],
       "key_metrics": [
         "May 13, 2025",
@@ -471,13 +465,11 @@
       "actionable_items": [
         "Issuers to disclose cash flow with date of interest/dividend/ redemption payment as per day count convention in the offer document.",
         "Issuers to submit and update information in the centralized database at the time of activation of the ISIN and post listing of securities.",
-        "Update cash flow schedule regarding payment of interest/ dividend/ redemption in the centralized corporate bond database at the time of activation of ISIN.",
-        "Update any changes in cash flow information within one working day in the centralized corporate bond database.",
-        "Stock Exchanges to bring the provisions of this circular to the notice of the market participants.",
-        "Stock Exchanges to disseminate the circular on their websites.",
-        "Stock Exchanges to make necessary amendments to the relevant bye-laws, rules and regulations.",
-        "Implement the directions in coordination with one another to achieve uniformity in approach.",
-        "The aforesaid disclosure requirement shall be applicable for prospective issuances of debt securities and for the residual maturity of the ISINs that are already listed."
+        "Issuers to update cash flow schedule regarding payment of interest/ dividend/ redemption in the centralized corporate bond database at the time of activation of ISIN.",
+        "Issuers to update any change in the information pertaining to cash flow regarding interest/ dividend/ redemption during the tenure of the securities within one working day in the centralized corporate bond database.",
+        "Stock Exchanges to bring the provisions of this circular to the notice of the market participants and also disseminate the same on their websites.",
+        "Stock Exchanges to make necessary amendments to the relevant bye-laws, rules and regulations for the implementation of the above directions in coordination with one another to achieve uniformity in approach.",
+        "Applicable for prospective issuances of debt securities and for the residual maturity of the ISINs that are already listed."
       ],
       "filename": "page_2_11_1_Simplification_of_op.pdf",
       "content_length": 5001,
@@ -501,8 +493,8 @@
         "Regulation 36 of AIF Regulations"
       ],
       "key_metrics": [
+        "May 13, 2025",
         "May 10, 2024",
-        "May 13, 2024",
         "May 9, 2025",
         "July 31, 2025"
       ],
@@ -510,7 +502,7 @@
         "Key investment team of the Manager of an AIF shall have at least one key personnel with relevant certification",
         "Obtain the requisite NISM certification by July 31, 2025",
         "Comply with Regulation 4(g)(i) of AIF Regulations",
-        "Comply with the aforesaid certification requirement by July 31, 2025"
+        "Comply with the certification requirement for the key investment team of the Manager of AIF"
       ],
       "filename": "page_2_12_1_Extension_of_timelin.pdf",
       "content_length": 2276,
@@ -525,46 +517,42 @@
     {
       "department": "Department of Debt and Hybrid Securities",
       "intermediary": [
-        "Merchant Bankers",
-        "Registered Stock Brokers in equity segment",
-        "Registered Stock Brokers in Equity Derivative Segment",
-        "Registered Stock Brokers in Currency Derivative Segment",
-        "Debentures Trustee"
+        "Merchant Bankers"
       ],
       "key_clauses": [
         "Chapter 3 and Chapter 4 of the Master Circular shall stand revised and the revised chapters are placed at Annexure – A.",
-        "Paragraph 7 of Annexure – 5 of the Master Circular shall be substituted with the specified text.",
-        "Paragraph 7 of Annexure – 6 of the Master Circular shall be substituted with the specified text.",
+        "Paragraph 7 of Annexure – 5 of the Master Circular shall be substituted.",
+        "Paragraph 7 of Annexure – 6 of the Master Circular shall be substituted.",
         "This circular is issued in exercise of powers conferred under Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with the provisions of Regulations 15(2)(d), 23(7) and 33 of the Securities and Exchange Board of India (Real Estate Investment Trusts) Regulations, 2014",
-        "Financial statements shall disclose all ‘material’ items.",
-        "The offer document shall contain disclosures of the projections of income and operating cash flows of the REIT including related assumptions, project-wise, for the next three financial years and for the current financial year.",
-        "REIT shall prepare and disclose Management Discussion and Analysis (MDA) (by the Manager), based on the financial statements.",
+        "The financial statements shall be prepared as per Division II of Schedule III of the Companies Act, 2013",
         "The financial information shall be prepared in accordance with Indian Accounting Standards (Ind AS)",
-        "The REIT shall submit quarterly and year to date financial results to the stock exchanges within forty-five days of end of each quarter, other than the last quarter.",
-        "Every credit rating, wherever required to be obtained by a REIT as per Regulation 20 (2) of the REIT Regulations, shall be reviewed once a year, by the registered credit rating agency."
+        "The offer document shall contain disclosures of the projections of income and operating cash flows of the REIT including related assumptions, project-wise, for the next three financial years and for the current financial year",
+        "The framework for computation of NDCF by REITs and its Holdcos/ SPVs",
+        "Every REIT shall maintain proper books of account, records and documents etc. relating to a period of not less than eight financial years immediately preceding a financial year",
+        "REIT shall enter into a simplified listing agreement, with all the Stock Exchanges where it proposes to list its units, in lines with the format as specified under the SEBI Circular No. CIR/CFD/CMD/6/2015 dated October 13, 2015 on ‘Format of uniform Listing Agreement’."
       ],
       "key_metrics": [
-        "3 financial years",
-        "6 months",
+        "2025",
+        "May 07, 2025",
+        "May 15, 2024",
         "April 01, 2025",
-        "20%",
+        "three financial years",
+        "six months",
         "three years",
-        "forty-five days",
-        "sixty days",
-        "21 days",
-        "10%",
-        "90% / 95% / 100%"
+        "20%",
+        "eight financial years",
+        "21 days"
       ],
       "actionable_items": [
         "REITs to revise disclosure of financial information in offer documents as per revised Chapter 3.",
-        "REITs to revise continuous disclosures and compliances as per revised Chapter 4.",
-        "Recognized Stock Exchanges and Indian REITs Association to disseminate the contents of the Circular on their website.",
-        "REITs to substitute Paragraph 7 of Annexure – 5 and Annexure – 6 of the Master Circular with the specified text.",
-        "REITs to comply with the requirements specified under Chapter 4 for disclosure of financial information for the period beginning on or after April 01, 2025.",
-        "REITs to prepare financial statements as per Division II of Schedule III of the Companies Act, 2013, with specified exceptions and modifications.",
-        "REITs to disclose Earnings per Unit (EPU) in place of Earnings per share in the ‘Statement of Profit or Loss’.",
-        "REITs to disclose changes in unit holders’ equity resulting from aggregate amount of investments by unit holders in the REIT, and dividends / other distributions by REIT to unit holders separately in the ‘Statement of Changes in Unit holders’ Equity’.",
-        "REITs to include summary of the audited consolidated financial statements of Manager and Sponsor(s) for past three completed years in the offer document.",
+        "REITs to revise continuous disclosures and compliances as per revised Chapter 4 for the period beginning on or after April 01, 2025.",
+        "Recognized Stock Exchanges and Indian REITs Association to disseminate the contents of this Circular on their website.",
+        "REITs to prepare and disclose Management Discussion and Analysis (MDA) based on the financial statements.",
+        "REITs to disclose a Capitalisation Statement showing total debt, net worth, and the debt/equity ratios before and after the completions of issue.",
+        "REITs to disclose a statement including history of interest and principal payments.",
+        "REITs to disclose a Statement of Net Assets at Fair Value.",
+        "REITs to disclose a Statement of Total Returns at Fair Value.",
+        "REITs to disclose Unit holding pattern as specified.",
         "REITs to maintain a functional website with updated information."
       ],
       "filename": "page_2_13_1_Review_of_-__a__disc.pdf",
@@ -636,29 +624,28 @@
       ],
       "key_clauses": [
         "Section 11(1) of Chapter IV of the Securities and Exchange Board of India Act, 1992",
-        "Investor Charter for KRAs",
-        "Grievance Redressal Mechanism",
+        "Investor Charter for KRAs detailing services, rights, activities, Dos and Don’ts, and Grievance Redressal Mechanism",
         "KYC Registration and Modification",
         "KYC Status Tracking",
-        "Data Protection and Privacy",
+        "Alert Mechanism (SMS/Email/physical)",
         "Verification of KYC attributes",
-        "SCORES (SEBI Complaints Redress System)",
-        "SMART Online Dispute Resolution (ODR) Portal"
+        "Data Protection and Privacy",
+        "Grievance Redressal Mechanism"
       ],
       "key_metrics": [
-        "21 days (for redressal of complaint by KRA)"
+        "21 days (for KRA to send intimation of redressal of complaint)",
+        "022-26449748 (Tel. No.)"
       ],
       "actionable_items": [
-        "KRAs shall disseminate the Investor Charter on their websites / through e-mail",
+        "KRAs shall disseminate the Investor Charter on their websites / through e-mail.",
         "KRAs shall display the Investor charter at prominent places in offices etc.",
-        "KRAs shall implement safeguards to maintain KYC data privacy, security, and confidentiality.",
+        "KRAs shall take necessary steps to bring the Investor Charter to the notice of existing and new investors.",
+        "Investors should promptly communicate to KRA on the designated email ID if they receive alerts not associated with investor-induced transactions.",
         "Investors should submit valid, accurate, and complete documentation during KYC registration or modification process.",
         "Investors should notify SEBI Registered Intermediary of any changes in KYC details.",
-        "Investors should promptly communicate to KRA on the designated email ID if they receive alerts not associated with investor-induced transactions.",
         "KRAs shall send intimation of redressal of complaint via e-mail / physical letter as applicable, within 21 days from the date of receipt of such grievance.",
-        "KRAs to enable centralized management and safekeeping of KYC data",
-        "KRAs to enable seamless and efficient client on-boarding",
-        "KRAs to foster a secure, efficient, and compliance-driven ecosystem"
+        "Investors may escalate unresolved grievances to SEBI electronically through SCORES.",
+        "Investors may initiate dispute resolution through the SMART Online Dispute Resolution (ODR) Portal."
       ],
       "filename": "page_2_15_1_Publishing_Investor_.pdf",
       "content_length": 7985,
@@ -680,10 +667,10 @@
       "key_clauses": [
         "Facilitation to SEBI registered Stock Brokers to undertake securities market related activities in GIFT-IFSC under a Separate Business Unit (SBU)",
         "Requirement of obtaining specific approval from SEBI is done away with.",
-        "Stock brokers proposing to undertake securities market related activities in GIFT-IFSC are permitted to do so under a Separate Business Unit (SBU)",
-        "Existing practice of carrying out securities market related activities in GIFT-IFSC through a subsidiary is also allowed.",
+        "Stock brokers permitted to undertake activities in GIFT-IFSC under a Separate Business Unit (SBU).",
+        "Existing practice of carrying out activities in GIFT-IFSC through a subsidiary is also allowed.",
         "Policy, eligibility criteria, risk management, investor grievances, inspection, enforcement, claims etc. for SBU in GIFT-IFSC would be specified under the regulatory framework issued by the concerned regulatory authority.",
-        "Securities market related activities of the SBU in GIFT-IFSC are segregated and ring-fenced from the Indian securities market related activities of the stock broker.",
+        "Securities market related activities of the SBU in GIFT-IFSC are segregated and ring-fenced from the Indian securities market related activities.",
         "SBU in GIFT-IFSC shall be exclusively engaged in providing securities market related activities as permitted by the IFSCA.",
         "Stock brokers shall prepare and maintain a separate account for the SBU on arms-length basis.",
         "Net worth of the SBU shall be kept segregated from the net worth of the stock broker in the Indian securities market.",
@@ -691,13 +678,13 @@
       ],
       "key_metrics": [],
       "actionable_items": [
-        "Stock brokers proposing to undertake securities market related activities in GIFT-IFSC are permitted to do so under a Separate Business Unit (SBU)",
-        "Ensure securities market related activities of the SBU in GIFT-IFSC are segregated and ring-fenced from the Indian securities market related activities.",
-        "Maintain arms-length relationship between the activities of SBU in GIFT-IFSC and Indian securities market related activities.",
-        "Ensure SBU in GIFT-IFSC is exclusively engaged in providing securities market related activities as permitted by the IFSCA.",
-        "Prepare and maintain a separate account for the SBU on arms-length basis.",
-        "Keep the net worth of the SBU segregated from the net worth of the stock broker in the Indian securities market.",
-        "Stock brokers who have already floated subsidiary or entered into joint venture to undertake securities market related activities in GIFT-IFSC after obtaining approval from SEBI, shall have an option to dismantle at its discretion, such subsidiary/joint venture and carry out such services under an SBU of the stock broking entity itself."
+        "Stock brokers proposing to undertake securities market related activities in GIFT-IFSC are permitted to do so under a Separate Business Unit (SBU).",
+        "Stock brokers shall ensure segregation and ring-fencing of SBU activities from Indian securities market activities.",
+        "Stock brokers shall maintain a separate account for the SBU on arms-length basis.",
+        "Stock brokers shall ensure net worth criteria are satisfied after excluding the account of the SBU.",
+        "Stock brokers who have already floated a subsidiary/JV have the option to dismantle it and carry out services under an SBU.",
+        "Comply with regulatory framework issued by the concerned regulatory authority for SBU in GIFT-IFSC.",
+        "Ensure activities carried out by the SBU are permitted by the IFSCA."
       ],
       "filename": "page_2_16_1_Measure_for_Ease_of_.pdf",
       "content_length": 3986,
@@ -712,35 +699,38 @@
     {
       "department": "Information Technology Department",
       "intermediary": [
+        "Registered Alternative Investment Funds",
+        "Registered Venture Capital Funds",
         "Merchant Bankers",
         "Registrars to an issue and share Transfer Agents",
         "Registered Stock Brokers in equity segment",
-        "Registered Portfolio Managers",
-        "Registered Alternative Investment Funds",
-        "Registered Venture Capital Funds",
-        "KYC (Know Your Client) Registration Agency registered with SEBI"
+        "KYC (Know Your Client) Registration Agency registered with SEBI",
+        "Registered Portfolio Managers"
       ],
       "key_clauses": [
         "Clarifications to Cybersecurity and Cyber Resilience Framework (CSCRF) for SEBI Regulated Entities (REs)",
         "Category of REs shall be decided at the beginning of the financial year based on the data of the previous financial year.",
         "Once the category of RE is decided, RE shall remain in the same category throughout the financial year irrespective of any changes in the parameters during the financial year.",
-        "The category shall be validated by the respective reporting authority at the time of compliance submission.",
+        "DPs having clients less than 100 shall be exempted from the requirement of SOC services or on-boarding to Market-SOC (M-SOC).",
+        "IAs not registered with SEBI in other capacities shall be exempted from provisions of CSCRF.",
+        "RAs not registered with SEBI in any other capacity shall be exempted from the CSCRF framework.",
+        "KRAs shall be re-categorised from MIIs to Qualified REs.",
+        "Portfolio Managers who fall under self-certification REs category and have less than 100 clients shall be exempted from the requirement of mandatory Market-SOC (M-SOC).",
         "Implementation of a dedicated Hardware Security Module (HSM) shall be made mandatory for MIIs and Qualified REs.",
-        "Mid-size REs, small-size REs, and self-certification REs shall be allowed to implement any alternative of HSM based on their risk assessment.",
-        "This circular is being issued in exercise of powers conferred under Section 11 (1) of the Securities and Exchange of India Act, 1992.",
-        "Cyber audit(s) conducted from the financial year 2025-26 shall be conducted as per the circular SEBI/HO/ITD-1/ITD_CSC_EXT/P/CIR/2024/113 dated August 20,2024, read along with the clarifications issued."
+        "This circular is being issued in exercise of powers conferred under Section 11 (1) of the Securities and Exchange of India Act, 1992"
       ],
       "key_metrics": [
-        "April 30, 2025",
-        "August 20, 2024",
-        "December 31, 2024",
-        "March 28, 2025",
-        "July 25, 2024",
-        "Five years",
-        "June 30, 2025",
-        "2025-26",
-        "More than 10 lakhs",
-        "More than 1,000"
+        "10 lakhs",
+        "1 lakh",
+        "10,000",
+        "1,000",
+        "10, 00,000",
+        "1,00,000",
+        "10,000",
+        "1,000",
+        "Rs. 3000 Crores",
+        "five years",
+        "June 30, 2025"
       ],
       "actionable_items": [
         "Stock Brokers, Depository Participants, KRAs, Portfolio Managers, Investment Advisers (IAs)/ Research Analysts (RAs), Merchant Bankers (MBs), AIFs/ VCFs and Registrars to an Issue / Share Transfer Agents shall take necessary action for implementation of the circular.",
@@ -749,9 +739,10 @@
         "Stock Exchanges/ Depositories are directed to bring the provisions of this circulars to the notice of their members/ participants and also disseminate the same on their websites.",
         "BSE Limited is directed to make necessary amendments to the relevant byelaws, rules and regulations for the implementation of the above direction.",
         "BSE Limited is directed to bring the provisions of this circulars to the notice of Investment Advisers (IAs) and Research Analysts (RAs) and disseminate the same on their websites.",
-        "REs to conduct cyber audits as per the specified circulars for the financial year 2025-26.",
-        "REs to determine their category at the beginning of the financial year based on the previous financial year's data.",
-        "Mid-size REs, small-size REs, and self-certification REs shall be allowed to implement any alternative of HSM based on their risk assessment. Such risk assessment shall be approved by the Board/ Partners/ Proprietor of the RE."
+        "REs to comply by June 30, 2025.",
+        "Conduct cyber audits from the financial year 2025-26 as per the specified circular.",
+        "Mid-size REs, small-size REs, and self-certification REs shall be allowed to implement any alternative of HSM based on their risk assessment.",
+        "Risk assessment for HSM alternatives shall be approved by the Board/ Partners/ Proprietor of the RE."
       ],
       "filename": "page_2_17_1_Clarifications_to_Cy.pdf",
       "content_length": 10252,
@@ -766,10 +757,7 @@
     {
       "department": "Department of Debt and Hybrid Securities",
       "intermediary": [
-        "Credit Rating Agency - CRA",
-        "Registered Stock Brokers in equity segment",
-        "Registered Stock Brokers in Equity Derivative Segment",
-        "Registered Stock Brokers in Currency Derivative Segment"
+        "Credit Rating Agency - CRA"
       ],
       "key_clauses": [
         "Regulation 28M of CRA regulations",
@@ -780,8 +768,7 @@
         "Para 23.1.3 of the Master Circular",
         "Para 15.3 of the Master Circular",
         "Section 11 (1) of Securities and Exchange Board of India Act, 1992",
-        "Regulation 28H of SEBI (Credit Rating Agencies) Regulations, 1999",
-        "Withdrawal of ESG ratings"
+        "Regulation 28H of SEBI (Credit Rating Agencies) Regulations, 1999"
       ],
       "key_metrics": [
         "3 years",
@@ -791,13 +778,13 @@
         "two working days"
       ],
       "actionable_items": [
-        "ERPs to adhere to the provisions of the circular in withdrawal of any ESG rating.",
+        "ERPs shall adhere to the provisions of this circular in withdrawal of any ESG rating.",
         "ERPs following a Subscriber-Pays business model shall disclose the ESG ratings assigned on their website in the specified format.",
-        "Rated entity/ issuer may provide its comments on the ESG rating report/ rating rationale to the ERP in the standardised format.",
-        "ERPs following subscriber-pays business model shall ensure that the format/ standards are disclosed on their websites and are shared with the rated issuer.",
-        "Stock exchanges to prominently disclose the ESG rating on its website under a separate tab/ section.",
-        "Category-II ERPs: Internal audit requirement effective after two years from the date of issuance of this Circular.",
-        "Category-II ERPs: Constitution of an ESG Ratings Sub-Committee and NRC shall become effective after a period of two years from the date of issuance of this Circular.",
+        "Rated entity/ issuer may provide its comments on the ESG rating report/ ratig rationale to the ERP in the standardised format.",
+        "ERPs following subscriber-pays business model shall ensure that the said format/ standards are disclosed on their websites and are shared with the rated issuer while sharing the ESG rating report/ rationale with the issuer.",
+        "Stock exchanges shall prominently disclose the ESG rating on its website under a separate tab/ section on the listed company’s/security’s page.",
+        "Category-II ERPs: requirement to conduct internal audit shall become effective after a period of two years from the date of issuance of this Circular.",
+        "Category-II ERPs: requirement for constitution of an ESG Ratings Sub-Committee and NRC shall become effective after a period of two years from the date of issuance of this Circular.",
         "ERPs to provide details in the specified format to the relevant stock exchange(s).",
         "ERPs to address valid concerns and ensure that the rating process is transparent and comprehensible.",
         "Rated entity shall respond with a single consolidated response within two working days from the date of receipt of rating rationale."
@@ -860,20 +847,22 @@
       "key_clauses": [
         "TMs/CMs are required to mandatorily collect upfront VaR margins and ELM from their clients.",
         "TMs/CMs have time till settlement day to collect margins (except VaR margins and ELM) from their clients.",
-        "If pay-in is made by settlement day, the other margins would deemed to have been collected and penalty for short / non collection of other margins shall not arise.",
+        "If pay-in (both funds and securities) is made by settlement day, the other margins would deemed to have been collected and penalty for short / non collection of other margins shall not arise.",
         "If client fails to make pay-in by settlement day and TM / CM do not collect other margins from the client by settlement day, the same shall also result in levy of penalty as applicable.",
         "Section 11(1) of Chapter IV of the Securities and Exchange Board of India Act, 1992",
         "Regulation 30 of Chapter VII of SEBI (Stock Brokers) Regulations, 1992"
       ],
       "key_metrics": [
-        "T+1 settlement cycle",
-        "T+2 working days (previous margin collection timeline)"
+        "T+2 working days (previous timeline)",
+        "T+1 (settlement cycle)",
+        "settlement day (new timeline)"
       ],
       "actionable_items": [
         "TMs/CMs shall be required to collect margins (except VaR margins and ELM) from their clients by the settlement day.",
         "Stock Exchanges and Clearing Corporations to make necessary amendments to the relevant bye-laws, rules and regulations.",
         "Stock Exchanges and Clearing Corporations to bring the provisions of this circular to the notice of the market Participants.",
-        "Stock Exchanges and Clearing Corporations to disseminate the circular on their website."
+        "Stock Exchanges and Clearing Corporations to disseminate the circular on their website.",
+        "Clients must ensure that the VaR margins and ELM are paid in advance of trade and other margins are paid as soon as margin calls are made."
       ],
       "filename": "page_2_20_1_Timelines_for_collec.pdf",
       "content_length": 3491,
@@ -987,33 +976,33 @@
         "Regulation 49AA and Seventh Schedule to SEBI (Mutual Funds) Regulations, 1996",
         "Regulation 18(15A) of the SEBI (MF) Regulations",
         "Clause 1.14 of SEBI Master Circular for Mutual Funds",
-        "Regulation 43(1) for mutual fund schemes",
-        "Regulation 52 of SEBI MF Regulations",
-        "Clause 13.6.2 of SEBI master circular for mutual funds dated June 27, 2024"
+        "Regulation 43(1)",
+        "Regulation 52 (6) (c)",
+        "Regulations 52(6A)(c)"
       ],
       "key_metrics": [
-        "3 years operation for Mutual Fund",
-        "INR 10,000 crores average AUM",
-        "10 years experience for CIO",
-        "INR 5,000 crores average AUM for CIO",
-        "3 years experience for Fund Manager",
-        "INR 500 crores average AUM for Fund Manager",
+        "Minimum AUM of INR 10,000 crores",
+        "Minimum AUM of INR 5,000 crores",
+        "Minimum AUM of INR 500 crores",
         "Minimum duration to be 3 working days and will not be kept open for more than 15 days",
         "Maximum duration of notice period shall not exceed 15 working days",
-        "repurchase price shall not be lower than 95% of the NAV",
-        "Payment of dividend/IDCW to the unitholders shall be made within seven working days from the record date."
+        "Repurchase price shall not be lower than 95% of the NAV",
+        "Payment of dividend/IDCW to the unitholders shall be made within seven working days from the record date.",
+        "The redemption or repurchase proceeds shall be dispatched to the unitholders within three working days from the date of redemption or repurchase.",
+        "Refund If application is rejected, full amount will be refunded within 5 working days of closure of NFO.",
+        "If refunded later than 5 working days @ 15% p.a. for delay period will be paid and charged to the AMC."
       ],
       "actionable_items": [
-        "Mutual Funds intending to establish Specialized Investment Funds are required to submit their applications as per the format provided at Annexure I",
-        "Registered Mutual Funds to launch Investment Strategies in accordance with the procedure applicable to the schemes of the Mutual Funds, as laid down in Regulation 28 of the MF Regulations.",
-        "Mutual Funds are required to launch Investment Strategies in accordance with Regulation 49Y(1) of the SEBI (Mutual Funds) Regulations 1996",
+        "Mutual Funds intending to establish Specialized Investment Funds are required to submit their applications as per the format provided at Annexure I.",
+        "Registered Mutual Funds are required to launch Investment Strategies in accordance with the procedure applicable to the schemes of the Mutual Funds, as laid down in Regulation 28 of the MF Regulations.",
+        "Registered Mutual Funds intending to establish Specialized Investment Funds are required to submit their applications as per the format provided at Annexure I to this Circular.",
+        "Registered Mutual Funds must disclose information in Investment Strategy Information Document (‘ISID’).",
         "AMCs must ensure real time updation of data on the said link.",
         "AMCs to refer to Clause 1.14.1.2, Clause 2.9, Clause 3.5.3.11 and Clause 3.6.7 of SEBI Master Circular for Mutual Funds and applicable clause of Consolidated checklist of standard observations for active and passive breach/es.",
         "The Trustees shall ensure that no change in the fundamental attributes of the investment strategy or the trust or fee and expenses payable or any other change which would modify the investment strategy thereunder and affect the interests of Unitholders is carried out unless certain conditions are met.",
         "AMC to ensure that no NFO expenses will be / were charged to the Investment Strategy.",
-        "The AMC shall send an allotment confirmation specifying the units allotted by way of email and/or SMS within 5 working days of receipt of valid application/transaction to the Unit holders registered e-mail address and/ or mobile number",
-        "The redemption or repurchase proceeds shall be dispatched to the unitholders within three working days from the date of redemption or repurchase.",
-        "Investment in overseas securities shall be made in accordance with the requirements stipulated by SEBI and RBI from time to time."
+        "AMC to ensure real time updation of data on the said link.",
+        "AMCs to ensure real time updation of data on the said link."
       ],
       "filename": "page_2_23_1_Specialized_Investme.pdf",
       "content_length": 42969,
@@ -1033,24 +1022,22 @@
       ],
       "key_clauses": [
         "Regulatory Framework for Specialized Investment Funds ('SIF')",
-        "Provisions under paragraph 12.27.2.4 of the Master Circular for Mutual Funds dated June 27, 2024, regarding maturity of securities in interval schemes, shall not be applicable to Interval Investment Strategies under SIF.",
+        "Provisions under paragraph 12.27.2.4 of the Master Circular for Mutual Funds dated June 27, 2024 regarding maturity of securities in interval schemes, shall not be applicable to Interval Investment Strategies under SIF.",
         "Paragraph 4.1.1 of the SIF Circular, regarding minimum investment threshold, shall stand modified.",
         "Aggregate investment by an investor across all investment strategies offered by the SIF, at the Permanent Account Number (‘PAN’) level, is not less than INR 10 lakh (hereinafter referred to as the ‘Minimum Investment Threshold’)",
         "Provisions shall not be applicable for mandatory investments made by AMCs for designated employees under paragraph 6.10 of the Master Circular for Mutual Funds dated June 27, 2024.",
-        "Circular issued in exercise of the powers conferred by Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Chapter VI-C of the SEBI (Mutual Funds) Regulations 1996",
-        "To protect the interest of investors in securities and to promote the development of, and to regulate the securities market."
+        "Circular issued in exercise of the powers conferred by Section 11(1) of the Securities and Exchange Board of India Act, 1992 read with Chapter VI-C of the SEBI (Mutual Funds) Regulations 1996"
       ],
       "key_metrics": [
         "INR 10 lakh",
-        "June 27, 2024",
+        "April 09, 2025",
         "February 27, 2025",
-        "April 09, 2025"
+        "June 27, 2024"
       ],
       "actionable_items": [
         "AMCs to ensure aggregate investment by an investor across all investment strategies offered by the SIF, at the PAN level, is not less than INR 10 lakh.",
         "Comply with the provisions of the circular with effect from the date of the circular.",
-        "Mutual Funds, AMCs, RTAs, Trustee Companies/ Board of Trustees of Mutual Funds, Recognized Stock Exchanges, Recognized Clearing Corporations, Depositories, and AMFI to take note of the circular.",
-        "AMCs to note that the minimum investment threshold of INR 10 lakh does not apply to mandatory investments made by AMCs for designated employees under paragraph 6.10 of the Master Circular for Mutual Funds dated June 27, 2024."
+        "Mutual Funds, AMCs, RTAs, Trustee Companies/ Board of Trustees of Mutual Funds, Recognized Stock Exchanges, Recognized Clearing Corporations, Depositories, and AMFI to take note of the clarification on the regulatory framework for Specialized Investment Funds (SIF)."
       ],
       "filename": "page_2_24_1_Clarification_on_Reg.pdf",
       "content_length": 2215,
@@ -1076,27 +1063,29 @@
         "FPI Master Circular No. SEBI/HO/AFD/AFD-PoD-2/P/CIR/P/2024/70 dated May 30, 2024",
         "Additional disclosures for FPIs holding more than INR 50,000 crore of equity AUM",
         "Requirements for subscribers of Offshore Derivative Instruments (ODIs)",
-        "sub-para (xiii)(b) of Para 1 of Part C",
-        "sub-para (xv) of Para 1 of Part C",
-        "sub-para (xx)(b) of Para 1 of Part C",
-        "sub-para (i)(b) of Para 4 of Part D"
+        "Modification of sub-para (xiii)(b) of Para 1 of Part C",
+        "Modification of sub-para (xv) of Para 1 of Part C",
+        "Modification of sub-para (xx)(b) of Para 1 of Part C",
+        "Modification of sub-para (i)(b) of Para 4 of Part D"
       ],
       "key_metrics": [
         "INR 25,000 crore",
         "INR 50,000 crore",
-        "April 09, 2025",
         "May 30, 2024",
-        "December 17, 2024"
+        "December 17, 2024",
+        "April 09, 2025"
       ],
       "actionable_items": [
-        "Comply with the increased threshold of INR 50,000 crore for additional disclosures.",
-        "Refer to the modified sub-paragraphs of the FPI Master Circular.",
-        "Ensure compliance with the provisions of the circular with immediate effect.",
-        "FPIs to assess their AUM and investor group holdings to determine if additional disclosures are required.",
-        "DDPs and Custodians to facilitate the implementation of the revised threshold.",
-        "Listed Companies to be aware of the revised disclosure requirements for FPIs.",
-        "Registrars to an Issue and Share Transfer Agents to assist in identifying FPI holdings.",
-        "Review and update internal policies and procedures to reflect the new threshold."
+        "FPIs to comply with additional disclosure requirements if AUM exceeds INR 50,000 crore",
+        "DDPs and Custodians to ensure compliance by FPIs",
+        "Depositories to take note of the circular",
+        "Stock Exchanges and Clearing Corporations to take note of the circular",
+        "Registrars to an Issue and Share Transfer Agents to take note of the circular",
+        "Listed Companies to take note of the circular",
+        "Implementation of the increased threshold with immediate effect",
+        "Compliance with the modified paragraphs of the FPI Master Circular",
+        "Review and update internal policies and procedures to reflect the increased threshold",
+        "Monitor FPI AUM to ensure compliance with the revised threshold"
       ],
       "filename": "page_2_25_1_Amendment_to_Circula.pdf",
       "content_length": 2387,

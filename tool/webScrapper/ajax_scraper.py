@@ -16,6 +16,9 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
+# LangSmith tracing
+from langsmith import traceable
+
 class SEBIAjaxScraper:
     def __init__(self, base_url: str = "https://www.sebi.gov.in", download_folder: str = "sebi_ajax_pdfs"):
         self.base_url = base_url
@@ -1042,6 +1045,7 @@ class SEBIAjaxScraper:
         return combined_results
 
 # Dynamic functions that can be called directly
+@traceable(name="scrape_page", metadata={"tool": "sebi_web_scraper"})
 def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict[str, Any]:
     """
     Dynamic function to scrape multiple pages by number.
@@ -1077,6 +1081,7 @@ def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict
     
     return results
 
+@traceable(name="scrape_pages", metadata={"tool": "sebi_web_scraper"})
 def scrape_pages(page_numbers: List[int], download_folder: str = "sebi_multiple_pages") -> Dict[str, Any]:
     """
     Dynamic function to scrape multiple specific pages.

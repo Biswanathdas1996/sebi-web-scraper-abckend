@@ -7,6 +7,9 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional
 import re
 
+# LangSmith tracing
+from langsmith import traceable
+
 
 def extract_text_from_pdf_pypdf2(pdf_path: str) -> str:
     """
@@ -254,6 +257,7 @@ def extract_text_summary(text: str, max_length: int = 500) -> str:
     return summary.strip() + "..." if summary else text[:max_length] + "..."
 
 
+@traceable(name="process_test_enhanced_metadata_pdfs", metadata={"tool": "pdf_text_extractor"})
 def process_test_enhanced_metadata_pdfs():
     """
     Main function to process PDFs from test_enhanced_metadata folder

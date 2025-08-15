@@ -1,18 +1,29 @@
-"""
-LangGraph Multi-Agent System for SEBI Document Processing Workflow
-
-This module creates a state machine workflow using LangGraph that orchestrates 
-the three main processing stages:
-1. Web Scraping Agent - Downloads PDFs from SEBI website
-2. Document Processing Agent - Extracts text from PDFs
-3. Analysis Agent - Analyzes and classifies documents
-"""
-
 import asyncio
 import json
+import os
 from typing import Dict, List, Any, TypedDict, Annotated
 from datetime import datetime
 from pathlib import Path
+
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
+# LangSmith tracing setup
+from langsmith import traceable
+from langsmith.wrappers import wrap_openai
+from langsmith_config import configure_langsmith, validate_langsmith_setup
+
+# Initialize LangSmith configuration
+print("🔧 Initializing LangSmith configuration...")
+is_valid, issues = validate_langsmith_setup()
+if is_valid:
+    configure_langsmith()
+else:
+    print("⚠️  LangSmith configuration issues detected:")
+    for issue in issues:
+        print(f"   • {issue}")
+    print("   Workflow will continue but tracing may not work properly.")
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
@@ -61,6 +72,7 @@ def create_message(agent_name: str, content: str, message_type: str = "status") 
 
 # Agent Functions
 
+@traceable(name="web_scraping_agent")
 def web_scraping_agent(state: WorkflowState) -> WorkflowState:
     """Web Scraping Agent - Downloads PDFs from SEBI website"""
     agent_name = "Web Scraping Agent"
@@ -103,6 +115,7 @@ def web_scraping_agent(state: WorkflowState) -> WorkflowState:
         state["messages"].append(create_message(agent_name, error_msg, "error"))
         return state
 
+@traceable(name="document_processing_agent")
 def document_processing_agent(state: WorkflowState) -> WorkflowState:
     """Document Processing Agent - Extracts text from downloaded PDFs"""
     agent_name = "Document Processing Agent"
@@ -152,6 +165,7 @@ def document_processing_agent(state: WorkflowState) -> WorkflowState:
         state["messages"].append(create_message(agent_name, error_msg, "error"))
         return state
 
+@traceable(name="analysis_agent")
 def analysis_agent(state: WorkflowState) -> WorkflowState:
     """Analysis Agent - Analyzes and classifies documents using LLM"""
     agent_name = "Analysis Agent"
@@ -204,6 +218,7 @@ def analysis_agent(state: WorkflowState) -> WorkflowState:
 
 # Workflow functions
 
+@traceable(name="check_scraping_success")
 def check_scraping_success(state: WorkflowState) -> str:
     """Check if scraping was successful"""
     scraping_result = state.get("scraping_result", {})
@@ -211,6 +226,7 @@ def check_scraping_success(state: WorkflowState) -> str:
         return "continue"
     return "end"
 
+@traceable(name="check_processing_success")
 def check_processing_success(state: WorkflowState) -> str:
     """Check if processing was successful"""
     processing_result = state.get("processing_result")
@@ -220,6 +236,7 @@ def check_processing_success(state: WorkflowState) -> str:
             return "continue"
     return "end"
 
+@traceable(name="finalize_workflow")
 def finalize_workflow(state: WorkflowState) -> WorkflowState:
     """Finalize workflow - summarize results"""
     print("\n" + "="*80)
@@ -352,6 +369,7 @@ def create_workflow() -> StateGraph:
     return workflow
 
 # Convenience functions to run the workflow
+@traceable(name="run_sebi_workflow", metadata={"workflow_type": "sebi_document_processing"})
 def run_sebi_workflow(
     page_numbers: List[int] = [1], 
     download_folder: str = "test_enhanced_metadata"
@@ -396,6 +414,7 @@ def run_sebi_workflow(
     
     return final_state
 
+@traceable(name="run_custom_sebi_workflow", metadata={"workflow_type": "custom_sebi_processing"})
 def run_custom_sebi_workflow(
     pages: List[int],
     folder: str ='test_enhanced_metadata',

@@ -4,3 +4,8 @@ pathlib
 PyPDF2
 pdfplumber
 python-dateutil
+langsmith
+python-dotenv
+langgraph
+langchain
+langchain-core

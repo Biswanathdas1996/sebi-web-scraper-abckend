@@ -4,6 +4,9 @@ import asyncio
 from typing import Dict, List, Optional
 from ..LLM.index import generate_with_prompt, parse_json_response
 
+# LangSmith tracing
+from langsmith import traceable
+
 # Define the available options for classification
 DEPARTMENTS = [
     "Alternative Investment Fund and Foreign Portfolio Investors Department",
@@ -86,6 +89,7 @@ Respond only with valid JSON. Ensure all array items are strings.
     
     return prompt
 
+@traceable(name="analyze_document_content", metadata={"tool": "document_classifier"})
 async def analyze_document_content(content: str, filename: str = "") -> Dict:
     """
     Analyze a single document's content using LLM
@@ -129,6 +133,7 @@ async def analyze_document_content(content: str, filename: str = "") -> Dict:
             "error": str(e)
         }
 
+@traceable(name="process_scraping_metadata", metadata={"tool": "sebi_document_processor"})
 async def process_scraping_metadata() -> Dict:
     """
     Main function to process scraping_metadata.json file and analyze all documents
@@ -233,6 +238,7 @@ async def process_scraping_metadata() -> Dict:
     
     return analysis_results
 
+@traceable(name="run_analysis", metadata={"workflow_stage": "document_analysis"})
 def run_analysis():
     """
     Synchronous wrapper function to run the analysis

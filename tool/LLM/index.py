@@ -6,6 +6,9 @@ from typing import Dict, List, Optional, Union, Literal, Callable
 from dataclasses import dataclass
 import re
 
+# LangSmith tracing
+from langsmith import traceable
+
 # Type definitions
 @dataclass
 class ConversationTheme:
@@ -33,6 +36,7 @@ class PWCModels:
 
 PWCModel = Literal["bedrock.anthropic.claude-sonnet-4", "vertex_ai.gemini-2.0-flash", "azure.gpt-4o"]
 
+@traceable(name="call_pwc_genai", metadata={"service": "pwc_genai"})
 async def call_pwc_genai(model: str, prompt: str, options: Dict = None) -> Dict:
     """
     Make an API call to PwC GenAI service.
@@ -90,6 +94,7 @@ async def call_pwc_genai(model: str, prompt: str, options: Dict = None) -> Dict:
         print(f"Error making API call to PwC GenAI: {error}")
         raise error
 
+@traceable(name="generate_with_prompt")
 async def generate_with_prompt(
     prompt: str,
     model: str = "bedrock.anthropic.claude-sonnet-4",
@@ -119,6 +124,7 @@ async def generate_with_prompt(
     response = await call_pwc_genai(model, prompt, options)
     return response
 
+@traceable(name="generate_with_custom_parser")
 async def generate_with_custom_parser(
     prompt: str,
     parser_func: Callable = None,
