@@ -1,0 +1,339 @@
+{
+  "workflow": {
+    "name": "SEBI Document Processing",
+    "version": "1.0",
+    "framework": "LangGraph",
+    "description": "Multi-agent workflow for processing SEBI regulatory documents"
+  },
+  "nodes": {
+    "START": {
+      "type": "start_node",
+      "description": "Workflow initialization",
+      "next": [
+        "web_scraping"
+      ],
+      "state_updates": [
+        "workflow_id",
+        "start_time",
+        "initial_parameters"
+      ]
+    },
+    "web_scraping": {
+      "type": "agent_node",
+      "name": "Web Scraping Agent",
+      "description": "Downloads PDFs from SEBI website using AJAX scraper",
+      "function": "web_scraping_agent",
+      "inputs": [
+        "page_numbers",
+        "download_folder"
+      ],
+      "outputs": [
+        "scraping_result",
+        "downloaded_files_metadata"
+      ],
+      "next": [
+        "scraping_check"
+      ],
+      "error_handling": "graceful_degradation",
+      "timeout": 300,
+      "retry_count": 3,
+      "capabilities": [
+        "AJAX-based web scraping",
+        "Session management",
+        "File download tracking",
+        "Metadata extraction",
+        "Link validation"
+      ]
+    },
+    "scraping_check": {
+      "type": "conditional_node",
+      "name": "Scraping Success Check",
+      "description": "Validates if files were successfully downloaded",
+      "function": "check_scraping_success",
+      "condition": "scraping_result.total_downloaded_files > 0",
+      "outcomes": {
+        "continue": "document_processing",
+        "end": "finalize"
+      },
+      "decision_logic": "file_count_validation"
+    },
+    "document_processing": {
+      "type": "agent_node",
+      "name": "Document Processing Agent",
+      "description": "Extracts text and metadata from PDF documents",
+      "function": "document_processing_agent",
+      "inputs": [
+        "scraping_result",
+        "pdf_files"
+      ],
+      "outputs": [
+        "processing_result",
+        "extracted_text",
+        "document_metadata"
+      ],
+      "next": [
+        "processing_check"
+      ],
+      "error_handling": "per_file_error_tracking",
+      "libraries": [
+        "PyPDF2",
+        "pdfplumber"
+      ],
+      "capabilities": [
+        "PDF text extraction",
+        "Metadata parsing",
+        "Content validation",
+        "Format detection",
+        "Error recovery"
+      ]
+    },
+    "processing_check": {
+      "type": "conditional_node",
+      "name": "Processing Success Check",
+      "description": "Validates if text extraction was successful",
+      "function": "check_processing_success",
+      "condition": "processing_result.processed_files_count > 0",
+      "outcomes": {
+        "continue": "analysis",
+        "end": "finalize"
+      },
+      "decision_logic": "extraction_validation"
+    },
+    "analysis": {
+      "type": "agent_node",
+      "name": "Analysis Agent",
+      "description": "Analyzes and classifies documents using LLM",
+      "function": "analysis_agent",
+      "inputs": [
+        "processing_result",
+        "extracted_text"
+      ],
+      "outputs": [
+        "analysis_result",
+        "classifications",
+        "insights"
+      ],
+      "next": [
+        "finalize"
+      ],
+      "error_handling": "document_level_errors",
+      "llm_provider": "PWC GenAI API",
+      "capabilities": [
+        "Document classification",
+        "Department identification",
+        "Intermediary extraction",
+        "Key insight generation",
+        "Structured output formatting"
+      ]
+    },
+    "finalize": {
+      "type": "finalization_node",
+      "name": "Workflow Finalizer",
+      "description": "Generates final reports and performs cleanup",
+      "function": "finalize_workflow",
+      "inputs": [
+        "all_agent_results",
+        "workflow_state"
+      ],
+      "outputs": [
+        "final_report",
+        "summary_statistics",
+        "saved_files"
+      ],
+      "next": [
+        "END"
+      ],
+      "operations": [
+        "Result aggregation",
+        "Report generation",
+        "File saving",
+        "Statistics calculation",
+        "Cleanup operations"
+      ]
+    },
+    "END": {
+      "type": "end_node",
+      "description": "Workflow completion",
+      "final_state": [
+        "completed",
+        "results_saved"
+      ]
+    }
+  },
+  "state_schema": {
+    "required_fields": {
+      "page_numbers": {
+        "type": "List[int]",
+        "description": "SEBI website page numbers to scrape",
+        "default": [
+          1
+        ]
+      },
+      "download_folder": {
+        "type": "str",
+        "description": "Target folder for downloaded files",
+        "default": "test_enhanced_metadata"
+      }
+    },
+    "workflow_fields": {
+      "scraping_result": {
+        "type": "Dict[str, Any]",
+        "description": "Results from web scraping stage"
+      },
+      "processing_result": {
+        "type": "Dict[str, Any]",
+        "description": "Results from document processing stage"
+      },
+      "analysis_result": {
+        "type": "Dict[str, Any]",
+        "description": "Results from analysis stage"
+      }
+    },
+    "metadata_fields": {
+      "current_stage": {
+        "type": "str",
+        "description": "Currently active workflow stage"
+      },
+      "workflow_id": {
+        "type": "str",
+        "description": "Unique workflow identifier"
+      },
+      "start_time": {
+        "type": "str",
+        "description": "Workflow start timestamp"
+      },
+      "errors": {
+        "type": "List[str]",
+        "description": "Collection of errors encountered"
+      },
+      "messages": {
+        "type": "List[Dict[str, Any]]",
+        "description": "Inter-agent communication messages"
+      }
+    }
+  },
+  "edges": {
+    "sequential_edges": [
+      {
+        "from": "START",
+        "to": "web_scraping",
+        "type": "direct"
+      },
+      {
+        "from": "web_scraping",
+        "to": "scraping_check",
+        "type": "direct"
+      },
+      {
+        "from": "document_processing",
+        "to": "processing_check",
+        "type": "direct"
+      },
+      {
+        "from": "analysis",
+        "to": "finalize",
+        "type": "direct"
+      },
+      {
+        "from": "finalize",
+        "to": "END",
+        "type": "direct"
+      }
+    ],
+    "conditional_edges": [
+      {
+        "from": "scraping_check",
+        "condition": "check_scraping_success",
+        "outcomes": {
+          "continue": {
+            "to": "document_processing",
+            "condition": "files_downloaded > 0"
+          },
+          "end": {
+            "to": "finalize",
+            "condition": "files_downloaded == 0"
+          }
+        }
+      },
+      {
+        "from": "processing_check",
+        "condition": "check_processing_success",
+        "outcomes": {
+          "continue": {
+            "to": "analysis",
+            "condition": "processed_files > 0"
+          },
+          "end": {
+            "to": "finalize",
+            "condition": "processed_files == 0"
+          }
+        }
+      }
+    ]
+  },
+  "execution_patterns": {
+    "success_path": [
+      "START",
+      "web_scraping",
+      "scraping_check",
+      "document_processing",
+      "processing_check",
+      "analysis",
+      "finalize",
+      "END"
+    ],
+    "no_files_path": [
+      "START",
+      "web_scraping",
+      "scraping_check",
+      "finalize",
+      "END"
+    ],
+    "no_text_path": [
+      "START",
+      "web_scraping",
+      "scraping_check",
+      "document_processing",
+      "processing_check",
+      "finalize",
+      "END"
+    ],
+    "error_recovery": "Each agent handles errors gracefully and continues workflow"
+  },
+  "output_artifacts": {
+    "primary_outputs": [
+      {
+        "filename": "scraping_metadata.json",
+        "description": "Raw scraping data and file metadata",
+        "generated_by": "web_scraping_agent"
+      },
+      {
+        "filename": "sebi_document_analysis_results.json",
+        "description": "LLM analysis results and classifications",
+        "generated_by": "analysis_agent"
+      }
+    ],
+    "workflow_outputs": [
+      {
+        "filename": "workflow_results_[ID].json",
+        "description": "Complete workflow execution results",
+        "generated_by": "finalize_workflow",
+        "optional": "true"
+      }
+    ]
+  },
+  "monitoring": {
+    "logging_levels": [
+      "INFO",
+      "ERROR",
+      "SUCCESS"
+    ],
+    "progress_tracking": "Real-time stage updates",
+    "error_handling": "Graceful degradation with error collection",
+    "performance_metrics": [
+      "duration",
+      "success_rates",
+      "file_counts"
+    ]
+  }
+}

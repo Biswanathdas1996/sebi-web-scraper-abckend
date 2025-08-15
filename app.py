@@ -1,17 +1,41 @@
-from tool.webScrapper.ajax_scraper import scrape_page
-from tool.fileReader.index import process_test_enhanced_metadata_pdfs
-from tool.classiflire.index import run_analysis, DEPARTMENTS, INTERMEDIARIES
-import json
-import os
+# Import the LangGraph workflow
+from langgraph_workflow import (
+    run_custom_sebi_workflow
+)
 
-def test_enhanced_metadata():
-    print("🧪 Testing enhanced metadata with date and circular number extraction...")
+def main():
     
-    result = scrape_page([1,2], "test_enhanced_metadata")
-    result = process_test_enhanced_metadata_pdfs()
-    result = run_analysis()
     
-    return result
+    try:
+        print("🔧 Running in CUSTOM mode...")
+        result = run_custom_sebi_workflow([2])    
+        
+        # Print final summary
+        print("\n" + "="*60)
+        print("🎉 WORKFLOW COMPLETED SUCCESSFULLY!")
+        print("="*60)
+        print(f"🆔 Workflow ID: {result.get('workflow_id', 'N/A')}")
+        print(f"📊 Current Stage: {result.get('current_stage', 'N/A')}")
+        print(f"❌ Errors: {len(result.get('errors', []))}")
+        print(f"💬 Messages: {len(result.get('messages', []))}")
+        
+        if result.get('errors'):
+            print("\n⚠️  ERRORS ENCOUNTERED:")
+            for i, error in enumerate(result['errors'], 1):
+                print(f"   {i}. {error}")
+        
+        return 0
+        
+    except KeyboardInterrupt:
+        print("\n⏹️  Workflow interrupted by user")
+        return 1
+        
+    except Exception as e:
+        print(f"\n❌ WORKFLOW FAILED: {str(e)}")
+        return 1
+
+
 
 if __name__ == "__main__":
-    test_enhanced_metadata()
+    # If no command line args, run in test mode
+    main()
