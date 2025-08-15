@@ -21,7 +21,6 @@ def main():
         # Print final summary
         print("\n" + "="*60)
         print("🎉 WORKFLOW COMPLETED SUCCESSFULLY!")
-        print("="*60)
         print(f"🆔 Workflow ID: {result.get('workflow_id', 'N/A')}")
         print(f"📊 Current Stage: {result.get('current_stage', 'N/A')}")
         print(f"❌ Errors: {len(result.get('errors', []))}")

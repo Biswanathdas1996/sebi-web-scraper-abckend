@@ -1,18 +1,25 @@
-import asyncio
 import json
-import os
 from typing import Dict, List, Any, TypedDict, Annotated
 from datetime import datetime
-from pathlib import Path
-
 # Load environment variables
 from dotenv import load_dotenv
-load_dotenv()
 
 # LangSmith tracing setup
 from langsmith import traceable
 from langsmith.wrappers import wrap_openai
 from langsmith_config import configure_langsmith, validate_langsmith_setup
+
+# Import shared workflow types and utilities
+from workflow_types import WorkflowState, log_message, create_message
+
+from agents.web_scraping_agent import web_scraping_agent
+from agents.document_processing_agent import document_processing_agent
+from agents.analysis_agent import analysis_agent
+
+from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.memory import MemorySaver
+
+load_dotenv()
 
 # Initialize LangSmith configuration
 print("🔧 Initializing LangSmith configuration...")
@@ -25,198 +32,8 @@ else:
         print(f"   • {issue}")
     print("   Workflow will continue but tracing may not work properly.")
 
-from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import MemorySaver
-from langchain_core.messages import HumanMessage, SystemMessage
 
-# Import our existing tools
-from tool.webScrapper.ajax_scraper import scrape_page
-from tool.fileReader.index import process_test_enhanced_metadata_pdfs
-from tool.classiflire.index import run_analysis
-
-# State definition for the workflow
-class WorkflowState(TypedDict):
-    """State that gets passed between agents in the workflow"""
-    # Input parameters
-    page_numbers: List[int]
-    download_folder: str
-    
-    # Results from each stage
-    scraping_result: Dict[str, Any]
-    processing_result: Dict[str, Any]
-    analysis_result: Dict[str, Any]
-    
-    # Workflow metadata
-    current_stage: str
-    workflow_id: str
-    start_time: str
-    errors: List[str]
-    
-    # Messages for agent communication
-    messages: Annotated[List[Dict], "Messages between agents"]
-
-# Utility functions
-def log_message(agent_name: str, message: str, level: str = "INFO"):
-    """Log a message with agent name and timestamp"""
-    timestamp = datetime.now().strftime("%H:%M:%S")
-    print(f"[{timestamp}] {level} - {agent_name}: {message}")
-
-def create_message(agent_name: str, content: str, message_type: str = "status") -> Dict[str, Any]:
-    """Create a standardized message format"""
-    return {
-        "agent": agent_name,
-        "timestamp": datetime.now().isoformat(),
-        "type": message_type,
-        "content": content
-    }
-
-# Agent Functions
-
-@traceable(name="web_scraping_agent")
-def web_scraping_agent(state: WorkflowState) -> WorkflowState:
-    """Web Scraping Agent - Downloads PDFs from SEBI website"""
-    agent_name = "Web Scraping Agent"
-    log_message(agent_name, "🚀 Starting web scraping process...")
-    
-    try:
-        # Update state
-        state["current_stage"] = "web_scraping"
-        state["messages"].append(
-            create_message(agent_name, "Starting web scraping for SEBI documents")
-        )
-        
-        # Extract parameters from state
-        page_numbers = state.get("page_numbers", [1])
-        download_folder = state.get("download_folder", "test_enhanced_metadata")
-        
-        log_message(agent_name, f"Scraping pages: {page_numbers}")
-        log_message(agent_name, f"Download folder: {download_folder}")
-        
-        # Execute scraping
-        scraping_result = scrape_page(page_numbers, download_folder)
-        
-        # Update state with results
-        state["scraping_result"] = scraping_result
-        state["messages"].append(
-            create_message(
-                agent_name,
-                f"Successfully scraped {scraping_result.get('total_downloaded_files', 0)} files",
-                "success"
-            )
-        )
-        
-        log_message(agent_name, "✅ Web scraping completed successfully")
-        return state
-        
-    except Exception as e:
-        error_msg = f"Web scraping failed: {str(e)}"
-        log_message(agent_name, error_msg, "ERROR")
-        state["errors"].append(error_msg)
-        state["messages"].append(create_message(agent_name, error_msg, "error"))
-        return state
-
-@traceable(name="document_processing_agent")
-def document_processing_agent(state: WorkflowState) -> WorkflowState:
-    """Document Processing Agent - Extracts text from downloaded PDFs"""
-    agent_name = "Document Processing Agent"
-    log_message(agent_name, "📄 Starting document processing...")
-    
-    try:
-        # Update state
-        state["current_stage"] = "document_processing"
-        state["messages"].append(
-            create_message(agent_name, "Starting PDF text extraction")
-        )
-        
-        # Check if we have files to process
-        scraping_result = state.get("scraping_result", {})
-        if not scraping_result or scraping_result.get("total_downloaded_files", 0) == 0:
-            raise Exception("No files were downloaded in the scraping stage")
-        
-        log_message(agent_name, f"Processing {scraping_result.get('total_downloaded_files')} PDF files")
-        
-        # Execute document processing
-        processing_result = process_test_enhanced_metadata_pdfs()
-        
-        # Update state with results
-        state["processing_result"] = processing_result
-        
-        if processing_result and "pdf_processing" in processing_result:
-            processed_count = processing_result["pdf_processing"].get("processed_files_count", 0)
-            state["messages"].append(
-                create_message(
-                    agent_name,
-                    f"Successfully processed {processed_count} PDF files",
-                    "success"
-                )
-            )
-        else:
-            state["messages"].append(
-                create_message(agent_name, "Document processing completed", "success")
-            )
-        
-        log_message(agent_name, "✅ Document processing completed successfully")
-        return state
-        
-    except Exception as e:
-        error_msg = f"Document processing failed: {str(e)}"
-        log_message(agent_name, error_msg, "ERROR")
-        state["errors"].append(error_msg)
-        state["messages"].append(create_message(agent_name, error_msg, "error"))
-        return state
-
-@traceable(name="analysis_agent")
-def analysis_agent(state: WorkflowState) -> WorkflowState:
-    """Analysis Agent - Analyzes and classifies documents using LLM"""
-    agent_name = "Analysis Agent"
-    log_message(agent_name, "🔍 Starting document analysis...")
-    
-    try:
-        # Update state
-        state["current_stage"] = "document_analysis"
-        state["messages"].append(
-            create_message(agent_name, "Starting document classification and analysis")
-        )
-        
-        # Check if we have processed files to analyze
-        processing_result = state.get("processing_result", {})
-        if not processing_result or "pdf_processing" not in processing_result:
-            raise Exception("No processed documents available for analysis")
-        
-        log_message(agent_name, "Running LLM-based document analysis...")
-        
-        # Execute analysis
-        analysis_result = run_analysis()
-        
-        # Update state with results
-        state["analysis_result"] = analysis_result
-        
-        if analysis_result and "documents" in analysis_result:
-            analyzed_count = len(analysis_result["documents"])
-            successful_count = len([doc for doc in analysis_result["documents"] if "error" not in doc])
-            state["messages"].append(
-                create_message(
-                    agent_name,
-                    f"Successfully analyzed {successful_count}/{analyzed_count} documents",
-                    "success"
-                )
-            )
-        else:
-            state["messages"].append(
-                create_message(agent_name, "Document analysis completed", "success")
-            )
-        
-        log_message(agent_name, "✅ Document analysis completed successfully")
-        return state
-        
-    except Exception as e:
-        error_msg = f"Document analysis failed: {str(e)}"
-        log_message(agent_name, error_msg, "ERROR")
-        state["errors"].append(error_msg)
-        state["messages"].append(create_message(agent_name, error_msg, "error"))
-        return state
-
-# Workflow functions
+# conditional routing functions
 
 @traceable(name="check_scraping_success")
 def check_scraping_success(state: WorkflowState) -> str:
@@ -374,16 +191,7 @@ def run_sebi_workflow(
     page_numbers: List[int] = [1], 
     download_folder: str = "test_enhanced_metadata"
 ) -> Dict[str, Any]:
-    """
-    Convenience function to run the SEBI workflow
     
-    Args:
-        page_numbers: List of page numbers to scrape from SEBI website
-        download_folder: Folder name to store downloaded PDFs
-    
-    Returns:
-        Complete workflow results
-    """
     print("🚀 Starting SEBI Document Processing Workflow")
     print("="*60)
     
@@ -420,17 +228,7 @@ def run_custom_sebi_workflow(
     folder: str ='test_enhanced_metadata',
     save_results: bool = False
 ) -> Dict[str, Any]:
-    """
-    Run a custom SEBI workflow with specified parameters
-    
-    Args:
-        pages: Page numbers to scrape
-        folder: Download folder name
-        save_results: Whether to save results to JSON file
-    
-    Returns:
-        Workflow results
-    """
+   
     result = run_sebi_workflow(pages, folder)
     
     if save_results:
