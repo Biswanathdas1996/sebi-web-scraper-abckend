@@ -1,7 +1,3 @@
-"""
-SEBI AJAX Scraper - Uses the AJAX endpoint for efficient pagination
-Based on the discovered AJAX API: /sebiweb/ajax/home/getnewslistinfo.jsp
-"""
 from __future__ import annotations
 
 import os
@@ -973,15 +969,7 @@ class SEBIAjaxScraper:
         return results
     
     def scrape_specific_pages(self, page_numbers: List[int]) -> Dict[str, Any]:
-        """
-        Scrape specific page numbers.
         
-        Args:
-            page_numbers: List of page numbers to scrape (1-based)
-            
-        Returns:
-            Dictionary with combined scraping results
-        """
         print(f"🎯 Scraping specific pages: {page_numbers}")
         print(f"📁 Download folder: {self.download_path.absolute()}")
         
@@ -1047,20 +1035,7 @@ class SEBIAjaxScraper:
 # Dynamic functions that can be called directly
 @traceable(name="scrape_page", metadata={"tool": "sebi_web_scraper"})
 def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict[str, Any]:
-    """
-    Dynamic function to scrape multiple pages by number.
     
-    Args:
-        page_numbers: Page number(s) to scrape - can be int for single page or list for multiple pages
-        download_folder: Folder to save PDFs
-        
-    Returns:
-        Dictionary with scraping results
-    
-    Example:
-        results = scrape_page(5, "page_5_pdfs")  # Single page
-        results = scrape_page([1, 2, 5, 10], "multiple_pages_pdfs")  # Multiple pages
-    """
     scraper = SEBIAjaxScraper(download_folder=download_folder)
     
     # Handle both single page number and array of page numbers
@@ -1083,19 +1058,7 @@ def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict
 
 @traceable(name="scrape_pages", metadata={"tool": "sebi_web_scraper"})
 def scrape_pages(page_numbers: List[int], download_folder: str = "sebi_multiple_pages") -> Dict[str, Any]:
-    """
-    Dynamic function to scrape multiple specific pages.
-    
-    Args:
-        page_numbers: List of page numbers to scrape (1-based)
-        download_folder: Folder to save PDFs
-        
-    Returns:
-        Dictionary with combined scraping results
-    
-    Example:
-        results = scrape_pages([1, 3, 5, 10], "selected_pages_pdfs")
-    """
+   
     scraper = SEBIAjaxScraper(download_folder=download_folder)
     results = scraper.scrape_specific_pages(page_numbers)
     
@@ -1110,18 +1073,7 @@ def scrape_pages(page_numbers: List[int], download_folder: str = "sebi_multiple_
     return results
 
 def get_page_links_only(page_number: int) -> List[Dict[str, Any]]:
-    """
-    Get only the links from a specific page without downloading PDFs.
     
-    Args:
-        page_number: Page number to get links from (1-based)
-        
-    Returns:
-        List of link dictionaries
-    
-    Example:
-        links = get_page_links_only(7)
-    """
     scraper = SEBIAjaxScraper(download_folder="temp_links_only")
     html_content = scraper.get_page_data(page_number)
     
