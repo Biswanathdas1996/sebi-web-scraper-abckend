@@ -1042,22 +1042,30 @@ class SEBIAjaxScraper:
         return combined_results
 
 # Dynamic functions that can be called directly
-def scrape_page(page_number: int, download_folder: str = "sebi_single_page") -> Dict[str, Any]:
+def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict[str, Any]:
     """
-    Dynamic function to scrape a single page by number.
+    Dynamic function to scrape multiple pages by number.
     
     Args:
-        page_number: Page number to scrape (1-based)
+        page_numbers: Page number(s) to scrape - can be int for single page or list for multiple pages
         download_folder: Folder to save PDFs
         
     Returns:
         Dictionary with scraping results
     
     Example:
-        results = scrape_page(5, "page_5_pdfs")
+        results = scrape_page(5, "page_5_pdfs")  # Single page
+        results = scrape_page([1, 2, 5, 10], "multiple_pages_pdfs")  # Multiple pages
     """
     scraper = SEBIAjaxScraper(download_folder=download_folder)
-    results = scraper.scrape_single_page(page_number)
+    
+    # Handle both single page number and array of page numbers
+    if isinstance(page_numbers, int):
+        results = scraper.scrape_single_page(page_numbers)
+    elif isinstance(page_numbers, list):
+        results = scraper.scrape_specific_pages(page_numbers)
+    else:
+        raise ValueError("page_numbers must be either an int or a list of ints")
     
     # Ensure metadata is saved for dynamic function calls too
     try:
