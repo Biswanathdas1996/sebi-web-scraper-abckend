@@ -266,7 +266,7 @@ def process_test_enhanced_metadata_pdfs():
     # Get current working directory and construct paths using pathlib for cross-platform compatibility
     current_dir = Path.cwd()
     test_folder = current_dir / "test_enhanced_metadata"
-    metadata_file = current_dir / "scraping_metadata.json"
+    metadata_file = current_dir / "output/scraping_metadata.json"
     
     print("🚀 Starting PDF processing for SEBI documents...")
     print(f"📁 PDF folder: {test_folder}")
@@ -533,7 +533,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "--refactor-paths":
         print("🔧 Refactoring metadata for path mapping issues...")
         current_dir = Path.cwd()
-        metadata_file = current_dir / "scraping_metadata.json"
+        metadata_file = current_dir / "output/scraping_metadata.json"
         result = refactor_metadata_paths(str(metadata_file))
         
         if "error" in result:
@@ -550,7 +550,7 @@ if __name__ == "__main__":
     elif len(sys.argv) > 1 and sys.argv[1] == "--validate-paths":
         print("🔍 Validating PDF file paths...")
         current_dir = Path.cwd()
-        metadata_file = current_dir / "scraping_metadata.json"
+        metadata_file = current_dir / "output/scraping_metadata.json"
         result = validate_pdf_paths(str(metadata_file))
         
         if "error" in result:

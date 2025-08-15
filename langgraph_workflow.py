@@ -418,7 +418,7 @@ def run_sebi_workflow(
 def run_custom_sebi_workflow(
     pages: List[int],
     folder: str ='test_enhanced_metadata',
-    save_results: bool = True
+    save_results: bool = False
 ) -> Dict[str, Any]:
     """
     Run a custom SEBI workflow with specified parameters

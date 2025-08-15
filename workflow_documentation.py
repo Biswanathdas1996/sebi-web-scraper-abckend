@@ -742,11 +742,7 @@ def generate_state_flow_json():
         }
     }
     
-    # Save to JSON file
-    with open('langgraph_workflow_structure.json', 'w', encoding='utf-8') as f:
-        json.dump(state_flow, f, indent=2, ensure_ascii=False)
     
-    print("🔄 Detailed workflow structure saved as 'langgraph_workflow_structure.json'")
     return state_flow
 
 

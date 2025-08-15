@@ -191,10 +191,10 @@ class SEBIAjaxScraper:
             # Choose where to save the JSON file
             if save_to_root:
                 # Save to workspace root directory
-                metadata_file = Path.cwd() / "scraping_metadata.json"
+                metadata_file = Path.cwd() / "output/scraping_metadata.json"
             else:
                 # Save to download folder
-                metadata_file = self.download_path / "scraping_metadata.json"
+                metadata_file = self.download_path / "output/scraping_metadata.json"
             
             with open(metadata_file, "w", encoding="utf-8") as f:
                 json.dump(metadata, f, indent=2, ensure_ascii=False)
@@ -1073,7 +1073,7 @@ def scrape_page(page_numbers, download_folder: str = "sebi_single_page") -> Dict
     
     # Ensure metadata is saved for dynamic function calls too
     try:
-        metadata_file = Path(download_folder) / "scraping_metadata.json"
+        metadata_file = Path(download_folder) / "output/scraping_metadata.json"
         if not metadata_file.exists():
             scraper._save_metadata_json(results)
     except Exception as e:
@@ -1101,7 +1101,7 @@ def scrape_pages(page_numbers: List[int], download_folder: str = "sebi_multiple_
     
     # Ensure metadata is saved for dynamic function calls too
     try:
-        metadata_file = Path(download_folder) / "scraping_metadata.json"
+        metadata_file = Path(download_folder) / "output/scraping_metadata.json"
         if not metadata_file.exists():
             scraper._save_metadata_json(results)
     except Exception as e:
