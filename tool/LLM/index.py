@@ -27,11 +27,11 @@ class IndustryMetric:
 
 # Model configuration
 class PWCModels:
-    CLAUDE = "claude"
-    GEMINI = "gemini"
-    GPT4 = "gpt4"
+    CLAUDE = "bedrock.anthropic.claude-sonnet-4"
+    GEMINI = "vertex_ai.gemini-2.0-flash"
+    GPT4 = "azure.gpt-4o"
 
-PWCModel = Literal["claude", "gemini", "gpt4"]
+PWCModel = Literal["bedrock.anthropic.claude-sonnet-4", "vertex_ai.gemini-2.0-flash", "azure.gpt-4o"]
 
 async def call_pwc_genai(model: str, prompt: str, options: Dict = None) -> Dict:
     """
@@ -45,8 +45,8 @@ async def call_pwc_genai(model: str, prompt: str, options: Dict = None) -> Dict:
     if options is None:
         options = {}
         
-    api_key = os.getenv("PWC_GENAI_API_KEY", "sk-al2SvdB5zphLTRZt1mrGEg")
-    url = os.getenv("PWC_GENAI_ENDPOINT_URL", "https://genai-sharedservice-americas.pwc.com/completions")
+    api_key = "sk-SxXiWpNEB1MCA_yxD3eHiQ"
+    url = "https://genai-sharedservice-americas.pwc.com/completions"
     
     headers = {
         "accept": "application/json",
