@@ -15,6 +15,7 @@ from workflow_types import WorkflowState, log_message, create_message
 from agents.web_scraping_agent import web_scraping_agent
 from agents.document_processing_agent import document_processing_agent
 from agents.analysis_agent import analysis_agent
+from agents.database_loading_agent import database_loading_agent, create_ai_team_assignments
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
@@ -50,6 +51,17 @@ def check_processing_success(state: WorkflowState) -> str:
     if processing_result and "pdf_processing" in processing_result:
         processed_count = processing_result["pdf_processing"].get("processed_files_count", 0)
         if processed_count > 0:
+            return "continue"
+    return "end"
+
+@traceable(name="check_analysis_success")
+def check_analysis_success(state: WorkflowState) -> str:
+    """Check if analysis was successful"""
+    analysis_result = state.get("analysis_result", {})
+    if analysis_result and "documents" in analysis_result:
+        documents = analysis_result["documents"]
+        successful_analyses = [doc for doc in documents if "error" not in doc]
+        if len(successful_analyses) > 0:
             return "continue"
     return "end"
 
@@ -103,6 +115,24 @@ def finalize_workflow(state: WorkflowState) -> WorkflowState:
                 "failed_analyses": len(docs) - len(successful_analyses)
             }
     
+    # Add database loading results
+    if "database_result" in state:
+        db_result = state["database_result"]
+        final_report["database_summary"] = {
+            "success": db_result.get("success", False),
+            "metadata_id": db_result.get("metadata_id", ""),
+            "total_documents_loaded": db_result.get("total_documents", 0),
+            "loaded_at": db_result.get("loaded_at", "")
+        }
+    
+    # Add team assignment results
+    if "ai_assignments" in state:
+        assignments = state["ai_assignments"]
+        final_report["team_assignments_summary"] = {
+            "total_assignments_created": len(assignments),
+            "assigned_teams": len(set(a.get("team_type", "") for a in assignments))
+        }
+    
     # Print final report
     print_final_report(final_report)
     
@@ -143,12 +173,26 @@ def print_final_report(report: Dict[str, Any]):
         print(f"   ✅ Successful: {analysis['successful_analyses']}")
         print(f"   ❌ Failed: {analysis['failed_analyses']}")
     
+    if "database_summary" in report:
+        db = report["database_summary"]
+        print(f"\n💾 Database Loading Results:")
+        print(f"   📊 Success: {db['success']}")
+        print(f"   🔑 Metadata ID: {db['metadata_id']}")
+        print(f"   📄 Documents loaded: {db['total_documents_loaded']}")
+    
+    if "team_assignments_summary" in report:
+        assignments = report["team_assignments_summary"]
+        print(f"\n👥 Team Assignment Results:")
+        print(f"   📋 Total assignments: {assignments['total_assignments_created']}")
+        print(f"   🏢 Teams involved: {assignments['assigned_teams']}")
+    
     if report["errors_encountered"] > 0:
         print(f"\n⚠️  Errors encountered: {report['errors_encountered']}")
     
     print("\n📁 Output Files:")
     print("   📄 scraping_metadata.json - Raw scraping data")
     print("   🔍 sebi_document_analysis_results.json - Analysis results")
+    print("   💾 Database - Loaded into PostgreSQL with team assignments")
 
 def create_workflow() -> StateGraph:
     """Create the LangGraph workflow"""
@@ -160,6 +204,8 @@ def create_workflow() -> StateGraph:
     workflow.add_node("web_scraping", web_scraping_agent)
     workflow.add_node("document_processing", document_processing_agent)
     workflow.add_node("analysis", analysis_agent)
+    workflow.add_node("database_loading", database_loading_agent)
+    workflow.add_node("team_assignments", create_ai_team_assignments)
     workflow.add_node("finalize", finalize_workflow)
     
     # Define the workflow edges (sequence)
@@ -180,7 +226,16 @@ def create_workflow() -> StateGraph:
             "end": "finalize"
         }
     )
-    workflow.add_edge("analysis", "finalize")
+    workflow.add_conditional_edges(
+        "analysis",
+        check_analysis_success,
+        {
+            "continue": "database_loading",
+            "end": "finalize"
+        }
+    )
+    workflow.add_edge("database_loading", "team_assignments")
+    workflow.add_edge("team_assignments", "finalize")
     workflow.add_edge("finalize", END)
     
     return workflow
@@ -203,6 +258,9 @@ def run_sebi_workflow(
         "scraping_result": {},
         "processing_result": {},
         "analysis_result": {},
+        "database_result": {},
+        "workflow_documents": [],
+        "ai_assignments": [],
         "current_stage": "initialized",
         "workflow_id": workflow_id,
         "start_time": datetime.now().isoformat(),

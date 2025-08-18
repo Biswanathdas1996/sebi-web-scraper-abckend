@@ -1,5 +1,5 @@
 {
-  "scrape_timestamp": "2025-08-16T16:50:49.768169",
+  "scrape_timestamp": "2025-08-18T16:44:20.406486",
   "scraper_version": "ajax_v2.0",
   "base_url": "https://www.sebi.gov.in",
   "ajax_endpoint": "https://www.sebi.gov.in/sebiweb/ajax/home/getnewslistinfo.jsp",
@@ -20,11 +20,23 @@
       "download_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata",
       "links": [
         {
+          "text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+          "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+          "page": 1,
+          "table_index": 0,
+          "td_index": 1,
+          "cell_content": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of ",
+          "circular_date": "June 03, 2025",
+          "circular_number": "96126",
+          "circular_month_year": "aug-2025",
+          "circular_month_year_full": "August 2025"
+        },
+        {
           "text": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Investment Advisers and Research Analysts",
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 1,
+          "td_index": 3,
           "cell_content": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Inv",
           "circular_date": null,
           "circular_number": "96052",
@@ -36,7 +48,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 3,
+          "td_index": 5,
           "cell_content": "Transaction charges paid to Mutual Fund Distributors",
           "circular_date": null,
           "circular_number": "95950",
@@ -48,7 +60,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 5,
+          "td_index": 7,
           "cell_content": "Review of Framework for conversion of Private Listed InvIT into Public InvIT",
           "circular_date": null,
           "circular_number": "95943",
@@ -60,7 +72,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 7,
+          "td_index": 9,
           "cell_content": "Ease of doing business (EODB) - Policy for joint annual inspection by MIIs – information sharing mec",
           "circular_date": null,
           "circular_number": "95897",
@@ -72,7 +84,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 9,
+          "td_index": 11,
           "cell_content": "Review, Appeal or Waiver of penalty requests emanating out of actions taken by the Member Committee",
           "circular_date": null,
           "circular_number": "95840",
@@ -84,7 +96,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 11,
+          "td_index": 13,
           "cell_content": "Rights of Persons with Disabilities Act, 2016 and rules made thereunder- mandatory compliance by all",
           "circular_date": null,
           "circular_number": "95745",
@@ -96,7 +108,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 13,
+          "td_index": 15,
           "cell_content": "Extension of timeline for implementation of Phase II & III of Nomination Circular dated January 10, ",
           "circular_date": "January 10, 2025",
           "circular_number": "95715",
@@ -108,7 +120,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 15,
+          "td_index": 17,
           "cell_content": "Operational Efficiency in Monitoring of Non-Resident Indians (NRIs) Position Limits in Exchange Trad",
           "circular_date": null,
           "circular_number": "95679",
@@ -120,7 +132,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 17,
+          "td_index": 19,
           "cell_content": "Extension of timeline for implementation of SEBI Circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013",
           "circular_date": "February 04, 2025",
           "circular_number": "95677",
@@ -132,7 +144,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 19,
+          "td_index": 21,
           "cell_content": "Monitoring of Minimum Investment Threshold under Specialized Investment Funds (SIF)",
           "circular_date": null,
           "circular_number": "95676",
@@ -144,7 +156,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 21,
+          "td_index": 23,
           "cell_content": "Frequently Asked Questions (FAQs) related to regulatory provisions for Research Analysts",
           "circular_date": null,
           "circular_number": "95549",
@@ -156,7 +168,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 23,
+          "td_index": 25,
           "cell_content": "Ease of Doing Investment - Special Window for Re-lodgement of Transfer Requests of Physical Shares",
           "circular_date": null,
           "circular_number": "94973",
@@ -168,7 +180,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 25,
+          "td_index": 27,
           "cell_content": "Extension towards Adoption and Implementation of Cybersecurity and Cyber Resilience Framework (CSCRF",
           "circular_date": null,
           "circular_number": "94902",
@@ -180,7 +192,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 27,
+          "td_index": 29,
           "cell_content": "Industry Standards on “Minimum information to be provided to the Audit Committee and Shareholders fo",
           "circular_date": null,
           "circular_number": "94809",
@@ -192,7 +204,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 29,
+          "td_index": 31,
           "cell_content": "Timelines for rebalancing of portfolios of mutual fund schemes in cases of all passive breaches",
           "circular_date": null,
           "circular_number": "94804",
@@ -204,7 +216,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 31,
+          "td_index": 33,
           "cell_content": "Investor Charter Infrastructure Investment Trusts (InvITs)",
           "circular_date": null,
           "circular_number": "94557",
@@ -216,7 +228,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 33,
+          "td_index": 35,
           "cell_content": "Investor Charter Real Estate Investment Trusts (REITs)",
           "circular_date": null,
           "circular_number": "94555",
@@ -228,7 +240,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 35,
+          "td_index": 37,
           "cell_content": "Review of provisions relating to Product Advisory Committee (PAC)",
           "circular_date": null,
           "circular_number": "94554",
@@ -240,7 +252,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 37,
+          "td_index": 39,
           "cell_content": "Adoption of Standardised, Validated and Exclusive UPI IDs for Payment Collection by SEBI Registered ",
           "circular_date": null,
           "circular_number": "94535",
@@ -252,7 +264,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 39,
+          "td_index": 41,
           "cell_content": "Extension of timeline of additional liquidation period for VCFs migrating to SEBI (Alternative Inves",
           "circular_date": null,
           "circular_number": "94433",
@@ -264,7 +276,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 41,
+          "td_index": 43,
           "cell_content": "Framework for Environment, Social and Governance (ESG) Debt Securities (other than green debt securi",
           "circular_date": null,
           "circular_number": "94424",
@@ -276,7 +288,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 43,
+          "td_index": 45,
           "cell_content": "Limited relaxation from compliance with certain provisions of the SEBI (Listing Obligations and Disc",
           "circular_date": null,
           "circular_number": "94423",
@@ -288,7 +300,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 45,
+          "td_index": 47,
           "cell_content": "Margin obligations to be given by way of Pledge/Re-pledge in the Depository System",
           "circular_date": null,
           "circular_number": "94363",
@@ -300,30 +312,98 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 47,
+          "td_index": 49,
           "cell_content": "Investor Charter for Research Analysts",
           "circular_date": null,
           "circular_number": "94355",
-          "circular_month_year": "jun-2025",
-          "circular_month_year_full": "June 2025"
-        },
-        {
-          "text": "Investor Charter for Investment Advisers",
-          "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-          "page": 1,
-          "table_index": 0,
-          "td_index": 49,
-          "cell_content": "Investor Charter for Investment Advisers",
-          "circular_date": null,
-          "circular_number": "94354",
           "circular_month_year": "jun-2025",
           "circular_month_year_full": "June 2025"
         }
       ],
       "files": [
         {
-          "file_path": "test_enhanced_metadata\\page_1_1_1_Use_of_liquid_mutual.pdf",
-          "original_filename": "page_1_1_1_Use_of_liquid_mutual.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
+          "original_filename": "page_1_1_1_Extension_of_timelin.pdf",
+          "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+          "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1755513146159.pdf",
+          "source_page": 1,
+          "link_text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+          "file_size": 392812,
+          "text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+          "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+          "page": 1,
+          "table_index": 0,
+          "td_index": 1,
+          "cell_content": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of ",
+          "circular_date": "Aug 18, 2025",
+          "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+          "circular_month_year": "aug-2025",
+          "circular_month_year_full": "August 2025",
+          "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+          "url_circular_id": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+          "has_iframe": true,
+          "extracted_content": {
+            "text": "--- Page 1 ---\nCIRCULAR\nSEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118 August 18, 2025\nTo,\nAll recognized Stock Exchanges\nAll Recognized Clearing Corporations\nAll Depositories\nMadam / Sir,\nSub: Extension of timeline for implementation of SEBI Circular ‘Margin\nobligations to be given by way of pledge/Re-pledge in the Depository\nSystem’ dated June 03, 2025\n1. SEBI issued circular on ‘Margin obligations to be given by way of pledge/Re-pledge\nin the Depository System’ on June 03, 2025. The provisions of the circular were to\ncome into effect from September 01, 2025.\n2. SEBI has received representation from depositories (CDSL and NSDL) requesting\nfor an extension of time to carry out system developments and to ensure system\nreadiness by carrying end-to-end testing. Based on the same and in order to\nensure smooth implementation without any disruption to the market players and\ninvestors, it has been decided to extend the timeline for implementation to October\n10, 2025.\n3. Stock Exchanges, Depositories and Clearing Corporations are directed to:\n3.1. bring the provisions of this circular to the notice of their members / participants\nand also disseminate the same on their websites;\n3.2. put in place appropriate systems and procedures to ensure compliance of the\nprovisions of this circular;\n3.3. make necessary amendments to the relevant Bye-laws, Rules and Regulations\nfor the implementation of the above decision;\nPage 1 of 2\n\n--- Page 2 ---\n4. This circular is issued in exercise of powers conferred under Section 11(1) of\nChapter IV of the Securities and Exchange Board of India Act, 1992, read with\nRegulation 30 of Chapter VII of SEBI (Stock Brokers) Regulations, 1992 to protect\nthe interests of investors in securities and to promote the development of, and to\nregulate the securities markets.\n5. This circular is available on SEBI website at www.sebi.gov.in under the category:\n‘Legal → Circulars’.\nYours faithfully,\nAradhana Verma\nGeneral Manager\nTel. No: 022 26449633\naradhanad@sebi.gov.in\nPage 2 of 2",
+            "tables": [
+              {
+                "page": 1,
+                "table_number": 1,
+                "data": [
+                  [
+                    "All recognized Stock Exchanges"
+                  ],
+                  [
+                    "All Recognized Clearing Corporations"
+                  ],
+                  [
+                    "All Depositories"
+                  ],
+                  [
+                    ""
+                  ],
+                  [
+                    "Madam / Sir,"
+                  ],
+                  [
+                    ""
+                  ],
+                  [
+                    "Sub: Extension of timeline for implementation of SEBI Circular ‘Margin"
+                  ],
+                  [
+                    "obligations to be given by way of pledge/Re-pledge in the Depository"
+                  ],
+                  [
+                    "System’ dated June 03, 2025"
+                  ],
+                  [
+                    ""
+                  ]
+                ]
+              }
+            ],
+            "metadata": {
+              "title": "",
+              "author": "GAURAV KUMAR",
+              "subject": "",
+              "creator": "Microsoft® Word 2016",
+              "creation_date": "D:20250818153914+05'30'",
+              "modification_date": "D:20250818153914+05'30'",
+              "pages": 2
+            },
+            "file_info": {
+              "filename": "page_1_1_1_Extension_of_timelin.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
+              "file_size": 392812,
+              "last_modified": "2025-08-18T16:43:34.735032",
+              "extraction_timestamp": "2025-08-18T16:44:28.254206"
+            },
+            "extraction_method": "pdfplumber"
+          }
+        },
+        {
+          "file_path": "test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
+          "original_filename": "page_1_2_1_Use_of_liquid_mutual.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1755059381537.pdf",
           "source_page": 1,
@@ -333,7 +413,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 1,
+          "td_index": 3,
           "cell_content": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Inv",
           "circular_date": "Aug 12, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/116",
@@ -383,18 +463,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_1_1_Use_of_liquid_mutual.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_1_1_Use_of_liquid_mutual.pdf",
+              "filename": "page_1_2_1_Use_of_liquid_mutual.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
               "file_size": 504409,
-              "last_modified": "2025-08-16T16:49:54.403972",
-              "extraction_timestamp": "2025-08-16T16:50:59.048116"
+              "last_modified": "2025-08-18T16:43:36.835448",
+              "extraction_timestamp": "2025-08-18T16:44:34.254538"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_2_1_Transaction_charges_.pdf",
-          "original_filename": "page_1_2_1_Transaction_charges_.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
+          "original_filename": "page_1_3_1_Transaction_charges_.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754653881911.pdf",
           "source_page": 1,
@@ -404,7 +484,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 3,
+          "td_index": 5,
           "cell_content": "Transaction charges paid to Mutual Fund Distributors",
           "circular_date": "Aug 08, 2025",
           "circular_number": "SEBI/HO/IMD/PoD1/CIR/P/2025/115",
@@ -426,18 +506,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_2_1_Transaction_charges_.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_2_1_Transaction_charges_.pdf",
+              "filename": "page_1_3_1_Transaction_charges_.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
               "file_size": 54375,
-              "last_modified": "2025-08-16T16:49:55.760561",
-              "extraction_timestamp": "2025-08-16T16:51:04.156624"
+              "last_modified": "2025-08-18T16:43:38.136858",
+              "extraction_timestamp": "2025-08-18T16:44:34.469859"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_3_1_Review_of_Framework_.pdf",
-          "original_filename": "page_1_3_1_Review_of_Framework_.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
+          "original_filename": "page_1_4_1_Review_of_Framework_.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754644766404.pdf",
           "source_page": 1,
@@ -447,7 +527,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 5,
+          "td_index": 7,
           "cell_content": "Review of Framework for conversion of Private Listed InvIT into Public InvIT",
           "circular_date": "Aug 08, 2025",
           "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/114",
@@ -469,18 +549,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_3_1_Review_of_Framework_.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_3_1_Review_of_Framework_.pdf",
+              "filename": "page_1_4_1_Review_of_Framework_.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
               "file_size": 651380,
-              "last_modified": "2025-08-16T16:49:58.097932",
-              "extraction_timestamp": "2025-08-16T16:51:04.299693"
+              "last_modified": "2025-08-18T16:43:40.786904",
+              "extraction_timestamp": "2025-08-18T16:44:34.620186"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_4_1_Ease_of_doing_busine.pdf",
-          "original_filename": "page_1_4_1_Ease_of_doing_busine.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
+          "original_filename": "page_1_5_1_Ease_of_doing_busine.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754563582805.pdf",
           "source_page": 1,
@@ -490,7 +570,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 7,
+          "td_index": 9,
           "cell_content": "Ease of doing business (EODB) - Policy for joint annual inspection by MIIs – information sharing mec",
           "circular_date": "Aug 07, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/113",
@@ -543,18 +623,18 @@
               "pages": 4
             },
             "file_info": {
-              "filename": "page_1_4_1_Ease_of_doing_busine.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_4_1_Ease_of_doing_busine.pdf",
+              "filename": "page_1_5_1_Ease_of_doing_busine.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
               "file_size": 404683,
-              "last_modified": "2025-08-16T16:50:00.050775",
-              "extraction_timestamp": "2025-08-16T16:51:04.642528"
+              "last_modified": "2025-08-18T16:43:42.735737",
+              "extraction_timestamp": "2025-08-18T16:44:34.883218"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_5_1_Review__Appeal_or_Wa.pdf",
-          "original_filename": "page_1_5_1_Review__Appeal_or_Wa.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
+          "original_filename": "page_1_6_1_Review__Appeal_or_Wa.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754395902917.pdf",
           "source_page": 1,
@@ -564,7 +644,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 9,
+          "td_index": 11,
           "cell_content": "Review, Appeal or Waiver of penalty requests emanating out of actions taken by the Member Committee",
           "circular_date": "Aug 05, 2025",
           "circular_number": "SEBI/HO/MRD/POD-III/CIR/P/2025/112",
@@ -586,18 +666,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_5_1_Review__Appeal_or_Wa.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_5_1_Review__Appeal_or_Wa.pdf",
+              "filename": "page_1_6_1_Review__Appeal_or_Wa.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
               "file_size": 198090,
-              "last_modified": "2025-08-16T16:50:01.785278",
-              "extraction_timestamp": "2025-08-16T16:51:05.000034"
+              "last_modified": "2025-08-18T16:43:44.334965",
+              "extraction_timestamp": "2025-08-18T16:44:35.386305"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_6_1_Rights_of_Persons_wi.pdf",
-          "original_filename": "page_1_6_1_Rights_of_Persons_wi.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
+          "original_filename": "page_1_7_1_Rights_of_Persons_wi.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754651443956.pdf",
           "source_page": 1,
@@ -607,7 +687,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 11,
+          "td_index": 13,
           "cell_content": "Rights of Persons with Disabilities Act, 2016 and rules made thereunder- mandatory compliance by all",
           "circular_date": "Jul 31, 2025",
           "circular_number": "SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111",
@@ -709,18 +789,18 @@
               "pages": 10
             },
             "file_info": {
-              "filename": "page_1_6_1_Rights_of_Persons_wi.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_6_1_Rights_of_Persons_wi.pdf",
+              "filename": "page_1_7_1_Rights_of_Persons_wi.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
               "file_size": 994904,
-              "last_modified": "2025-08-16T16:50:05.099183",
-              "extraction_timestamp": "2025-08-16T16:51:05.332708"
+              "last_modified": "2025-08-18T16:43:47.035385",
+              "extraction_timestamp": "2025-08-18T16:44:35.635622"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_7_1_Extension_of_timelin.pdf",
-          "original_filename": "page_1_7_1_Extension_of_timelin.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
+          "original_filename": "page_1_8_1_Extension_of_timelin.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753876405008.pdf",
           "source_page": 1,
@@ -730,7 +810,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 13,
+          "td_index": 15,
           "cell_content": "Extension of timeline for implementation of Phase II & III of Nomination Circular dated January 10, ",
           "circular_date": "Jul 30, 2025",
           "circular_number": "SEBI/HO/OIAE/OIAE_IAD-3/P/CIR/2025/110",
@@ -777,18 +857,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_7_1_Extension_of_timelin.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_7_1_Extension_of_timelin.pdf",
+              "filename": "page_1_8_1_Extension_of_timelin.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
               "file_size": 687956,
-              "last_modified": "2025-08-16T16:50:08.059988",
-              "extraction_timestamp": "2025-08-16T16:51:06.783055"
+              "last_modified": "2025-08-18T16:43:49.186947",
+              "extraction_timestamp": "2025-08-18T16:44:37.136995"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_8_1_Operational_Efficien.pdf",
-          "original_filename": "page_1_8_1_Operational_Efficien.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
+          "original_filename": "page_1_9_1_Operational_Efficien.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753787352730.pdf",
           "source_page": 1,
@@ -798,7 +878,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 15,
+          "td_index": 17,
           "cell_content": "Operational Efficiency in Monitoring of Non-Resident Indians (NRIs) Position Limits in Exchange Trad",
           "circular_date": "Jul 29, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/109",
@@ -854,18 +934,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_8_1_Operational_Efficien.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_8_1_Operational_Efficien.pdf",
+              "filename": "page_1_9_1_Operational_Efficien.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
               "file_size": 60084,
-              "last_modified": "2025-08-16T16:50:09.680852",
-              "extraction_timestamp": "2025-08-16T16:51:07.023779"
+              "last_modified": "2025-08-18T16:43:50.440382",
+              "extraction_timestamp": "2025-08-18T16:44:37.369388"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_9_1_Extension_of_timelin.pdf",
-          "original_filename": "page_1_9_1_Extension_of_timelin.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
+          "original_filename": "page_1_10_1_Extension_of_timelin.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753786452703.pdf",
           "source_page": 1,
@@ -875,7 +955,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 17,
+          "td_index": 19,
           "cell_content": "Extension of timeline for implementation of SEBI Circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013",
           "circular_date": "Jul 29, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/108",
@@ -928,18 +1008,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_9_1_Extension_of_timelin.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_9_1_Extension_of_timelin.pdf",
+              "filename": "page_1_10_1_Extension_of_timelin.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
               "file_size": 297145,
-              "last_modified": "2025-08-16T16:50:11.614140",
-              "extraction_timestamp": "2025-08-16T16:51:07.230525"
+              "last_modified": "2025-08-18T16:43:52.085758",
+              "extraction_timestamp": "2025-08-18T16:44:20.437719"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_10_1_Monitoring_of_Minimu.pdf",
-          "original_filename": "page_1_10_1_Monitoring_of_Minimu.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
+          "original_filename": "page_1_11_1_Monitoring_of_Minimu.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753783478291.pdf",
           "source_page": 1,
@@ -949,7 +1029,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 19,
+          "td_index": 21,
           "cell_content": "Monitoring of Minimum Investment Threshold under Specialized Investment Funds (SIF)",
           "circular_date": "Jul 29, 2025",
           "circular_number": "SEBI/HO/IMD/IMD-I POD-1/P/CIR/2025/107",
@@ -971,18 +1051,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_10_1_Monitoring_of_Minimu.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_10_1_Monitoring_of_Minimu.pdf",
+              "filename": "page_1_11_1_Monitoring_of_Minimu.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
               "file_size": 198512,
-              "last_modified": "2025-08-16T16:50:13.325005",
-              "extraction_timestamp": "2025-08-16T16:50:49.818627"
+              "last_modified": "2025-08-18T16:43:53.544070",
+              "extraction_timestamp": "2025-08-18T16:44:20.619479"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_11_1_Frequently_Asked_Que.pdf",
-          "original_filename": "page_1_11_1_Frequently_Asked_Que.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
+          "original_filename": "page_1_12_1_Frequently_Asked_Que.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753268710217.pdf",
           "source_page": 1,
@@ -992,7 +1072,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 21,
+          "td_index": 23,
           "cell_content": "Frequently Asked Questions (FAQs) related to regulatory provisions for Research Analysts",
           "circular_date": "Jul 23, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/105",
@@ -1135,18 +1215,18 @@
               "pages": 18
             },
             "file_info": {
-              "filename": "page_1_11_1_Frequently_Asked_Que.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_11_1_Frequently_Asked_Que.pdf",
+              "filename": "page_1_12_1_Frequently_Asked_Que.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
               "file_size": 680648,
-              "last_modified": "2025-08-16T16:50:16.098160",
-              "extraction_timestamp": "2025-08-16T16:50:50.150003"
+              "last_modified": "2025-08-18T16:43:55.736070",
+              "extraction_timestamp": "2025-08-18T16:44:20.968111"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_12_1_Ease_of_Doing_Invest.pdf",
-          "original_filename": "page_1_12_1_Ease_of_Doing_Invest.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
+          "original_filename": "page_1_13_1_Ease_of_Doing_Invest.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1751451299336.pdf",
           "source_page": 1,
@@ -1156,7 +1236,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 23,
+          "td_index": 25,
           "cell_content": "Ease of Doing Investment - Special Window for Re-lodgement of Transfer Requests of Physical Shares",
           "circular_date": "Jul 02, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/97",
@@ -1232,18 +1312,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_12_1_Ease_of_Doing_Invest.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_12_1_Ease_of_Doing_Invest.pdf",
+              "filename": "page_1_13_1_Ease_of_Doing_Invest.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
               "file_size": 96963,
-              "last_modified": "2025-08-16T16:50:17.683829",
-              "extraction_timestamp": "2025-08-16T16:50:52.216854"
+              "last_modified": "2025-08-18T16:43:57.035304",
+              "extraction_timestamp": "2025-08-18T16:44:22.803419"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_13_1_Extension_towards_Ad.pdf",
-          "original_filename": "page_1_13_1_Extension_towards_Ad.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
+          "original_filename": "page_1_14_1_Extension_towards_Ad.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1751286353420.pdf",
           "source_page": 1,
@@ -1253,7 +1333,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 25,
+          "td_index": 27,
           "cell_content": "Extension towards Adoption and Implementation of Cybersecurity and Cyber Resilience Framework (CSCRF",
           "circular_date": "Jun 30, 2025",
           "circular_number": "SEBI/HO/ITD-1/ITD_CSC_EXT/P/CIR/2025/96",
@@ -1275,18 +1355,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_13_1_Extension_towards_Ad.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_13_1_Extension_towards_Ad.pdf",
+              "filename": "page_1_14_1_Extension_towards_Ad.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
               "file_size": 388099,
-              "last_modified": "2025-08-16T16:50:19.944934",
-              "extraction_timestamp": "2025-08-16T16:50:52.482444"
+              "last_modified": "2025-08-18T16:43:58.836447",
+              "extraction_timestamp": "2025-08-18T16:44:23.187223"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_14_1_Industry_Standards_o.pdf",
-          "original_filename": "page_1_14_1_Industry_Standards_o.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
+          "original_filename": "page_1_15_1_Industry_Standards_o.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1750948720659.pdf",
           "source_page": 1,
@@ -1296,7 +1376,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 27,
+          "td_index": 29,
           "cell_content": "Industry Standards on “Minimum information to be provided to the Audit Committee and Shareholders fo",
           "circular_date": "Jun 26, 2025",
           "circular_number": "SEBI/HO/CFD/CFD-PoD-2/P/CIR/2025/93",
@@ -1318,18 +1398,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_14_1_Industry_Standards_o.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_14_1_Industry_Standards_o.pdf",
+              "filename": "page_1_15_1_Industry_Standards_o.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
               "file_size": 677638,
-              "last_modified": "2025-08-16T16:50:22.608174",
-              "extraction_timestamp": "2025-08-16T16:50:52.678149"
+              "last_modified": "2025-08-18T16:44:01.036177",
+              "extraction_timestamp": "2025-08-18T16:44:23.388879"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_15_1_Timelines_for_rebala.pdf",
-          "original_filename": "page_1_15_1_Timelines_for_rebala.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
+          "original_filename": "page_1_16_1_Timelines_for_rebala.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1750938257248.pdf",
           "source_page": 1,
@@ -1339,7 +1419,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 29,
+          "td_index": 31,
           "cell_content": "Timelines for rebalancing of portfolios of mutual fund schemes in cases of all passive breaches",
           "circular_date": "Jun 26, 2025",
           "circular_number": "SEBI/HO/IMD/PoD2/P/CIR/2025/92",
@@ -1361,18 +1441,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_15_1_Timelines_for_rebala.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_15_1_Timelines_for_rebala.pdf",
+              "filename": "page_1_16_1_Timelines_for_rebala.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
               "file_size": 225832,
-              "last_modified": "2025-08-16T16:50:24.425591",
-              "extraction_timestamp": "2025-08-16T16:50:53.099545"
+              "last_modified": "2025-08-18T16:44:02.588863",
+              "extraction_timestamp": "2025-08-18T16:44:23.771029"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_16_1_Investor_Charter_Inf.pdf",
-          "original_filename": "page_1_16_1_Investor_Charter_Inf.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
+          "original_filename": "page_1_17_1_Investor_Charter_Inf.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749727622982.PDF",
           "source_page": 1,
@@ -1382,7 +1462,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 31,
+          "td_index": 33,
           "cell_content": "Investor Charter Infrastructure Investment Trusts (InvITs)",
           "circular_date": "Jun 12, 2025",
           "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/89",
@@ -1965,18 +2045,18 @@
               "pages": 18
             },
             "file_info": {
-              "filename": "page_1_16_1_Investor_Charter_Inf.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_16_1_Investor_Charter_Inf.pdf",
+              "filename": "page_1_17_1_Investor_Charter_Inf.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
               "file_size": 355199,
-              "last_modified": "2025-08-16T16:50:26.397861",
-              "extraction_timestamp": "2025-08-16T16:50:53.231025"
+              "last_modified": "2025-08-18T16:44:04.336484",
+              "extraction_timestamp": "2025-08-18T16:44:23.903373"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Rea.pdf",
-          "original_filename": "page_1_17_1_Investor_Charter_Rea.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
+          "original_filename": "page_1_18_1_Investor_Charter_Rea.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749727433120.PDF",
           "source_page": 1,
@@ -1986,7 +2066,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 33,
+          "td_index": 35,
           "cell_content": "Investor Charter Real Estate Investment Trusts (REITs)",
           "circular_date": "Jun 12, 2025",
           "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/88",
@@ -2478,18 +2558,18 @@
               "pages": 15
             },
             "file_info": {
-              "filename": "page_1_17_1_Investor_Charter_Rea.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_17_1_Investor_Charter_Rea.pdf",
+              "filename": "page_1_18_1_Investor_Charter_Rea.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
               "file_size": 320252,
-              "last_modified": "2025-08-16T16:50:28.356372",
-              "extraction_timestamp": "2025-08-16T16:50:55.239334"
+              "last_modified": "2025-08-18T16:44:05.986642",
+              "extraction_timestamp": "2025-08-18T16:44:26.087210"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_18_1_Review_of_provisions.pdf",
-          "original_filename": "page_1_18_1_Review_of_provisions.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
+          "original_filename": "page_1_19_1_Review_of_provisions.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749726843164.pdf",
           "source_page": 1,
@@ -2499,7 +2579,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 35,
+          "td_index": 37,
           "cell_content": "Review of provisions relating to Product Advisory Committee (PAC)",
           "circular_date": "Jun 12, 2025",
           "circular_number": "SEBI/HO/MRD/MRD-PoD-1/P/CIR/2025/087",
@@ -2658,18 +2738,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_18_1_Review_of_provisions.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_18_1_Review_of_provisions.pdf",
+              "filename": "page_1_19_1_Review_of_provisions.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
               "file_size": 665437,
-              "last_modified": "2025-08-16T16:50:32.139549",
-              "extraction_timestamp": "2025-08-16T16:50:56.959903"
+              "last_modified": "2025-08-18T16:44:08.087459",
+              "extraction_timestamp": "2025-08-18T16:44:28.053661"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_19_1_Adoption_of_Standard.pdf",
-          "original_filename": "page_1_19_1_Adoption_of_Standard.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
+          "original_filename": "page_1_20_1_Adoption_of_Standard.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749641449497.pdf",
           "source_page": 1,
@@ -2679,7 +2759,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 37,
+          "td_index": 39,
           "cell_content": "Adoption of Standardised, Validated and Exclusive UPI IDs for Payment Collection by SEBI Registered ",
           "circular_date": "Jun 11, 2025",
           "circular_number": "SEBI/HO/DEPA-II/DEPA-II_SRG/P/CIR/2025/86",
@@ -3240,18 +3320,18 @@
               "pages": 15
             },
             "file_info": {
-              "filename": "page_1_19_1_Adoption_of_Standard.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_19_1_Adoption_of_Standard.pdf",
+              "filename": "page_1_20_1_Adoption_of_Standard.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
               "file_size": 956887,
-              "last_modified": "2025-08-16T16:50:35.448679",
-              "extraction_timestamp": "2025-08-16T16:50:57.248853"
+              "last_modified": "2025-08-18T16:44:10.585307",
+              "extraction_timestamp": "2025-08-18T16:44:28.433990"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_20_1_Extension_of_timelin.pdf",
-          "original_filename": "page_1_20_1_Extension_of_timelin.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
+          "original_filename": "page_1_21_1_Extension_of_timelin.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749532586359.pdf",
           "source_page": 1,
@@ -3261,7 +3341,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 39,
+          "td_index": 41,
           "cell_content": "Extension of timeline of additional liquidation period for VCFs migrating to SEBI (Alternative Inves",
           "circular_date": "Jun 06, 2025",
           "circular_number": "94433",
@@ -3282,18 +3362,18 @@
               "pages": 2
             },
             "file_info": {
-              "filename": "page_1_20_1_Extension_of_timelin.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_20_1_Extension_of_timelin.pdf",
+              "filename": "page_1_21_1_Extension_of_timelin.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
               "file_size": 198814,
-              "last_modified": "2025-08-16T16:50:37.198782",
-              "extraction_timestamp": "2025-08-16T16:50:59.249513"
+              "last_modified": "2025-08-18T16:44:12.086654",
+              "extraction_timestamp": "2025-08-18T16:44:30.354944"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_21_1_Framework_for_Enviro.pdf",
-          "original_filename": "page_1_21_1_Framework_for_Enviro.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
+          "original_filename": "page_1_22_1_Framework_for_Enviro.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749120913845.pdf",
           "source_page": 1,
@@ -3303,7 +3383,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 41,
+          "td_index": 43,
           "cell_content": "Framework for Environment, Social and Governance (ESG) Debt Securities (other than green debt securi",
           "circular_date": "Jun 05, 2025",
           "circular_number": "SEBI/HO/DDHS/DDHS-POD-1/P/CIR/2025/84",
@@ -3325,18 +3405,18 @@
               "pages": 12
             },
             "file_info": {
-              "filename": "page_1_21_1_Framework_for_Enviro.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_21_1_Framework_for_Enviro.pdf",
+              "filename": "page_1_22_1_Framework_for_Enviro.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
               "file_size": 486146,
-              "last_modified": "2025-08-16T16:50:40.016927",
-              "extraction_timestamp": "2025-08-16T16:50:59.413099"
+              "last_modified": "2025-08-18T16:44:13.988282",
+              "extraction_timestamp": "2025-08-18T16:44:30.518880"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_22_1_Limited_relaxation_f.pdf",
-          "original_filename": "page_1_22_1_Limited_relaxation_f.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
+          "original_filename": "page_1_23_1_Limited_relaxation_f.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749120408803.pdf",
           "source_page": 1,
@@ -3346,7 +3426,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 43,
+          "td_index": 45,
           "cell_content": "Limited relaxation from compliance with certain provisions of the SEBI (Listing Obligations and Disc",
           "circular_date": "Jun 05, 2025",
           "circular_number": "SEBI/HO/DDHS/DDHS-PoD-1/P/CIR/2025/83",
@@ -3368,18 +3448,18 @@
               "pages": 3
             },
             "file_info": {
-              "filename": "page_1_22_1_Limited_relaxation_f.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_22_1_Limited_relaxation_f.pdf",
+              "filename": "page_1_23_1_Limited_relaxation_f.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
               "file_size": 144013,
-              "last_modified": "2025-08-16T16:50:41.656428",
-              "extraction_timestamp": "2025-08-16T16:51:01.232780"
+              "last_modified": "2025-08-18T16:44:15.402378",
+              "extraction_timestamp": "2025-08-18T16:44:32.386399"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_23_1_Margin_obligations_t.pdf",
-          "original_filename": "page_1_23_1_Margin_obligations_t.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
+          "original_filename": "page_1_24_1_Margin_obligations_t.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748947174736.pdf",
           "source_page": 1,
@@ -3389,7 +3469,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 45,
+          "td_index": 47,
           "cell_content": "Margin obligations to be given by way of Pledge/Re-pledge in the Depository System",
           "circular_date": "Jun 03, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/82",
@@ -3454,18 +3534,18 @@
               "pages": 4
             },
             "file_info": {
-              "filename": "page_1_23_1_Margin_obligations_t.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_23_1_Margin_obligations_t.pdf",
+              "filename": "page_1_24_1_Margin_obligations_t.pdf",
+              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
               "file_size": 483979,
-              "last_modified": "2025-08-16T16:50:43.699792",
-              "extraction_timestamp": "2025-08-16T16:51:01.566183"
+              "last_modified": "2025-08-18T16:44:17.286140",
+              "extraction_timestamp": "2025-08-18T16:44:32.735262"
             },
             "extraction_method": "pdfplumber"
           }
         },
         {
-          "file_path": "test_enhanced_metadata\\page_1_24_1_Investor_Charter_for.pdf",
-          "original_filename": "page_1_24_1_Investor_Charter_for.pdf",
+          "file_path": "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
+          "original_filename": "page_1_25_1_Investor_Charter_for.pdf",
           "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
           "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748864324710.pdf",
           "source_page": 1,
@@ -3475,7 +3555,7 @@
           "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
           "page": 1,
           "table_index": 0,
-          "td_index": 47,
+          "td_index": 49,
           "cell_content": "Investor Charter for Research Analysts",
           "circular_date": "Jun 02, 2025",
           "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/81",
@@ -3707,295 +3787,64 @@
               "pages": 9
             },
             "file_info": {
-              "filename": "page_1_24_1_Investor_Charter_for.pdf",
-              "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_24_1_Investor_Charter_for.pdf",
-              "file_size": 718036,
-              "last_modified": "2025-08-16T16:50:46.281245",
-              "extraction_timestamp": "2025-08-16T16:51:01.947840"
-            },
-            "extraction_method": "pdfplumber"
-          }
-        },
-        {
-          "file_path": "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
-          "original_filename": "page_1_25_1_Investor_Charter_for.pdf",
-          "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-          "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748863758785.pdf",
-          "source_page": 1,
-          "link_text": "Investor Charter for Investment Advisers",
-          "file_size": 628485,
-          "text": "Investor Charter for Investment Advisers",
-          "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-          "page": 1,
-          "table_index": 0,
-          "td_index": 49,
-          "cell_content": "Investor Charter for Investment Advisers",
-          "circular_date": "Jun 02, 2025",
-          "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-          "circular_month_year": "jun-2025",
-          "circular_month_year_full": "June 2025",
-          "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-          "url_circular_id": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-          "has_iframe": true,
-          "extracted_content": {
-            "text": "--- Page 1 ---\nपरिपत्र / Circular\nSEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80 02-06-2025\nTo,\nAll Investment Advisers\nInvestment Adviser Administration and Supervisory Body (IAASB)\nMadam / Sir,\nSub: Investor Charter for Investment Advisers\n1. SEBI, vide Circular no. SEBI/HO/IMD/IMD-II CIS/P/CIR/2021/0686 dated December 13,\n2021 (hereinafter mentioned as ‘Circular’) and Clause 8 of Master Circular for Investment\nAdvisers dated May 21, 2024 (hereinafter mentioned as ‘Master Circular’), inter alia,\nissued Investor charter for Investment Advisers.\n2. In a move to enhance financial consumer protection alongside enhanced financial\ninclusion and financial literacy and in view of the recent developments in the securities\nmarket including introduction of Online Dispute Resolution (ODR) platform and SCORES\n2.0, it has been decided to modify the investor charter for Investment Advisers.\n3. In view of the above and based on consultation with Industry Standards Forum (ISF) for\nInvestment Advisers, updated investor charter for Investment Advisers is placed at\nAnnexure A.\n4. In this regard, BSE Limited (presently recognized as IAASB) is directed to advise\nInvestment Advisers to bring the Investor Charter to the notice of their clients (existing as\nwell as new clients) through disclosing the Investor Charter on their respective websites\nand mobile applications (if any), making them available at prominent places in the office,\nprovide a copy of Investor Charter as a part of client on-boarding process, through e-mails/\nletters etc.\n5. Additionally, in order to ensure transparency in the Investor Grievance Redressal\nMechanism, all the Investment Advisers shall continue to disclose on their respective\nwebsites and mobile applications (if any), the data on complaints received against them or\nPage 1 of 9\n\n--- Page 2 ---\nagainst issues dealt by them and redressal thereof, latest by 7th of succeeding month, as\nper the format enclosed at Annexure ‘B’ to this circular.\n6. The provisions of this circular shall come into force with immediate effect.\n7. With the issuance of this circular, SEBI, Circular No. SEBI/HO/IMD/IMD-II\nCIS/P/CIR/2021/0686 dated December 13, 2021 stands rescinded and Clause 8 of Master\nCircular for Investment Advisers dated May 21, 2024 stands amended as per this circular.\n8. This circular is issued in exercise of powers conferred under Section 11(1) of Chapter IV\nof the Securities and Exchange Board of India Act, 1992 read with Regulation 15(15) of\nthe SEBI (Investment Advisers) Regulations, 2013 to protect the interests of investors in\nsecurities and to promote the development of, and to regulate the securities markets and\nshall come into effect from the date of this circular.\n9. This circular is available on SEBI website at www.sebi.gov.in under the category: ‘Legal\n→ Circulars\nभवदीय | Yours faithfully,\nआराधना वर्ा ा | Aradhana Verma\nर्हाप्रबंधक | General Manager\nदरू भाष | Telephone: +91-22-26449633\nईर्ेल | E-mail: aradhanad@sebi.gov.in\nPage 2 of 9\n\n--- Page 3 ---\nANNEXURE A\nINVESTOR CHARTER IN RESPECT OF IAs\nA. Vision and Mission Statements for investors\n Vision\nInvest with knowledge & safety.\n Mission\nEvery investor should be able to invest in right investment products based on their needs,\nmanage and monitor them to meet their goals, access reports and enjoy financial wellness.\nB. Details of business transacted by the Investment Adviser with respect to the investors\n To enter into an agreement with the client providing all details including fee details, aspects\nof Conflict of interest disclosure and maintaining confidentiality of information.\n To do a proper and unbiased risk – profiling and suitability assessment of the client.\n To conduct audit annually.\n To disclose the status of complaints on its website.\n To disclose the name, proprietor name, type of registration, registration number, validity,\ncomplete address with telephone numbers and associated SEBI Office details (i.e. Head\noffice/ regional/ local Office) on its website.\n To employ only qualified and certified employees.\n To deal with clients only from official number\n To maintain records of interactions, with all clients including prospective clients (prior to\nonboarding), where any conversation related to advice has taken place.\n To ensure that all advertisements are in adherence to the provisions of the Advertisement\nCode for Investment Advisers\n Not to discriminate in terms of services provided, among clients opting for same/similar\nproducts/services offered by investment adviser.\nC. Details of services provided to investors (No Indicative Timelines)\n Onboarding of Clients\no Sharing of agreement copy\no Completing KYC of clients\n Disclosure to Clients\no To provide full disclosure about its business, affiliations, compensation in the\nagreement.\nPage 3 of 9\n\n--- Page 4 ---\no To not access client’s accounts or holdings for offering advice.\no To disclose the risk profile to the client.\no To disclose any conflict of interest of the investment advisory activities with any other\nactivities of the investment adviser.\no To disclose the extent of use of Artificial Intelligence tools in providing investment\nadvisory services.\n To provide investment advice to the client based on the risk-profiling of the clients and\nsuitability of the client.\n To treat all advisory clients with honesty and integrity.\n To make adequate disclosure to the investor of all material facts such as risks, obligations,\ncosts, etc. relating to the products or securities advised by the adviser.\n To provide clear guidance and adequate caution notice to clients when providing\ninvestment advice for dealing in complex and high-risk financial products/services.\n To ensure confidentiality of information shared by clients unless such information is\nrequired to be provided in furtherance of discharging legal obligations or a client has\nprovided specific consent to share such information.\n To disclose the timelines for the various services provided by the investment adviser to\nclients and ensure adherence to the said timelines.\nD. Details of grievance redressal mechanism and how to access it\n1. Investor can lodge complaint/grievance against Investment Adviser in the following ways:\nMode of filing the complaint with investment adviser\nIn case of any grievance / complaint, an investor may approach the concerned\nInvestment Adviser who shall strive to redress the grievance immediately, but not later\nthan 21 days of the receipt of the grievance.\nMode of filing the complaint on SCORES or with Investment Adviser Administration\nand Supervisory Body (IAASB)\ni. SCORES 2.0 (a web based centralized grievance redressal system of SEBI for\nfacilitating effective grievance redressal in time-bound manner)\n(https://scores.sebi.gov.in)\nTwo level review for complaint/grievance against investment adviser:\n First review done by designated body (IAASB)\nPage 4 of 9\n\n--- Page 5 ---\n Second review done by SEBI\nii. Email to designated email ID of IAASB\n2. If the Investor is not satisfied with the resolution provided by the Market Participants, then\nthe Investor has the option to file the complaint/ grievance on SMARTODR platform for its\nresolution through online conciliation or arbitration.\n3. With regard to physical complaints, investors may send their complaints to:\nOffice of Investor Assistance and Education,\nSecurities and Exchange Board of India,\nSEBI Bhavan, Plot No. C4-A, ‘G’ Block,\nBandra-Kurla Complex, Bandra (E),\nMumbai - 400 051\nE. Rights of investors\n Right to Privacy and Confidentiality\n Right to Transparent Practices\n Right to fair and Equitable Treatment\n Right to Adequate Information\n Right to Initial and Continuing Disclosure\n- Right to receive information about all the statutory and regulatory disclosures.\n Right to Fair & True Advertisement\n Right to Awareness about Service Parameters and Turnaround Times\n Right to be informed of the timelines for each service\n Right to be Heard and Satisfactory Grievance Redressal\n Right to have timely redressal\n Right to Suitability of the Financial Products\n Right to Exit from Financial product or service in accordance with the terms of agreement\nwith the investment adviser\n Right to receive clear guidance and caution notice when dealing in Complex and High-Risk\nFinancial Products and Services\n Additional Rights to vulnerable consumers\n- Right to get access to services in a suitable manner even if differently abled\n Right to provide feedback on the financial products and services used\n Right against coercive, unfair, and one-sided clauses in financial agreements\nPage 5 of 9\n\n--- Page 6 ---\nF. Expectations from the investors (Responsibilities of investors)\n Do’s\ni. Always deal with SEBI registered Investment Advisers.\nii. Ensure that the Investment Adviser has a valid registration certificate.\niii. Check for SEBI registration number.\nPlease refer to the list of all SEBI registered Investment Advisers which is\navailable on SEBI website in the following link:\nhttps://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&in\ntmId=13)\niv. Pay only advisory fees to your Investment Adviser. Make payments of advisory fees\nthrough banking channels only and maintain duly signed receipts mentioning the\ndetails of your payments.\nYou may make payment of advisory fees through Centralised Fee Collection\nMechanism (CeFCoM) of IAASB if investment adviser has opted for the mechanism.\nv. Always ask for your risk profiling before accepting investment advice. Insist that\nInvestment Adviser provides advisory strictly on the basis of your risk profiling and\ntake into account available investment alternatives.\nvi. Ask all relevant questions and clear your doubts with your Investment Adviser before\nacting on advice.\nvii. Assess the risk–return profile of the investment as well as the liquidity and safety\naspects before making investments.\nviii. Insist on getting the terms and conditions in writing duly signed and stamped. Read\nthese terms and conditions carefully particularly regarding advisory fees, advisory\nplans, category of recommendations etc. before dealing with any Investment Adviser.\nix. Be vigilant in your transactions.\nx. Approach the appropriate authorities for redressal of your doubts / grievances.\nxi. Inform SEBI about Investment Advisers offering assured or guaranteed returns.\nxii. Always be aware that you have the right to exit the service of an Investment Adviser\nxiii. Always be aware that you have the right to seek clarifications and clear guidance on\nadvice\nxiv. Always be aware that you have the right to provide feedback to the Investment Adviser\nin respect of services received.\nxv. Always be aware that you will not be bound by any clause, prescribed by the\ninvestment adviser, which is contravening any regulatory provisions.\n Don’ts\ni. Don’t fall for stock tips offered under the pretext of investment advice.\nii. Do not provide funds for investment to the Investment Adviser.\nPage 6 of 9\n\n--- Page 7 ---\niii. Don’t fall for the promise of indicative or exorbitant or assured returns by the\nInvestment Advisers. Don’t let greed overcome rational investment decisions.\niv. Don’t fall prey to luring advertisements or market rumors.\nv. Avoid doing transactions only on the basis of phone calls or messages from any\nInvestment adviser or its representatives.\nvi. Don’t take decisions just because of repeated messages and calls by Investment\nAdvisers.\nvii. Do not fall prey to limited period discount or other incentive, gifts, etc. offered by\nInvestment advisers.\nviii. Don’t rush into making investments that do not match your risk taking appetite and\ninvestment goals.\nix. Do not share login credential and password of your trading, demat or bank accounts\nwith the Investment Adviser.\nPage 7 of 9\n\n--- Page 8 ---\nAnnexure – B\nCOMPLAINT DATA TO BE DISPLAYED BY IAs\nFormats for investors complaints data to be disclosed monthly by IAs on their website and\nmobile applications:\nData for the month ending -_____________\nSr. Received Pending Received Resolved Total Pending Average\nNo. from at the * Pending complaints Resolution\nend of # > 3months time^ (in\nlast days)\nmonth\n1 Directly from\nInvestors\n2 SEBI\n(SCORES )\n3 Other Sources\n(if any)\nGrand Total\nNumber of complaints received during month against the IA due to impersonation by some other\nentity:\nNote: In case of any complaints received against the IA due to impersonation of the IA by some other\nentity, the IA may adjust the number of such complaints from total number of received/resolved\ncomplaints while preparing the above table. Further, IA must close such impersonation related\ncomplaints after following the due process as specified by SEBI/ IAASB.\n* Inclusive of complaints of previous months resolved in the current month.\n# Inclusive of complaints pending as on the last day of the month\n^ Average Resolution time is the sum total of time taken to resolve each complaint in days, in the\ncurrent month divided by total number of complaints resolved in the current month.\nPage 8 of 9\n\n--- Page 9 ---\nTrend of monthly disposal of complaints\nSr. Month Carried forward from Received Resolved* Pending#\nNo. previous month\n1 April, YYYY\n2 May, YYYY\n3 June, YYYY\n4 ……………..\n5 March, YYYY\nGrand Total\n* Inclusive of complaints of previous months resolved in the current month.\n# Inclusive of complaints pending as on the last day of the month\nTrend of annual disposal of complaints\nSr. Year Carried forward from Received Resolved* Pending#\nNo. previous year\n1 2021-22\n2 2022-23\n3 2023-24\n4 20XX-XX\nGrand Total\n* Inclusive of complaints of previous years resolved in the current year.\n# Inclusive of complaints pending as on the last day of the year\nPage 9 of 9",
-            "tables": [
-              {
-                "page": 1,
-                "table_number": 1,
-                "data": [
-                  [
-                    "All Investment Advisers"
-                  ],
-                  [
-                    "Investment Adviser Administration and Supervisory Body (IAASB)"
-                  ],
-                  [
-                    ""
-                  ],
-                  [
-                    "Madam / Sir,"
-                  ],
-                  [
-                    ""
-                  ],
-                  [
-                    "Sub: Investor Charter for Investment Advisers"
-                  ],
-                  [
-                    ""
-                  ]
-                ]
-              },
-              {
-                "page": 8,
-                "table_number": 1,
-                "data": [
-                  [
-                    "Sr.\nNo.",
-                    "Received\nfrom",
-                    "Pending\nat the\nend of\nlast\nmonth",
-                    "Received",
-                    "Resolved\n*",
-                    "Total\nPending\n#",
-                    "Pending\ncomplaints\n> 3months",
-                    "Average\nResolution\ntime^ (in\ndays)"
-                  ],
-                  [
-                    "1",
-                    "Directly from\nInvestors",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "2",
-                    "SEBI\n(SCORES )",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "3",
-                    "Other Sources\n(if any)",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "",
-                    "Grand Total",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ]
-                ]
-              },
-              {
-                "page": 9,
-                "table_number": 1,
-                "data": [
-                  [
-                    "Sr.\nNo.",
-                    "Month",
-                    "Carried forward from\nprevious month",
-                    "Received",
-                    "Resolved*",
-                    "Pending#"
-                  ],
-                  [
-                    "1",
-                    "April, YYYY",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "2",
-                    "May, YYYY",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "3",
-                    "June, YYYY",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "4",
-                    "……………..",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "5",
-                    "March, YYYY",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "",
-                    "Grand Total",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ]
-                ]
-              },
-              {
-                "page": 9,
-                "table_number": 2,
-                "data": [
-                  [
-                    "Sr.\nNo.",
-                    "Year",
-                    "Carried forward from\nprevious year",
-                    "Received",
-                    "Resolved*",
-                    "Pending#"
-                  ],
-                  [
-                    "1",
-                    "2021-22",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "2",
-                    "2022-23",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "3",
-                    "2023-24",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "4",
-                    "20XX-XX",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ],
-                  [
-                    "",
-                    "Grand Total",
-                    "",
-                    "",
-                    "",
-                    ""
-                  ]
-                ]
-              }
-            ],
-            "metadata": {
-              "title": "",
-              "author": "GAURAV KUMAR",
-              "subject": "",
-              "creator": "Microsoft® Word 2016",
-              "creation_date": "D:20250602162347+05'30'",
-              "modification_date": "D:20250602162347+05'30'",
-              "pages": 9
-            },
-            "file_info": {
               "filename": "page_1_25_1_Investor_Charter_for.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
-              "file_size": 628485,
-              "last_modified": "2025-08-16T16:50:48.748218",
-              "extraction_timestamp": "2025-08-16T16:51:03.032930"
+              "file_size": 718036,
+              "last_modified": "2025-08-18T16:44:19.385585",
+              "extraction_timestamp": "2025-08-18T16:44:33.134306"
             },
             "extraction_method": "pdfplumber"
           }
         }
       ],
       "file_paths": [
-        "test_enhanced_metadata\\page_1_1_1_Use_of_liquid_mutual.pdf",
-        "test_enhanced_metadata\\page_1_2_1_Transaction_charges_.pdf",
-        "test_enhanced_metadata\\page_1_3_1_Review_of_Framework_.pdf",
-        "test_enhanced_metadata\\page_1_4_1_Ease_of_doing_busine.pdf",
-        "test_enhanced_metadata\\page_1_5_1_Review__Appeal_or_Wa.pdf",
-        "test_enhanced_metadata\\page_1_6_1_Rights_of_Persons_wi.pdf",
-        "test_enhanced_metadata\\page_1_7_1_Extension_of_timelin.pdf",
-        "test_enhanced_metadata\\page_1_8_1_Operational_Efficien.pdf",
-        "test_enhanced_metadata\\page_1_9_1_Extension_of_timelin.pdf",
-        "test_enhanced_metadata\\page_1_10_1_Monitoring_of_Minimu.pdf",
-        "test_enhanced_metadata\\page_1_11_1_Frequently_Asked_Que.pdf",
-        "test_enhanced_metadata\\page_1_12_1_Ease_of_Doing_Invest.pdf",
-        "test_enhanced_metadata\\page_1_13_1_Extension_towards_Ad.pdf",
-        "test_enhanced_metadata\\page_1_14_1_Industry_Standards_o.pdf",
-        "test_enhanced_metadata\\page_1_15_1_Timelines_for_rebala.pdf",
-        "test_enhanced_metadata\\page_1_16_1_Investor_Charter_Inf.pdf",
-        "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Rea.pdf",
-        "test_enhanced_metadata\\page_1_18_1_Review_of_provisions.pdf",
-        "test_enhanced_metadata\\page_1_19_1_Adoption_of_Standard.pdf",
-        "test_enhanced_metadata\\page_1_20_1_Extension_of_timelin.pdf",
-        "test_enhanced_metadata\\page_1_21_1_Framework_for_Enviro.pdf",
-        "test_enhanced_metadata\\page_1_22_1_Limited_relaxation_f.pdf",
-        "test_enhanced_metadata\\page_1_23_1_Margin_obligations_t.pdf",
-        "test_enhanced_metadata\\page_1_24_1_Investor_Charter_for.pdf",
+        "test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
+        "test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
+        "test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
+        "test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
+        "test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
+        "test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
+        "test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
+        "test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
+        "test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
+        "test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
+        "test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
+        "test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
+        "test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
+        "test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
+        "test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
+        "test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
+        "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
+        "test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
+        "test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
+        "test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
+        "test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
+        "test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
+        "test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
+        "test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
         "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf"
       ]
     }
   ],
   "all_links": [
     {
+      "text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+      "page": 1,
+      "table_index": 0,
+      "td_index": 1,
+      "cell_content": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of ",
+      "circular_date": "June 03, 2025",
+      "circular_number": "96126",
+      "circular_month_year": "aug-2025",
+      "circular_month_year_full": "August 2025"
+    },
+    {
       "text": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Investment Advisers and Research Analysts",
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 1,
+      "td_index": 3,
       "cell_content": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Inv",
       "circular_date": null,
       "circular_number": "96052",
@@ -4007,7 +3856,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 3,
+      "td_index": 5,
       "cell_content": "Transaction charges paid to Mutual Fund Distributors",
       "circular_date": null,
       "circular_number": "95950",
@@ -4019,7 +3868,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 5,
+      "td_index": 7,
       "cell_content": "Review of Framework for conversion of Private Listed InvIT into Public InvIT",
       "circular_date": null,
       "circular_number": "95943",
@@ -4031,7 +3880,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 7,
+      "td_index": 9,
       "cell_content": "Ease of doing business (EODB) - Policy for joint annual inspection by MIIs – information sharing mec",
       "circular_date": null,
       "circular_number": "95897",
@@ -4043,7 +3892,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 9,
+      "td_index": 11,
       "cell_content": "Review, Appeal or Waiver of penalty requests emanating out of actions taken by the Member Committee",
       "circular_date": null,
       "circular_number": "95840",
@@ -4055,7 +3904,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 11,
+      "td_index": 13,
       "cell_content": "Rights of Persons with Disabilities Act, 2016 and rules made thereunder- mandatory compliance by all",
       "circular_date": null,
       "circular_number": "95745",
@@ -4067,7 +3916,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 13,
+      "td_index": 15,
       "cell_content": "Extension of timeline for implementation of Phase II & III of Nomination Circular dated January 10, ",
       "circular_date": "January 10, 2025",
       "circular_number": "95715",
@@ -4079,7 +3928,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 15,
+      "td_index": 17,
       "cell_content": "Operational Efficiency in Monitoring of Non-Resident Indians (NRIs) Position Limits in Exchange Trad",
       "circular_date": null,
       "circular_number": "95679",
@@ -4091,7 +3940,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 17,
+      "td_index": 19,
       "cell_content": "Extension of timeline for implementation of SEBI Circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013",
       "circular_date": "February 04, 2025",
       "circular_number": "95677",
@@ -4103,7 +3952,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 19,
+      "td_index": 21,
       "cell_content": "Monitoring of Minimum Investment Threshold under Specialized Investment Funds (SIF)",
       "circular_date": null,
       "circular_number": "95676",
@@ -4115,7 +3964,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 21,
+      "td_index": 23,
       "cell_content": "Frequently Asked Questions (FAQs) related to regulatory provisions for Research Analysts",
       "circular_date": null,
       "circular_number": "95549",
@@ -4127,7 +3976,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 23,
+      "td_index": 25,
       "cell_content": "Ease of Doing Investment - Special Window for Re-lodgement of Transfer Requests of Physical Shares",
       "circular_date": null,
       "circular_number": "94973",
@@ -4139,7 +3988,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 25,
+      "td_index": 27,
       "cell_content": "Extension towards Adoption and Implementation of Cybersecurity and Cyber Resilience Framework (CSCRF",
       "circular_date": null,
       "circular_number": "94902",
@@ -4151,7 +4000,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 27,
+      "td_index": 29,
       "cell_content": "Industry Standards on “Minimum information to be provided to the Audit Committee and Shareholders fo",
       "circular_date": null,
       "circular_number": "94809",
@@ -4163,7 +4012,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 29,
+      "td_index": 31,
       "cell_content": "Timelines for rebalancing of portfolios of mutual fund schemes in cases of all passive breaches",
       "circular_date": null,
       "circular_number": "94804",
@@ -4175,7 +4024,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 31,
+      "td_index": 33,
       "cell_content": "Investor Charter Infrastructure Investment Trusts (InvITs)",
       "circular_date": null,
       "circular_number": "94557",
@@ -4187,7 +4036,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 33,
+      "td_index": 35,
       "cell_content": "Investor Charter Real Estate Investment Trusts (REITs)",
       "circular_date": null,
       "circular_number": "94555",
@@ -4199,7 +4048,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 35,
+      "td_index": 37,
       "cell_content": "Review of provisions relating to Product Advisory Committee (PAC)",
       "circular_date": null,
       "circular_number": "94554",
@@ -4211,7 +4060,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 37,
+      "td_index": 39,
       "cell_content": "Adoption of Standardised, Validated and Exclusive UPI IDs for Payment Collection by SEBI Registered ",
       "circular_date": null,
       "circular_number": "94535",
@@ -4223,7 +4072,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 39,
+      "td_index": 41,
       "cell_content": "Extension of timeline of additional liquidation period for VCFs migrating to SEBI (Alternative Inves",
       "circular_date": null,
       "circular_number": "94433",
@@ -4235,7 +4084,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 41,
+      "td_index": 43,
       "cell_content": "Framework for Environment, Social and Governance (ESG) Debt Securities (other than green debt securi",
       "circular_date": null,
       "circular_number": "94424",
@@ -4247,7 +4096,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 43,
+      "td_index": 45,
       "cell_content": "Limited relaxation from compliance with certain provisions of the SEBI (Listing Obligations and Disc",
       "circular_date": null,
       "circular_number": "94423",
@@ -4259,7 +4108,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 45,
+      "td_index": 47,
       "cell_content": "Margin obligations to be given by way of Pledge/Re-pledge in the Depository System",
       "circular_date": null,
       "circular_number": "94363",
@@ -4271,30 +4120,40 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 47,
+      "td_index": 49,
       "cell_content": "Investor Charter for Research Analysts",
       "circular_date": null,
       "circular_number": "94355",
-      "circular_month_year": "jun-2025",
-      "circular_month_year_full": "June 2025"
-    },
-    {
-      "text": "Investor Charter for Investment Advisers",
-      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-      "page": 1,
-      "table_index": 0,
-      "td_index": 49,
-      "cell_content": "Investor Charter for Investment Advisers",
-      "circular_date": null,
-      "circular_number": "94354",
       "circular_month_year": "jun-2025",
       "circular_month_year_full": "June 2025"
     }
   ],
   "all_files": [
     {
-      "file_path": "test_enhanced_metadata\\page_1_1_1_Use_of_liquid_mutual.pdf",
-      "original_filename": "page_1_1_1_Use_of_liquid_mutual.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
+      "original_filename": "page_1_1_1_Extension_of_timelin.pdf",
+      "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+      "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1755513146159.pdf",
+      "source_page": 1,
+      "link_text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+      "file_size": 392812,
+      "text": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of pledge/Re-pledge in the Depository System’ dated June 03, 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/extension-of-timeline-for-implementation-of-sebi-circular-margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system-dated-june-03-2025_96126.html",
+      "page": 1,
+      "table_index": 0,
+      "td_index": 1,
+      "cell_content": "Extension of timeline for implementation of SEBI Circular ‘Margin obligations to be given by way of ",
+      "circular_date": "Aug 18, 2025",
+      "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+      "circular_month_year": "aug-2025",
+      "circular_month_year_full": "August 2025",
+      "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+      "url_circular_id": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+      "has_iframe": true
+    },
+    {
+      "file_path": "test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
+      "original_filename": "page_1_2_1_Use_of_liquid_mutual.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1755059381537.pdf",
       "source_page": 1,
@@ -4304,7 +4163,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/use-of-liquid-mutual-funds-and-overnight-mutual-funds-for-compliance-with-deposit-requirement-by-investment-advisers-and-research-analysts_96052.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 1,
+      "td_index": 3,
       "cell_content": "Use of liquid mutual funds and overnight mutual funds for compliance with deposit requirement by Inv",
       "circular_date": "Aug 12, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/116",
@@ -4315,8 +4174,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_2_1_Transaction_charges_.pdf",
-      "original_filename": "page_1_2_1_Transaction_charges_.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
+      "original_filename": "page_1_3_1_Transaction_charges_.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754653881911.pdf",
       "source_page": 1,
@@ -4326,7 +4185,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/transaction-charges-paid-to-mutual-fund-distributors_95950.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 3,
+      "td_index": 5,
       "cell_content": "Transaction charges paid to Mutual Fund Distributors",
       "circular_date": "Aug 08, 2025",
       "circular_number": "SEBI/HO/IMD/PoD1/CIR/P/2025/115",
@@ -4337,8 +4196,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_3_1_Review_of_Framework_.pdf",
-      "original_filename": "page_1_3_1_Review_of_Framework_.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
+      "original_filename": "page_1_4_1_Review_of_Framework_.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754644766404.pdf",
       "source_page": 1,
@@ -4348,7 +4207,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-of-framework-for-conversion-of-private-listed-invit-into-public-invit_95943.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 5,
+      "td_index": 7,
       "cell_content": "Review of Framework for conversion of Private Listed InvIT into Public InvIT",
       "circular_date": "Aug 08, 2025",
       "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/114",
@@ -4359,8 +4218,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_4_1_Ease_of_doing_busine.pdf",
-      "original_filename": "page_1_4_1_Ease_of_doing_busine.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
+      "original_filename": "page_1_5_1_Ease_of_doing_busine.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754563582805.pdf",
       "source_page": 1,
@@ -4370,7 +4229,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/ease-of-doing-business-eodb-policy-for-joint-annual-inspection-by-miis-information-sharing-mechanism-action-by-lead-mii_95897.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 7,
+      "td_index": 9,
       "cell_content": "Ease of doing business (EODB) - Policy for joint annual inspection by MIIs – information sharing mec",
       "circular_date": "Aug 07, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/113",
@@ -4381,8 +4240,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_5_1_Review__Appeal_or_Wa.pdf",
-      "original_filename": "page_1_5_1_Review__Appeal_or_Wa.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
+      "original_filename": "page_1_6_1_Review__Appeal_or_Wa.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754395902917.pdf",
       "source_page": 1,
@@ -4392,7 +4251,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/aug-2025/review-appeal-or-waiver-of-penalty-requests-emanating-out-of-actions-taken-by-the-member-committee_95840.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 9,
+      "td_index": 11,
       "cell_content": "Review, Appeal or Waiver of penalty requests emanating out of actions taken by the Member Committee",
       "circular_date": "Aug 05, 2025",
       "circular_number": "SEBI/HO/MRD/POD-III/CIR/P/2025/112",
@@ -4403,8 +4262,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_6_1_Rights_of_Persons_wi.pdf",
-      "original_filename": "page_1_6_1_Rights_of_Persons_wi.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
+      "original_filename": "page_1_7_1_Rights_of_Persons_wi.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2025/1754651443956.pdf",
       "source_page": 1,
@@ -4414,7 +4273,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/rights-of-persons-with-disabilities-act-2016-and-rules-made-thereunder-mandatory-compliance-by-all-regulated-entities_95745.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 11,
+      "td_index": 13,
       "cell_content": "Rights of Persons with Disabilities Act, 2016 and rules made thereunder- mandatory compliance by all",
       "circular_date": "Jul 31, 2025",
       "circular_number": "SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111",
@@ -4425,8 +4284,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_7_1_Extension_of_timelin.pdf",
-      "original_filename": "page_1_7_1_Extension_of_timelin.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
+      "original_filename": "page_1_8_1_Extension_of_timelin.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753876405008.pdf",
       "source_page": 1,
@@ -4436,7 +4295,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-phase-ii-and-iii-of-nomination-circular-dated-january-10-2025-read-with-circular-dated-february-28-2025_95715.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 13,
+      "td_index": 15,
       "cell_content": "Extension of timeline for implementation of Phase II & III of Nomination Circular dated January 10, ",
       "circular_date": "Jul 30, 2025",
       "circular_number": "SEBI/HO/OIAE/OIAE_IAD-3/P/CIR/2025/110",
@@ -4447,8 +4306,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_8_1_Operational_Efficien.pdf",
-      "original_filename": "page_1_8_1_Operational_Efficien.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
+      "original_filename": "page_1_9_1_Operational_Efficien.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753787352730.pdf",
       "source_page": 1,
@@ -4458,7 +4317,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/operational-efficiency-in-monitoring-of-non-resident-indians-nris-position-limits-in-exchange-traded-derivatives-contracts-ease-of-doing-investment_95679.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 15,
+      "td_index": 17,
       "cell_content": "Operational Efficiency in Monitoring of Non-Resident Indians (NRIs) Position Limits in Exchange Trad",
       "circular_date": "Jul 29, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/109",
@@ -4469,8 +4328,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_9_1_Extension_of_timelin.pdf",
-      "original_filename": "page_1_9_1_Extension_of_timelin.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
+      "original_filename": "page_1_10_1_Extension_of_timelin.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753786452703.pdf",
       "source_page": 1,
@@ -4480,7 +4339,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/extension-of-timeline-for-implementation-of-sebi-circular-sebi-ho-mirsd-mirsd-pod-p-cir-2025-0000013-dated-february-04-2025_95677.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 17,
+      "td_index": 19,
       "cell_content": "Extension of timeline for implementation of SEBI Circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013",
       "circular_date": "Jul 29, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/108",
@@ -4491,8 +4350,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_10_1_Monitoring_of_Minimu.pdf",
-      "original_filename": "page_1_10_1_Monitoring_of_Minimu.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
+      "original_filename": "page_1_11_1_Monitoring_of_Minimu.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753783478291.pdf",
       "source_page": 1,
@@ -4502,7 +4361,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/monitoring-of-minimum-investment-threshold-under-specialized-investment-funds-sif-_95676.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 19,
+      "td_index": 21,
       "cell_content": "Monitoring of Minimum Investment Threshold under Specialized Investment Funds (SIF)",
       "circular_date": "Jul 29, 2025",
       "circular_number": "SEBI/HO/IMD/IMD-I POD-1/P/CIR/2025/107",
@@ -4513,8 +4372,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_11_1_Frequently_Asked_Que.pdf",
-      "original_filename": "page_1_11_1_Frequently_Asked_Que.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
+      "original_filename": "page_1_12_1_Frequently_Asked_Que.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1753268710217.pdf",
       "source_page": 1,
@@ -4524,7 +4383,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/frequently-asked-questions-faqs-related-to-regulatory-provisions-for-research-analysts_95549.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 21,
+      "td_index": 23,
       "cell_content": "Frequently Asked Questions (FAQs) related to regulatory provisions for Research Analysts",
       "circular_date": "Jul 23, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/105",
@@ -4535,8 +4394,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_12_1_Ease_of_Doing_Invest.pdf",
-      "original_filename": "page_1_12_1_Ease_of_Doing_Invest.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
+      "original_filename": "page_1_13_1_Ease_of_Doing_Invest.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2025/1751451299336.pdf",
       "source_page": 1,
@@ -4546,7 +4405,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jul-2025/ease-of-doing-investment-special-window-for-re-lodgement-of-transfer-requests-of-physical-shares_94973.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 23,
+      "td_index": 25,
       "cell_content": "Ease of Doing Investment - Special Window for Re-lodgement of Transfer Requests of Physical Shares",
       "circular_date": "Jul 02, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/97",
@@ -4557,8 +4416,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_13_1_Extension_towards_Ad.pdf",
-      "original_filename": "page_1_13_1_Extension_towards_Ad.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
+      "original_filename": "page_1_14_1_Extension_towards_Ad.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1751286353420.pdf",
       "source_page": 1,
@@ -4568,7 +4427,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-towards-adoption-and-implementation-of-cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_94902.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 25,
+      "td_index": 27,
       "cell_content": "Extension towards Adoption and Implementation of Cybersecurity and Cyber Resilience Framework (CSCRF",
       "circular_date": "Jun 30, 2025",
       "circular_number": "SEBI/HO/ITD-1/ITD_CSC_EXT/P/CIR/2025/96",
@@ -4579,8 +4438,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_14_1_Industry_Standards_o.pdf",
-      "original_filename": "page_1_14_1_Industry_Standards_o.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
+      "original_filename": "page_1_15_1_Industry_Standards_o.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1750948720659.pdf",
       "source_page": 1,
@@ -4590,7 +4449,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/industry-standards-on-minimum-information-to-be-provided-to-the-audit-committee-and-shareholders-for-approval-of-related-party-transactions-_94809.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 27,
+      "td_index": 29,
       "cell_content": "Industry Standards on “Minimum information to be provided to the Audit Committee and Shareholders fo",
       "circular_date": "Jun 26, 2025",
       "circular_number": "SEBI/HO/CFD/CFD-PoD-2/P/CIR/2025/93",
@@ -4601,8 +4460,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_15_1_Timelines_for_rebala.pdf",
-      "original_filename": "page_1_15_1_Timelines_for_rebala.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
+      "original_filename": "page_1_16_1_Timelines_for_rebala.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1750938257248.pdf",
       "source_page": 1,
@@ -4612,7 +4471,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/timelines-for-rebalancing-of-portfolios-of-mutual-fund-schemes-in-cases-of-all-passive-breaches_94804.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 29,
+      "td_index": 31,
       "cell_content": "Timelines for rebalancing of portfolios of mutual fund schemes in cases of all passive breaches",
       "circular_date": "Jun 26, 2025",
       "circular_number": "SEBI/HO/IMD/PoD2/P/CIR/2025/92",
@@ -4623,8 +4482,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_16_1_Investor_Charter_Inf.pdf",
-      "original_filename": "page_1_16_1_Investor_Charter_Inf.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
+      "original_filename": "page_1_17_1_Investor_Charter_Inf.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749727622982.PDF",
       "source_page": 1,
@@ -4634,7 +4493,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-infrastructure-investment-trusts-invits-_94557.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 31,
+      "td_index": 33,
       "cell_content": "Investor Charter Infrastructure Investment Trusts (InvITs)",
       "circular_date": "Jun 12, 2025",
       "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/89",
@@ -4645,8 +4504,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Rea.pdf",
-      "original_filename": "page_1_17_1_Investor_Charter_Rea.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
+      "original_filename": "page_1_18_1_Investor_Charter_Rea.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749727433120.PDF",
       "source_page": 1,
@@ -4656,7 +4515,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-real-estate-investment-trusts-reits-_94555.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 33,
+      "td_index": 35,
       "cell_content": "Investor Charter Real Estate Investment Trusts (REITs)",
       "circular_date": "Jun 12, 2025",
       "circular_number": "SEBI/HO/DDHS/DDHS-PoD-2/P/CIR/2025/88",
@@ -4667,8 +4526,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_18_1_Review_of_provisions.pdf",
-      "original_filename": "page_1_18_1_Review_of_provisions.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
+      "original_filename": "page_1_19_1_Review_of_provisions.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749726843164.pdf",
       "source_page": 1,
@@ -4678,7 +4537,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/review-of-provisions-relating-to-product-advisory-committee-pac-_94554.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 35,
+      "td_index": 37,
       "cell_content": "Review of provisions relating to Product Advisory Committee (PAC)",
       "circular_date": "Jun 12, 2025",
       "circular_number": "SEBI/HO/MRD/MRD-PoD-1/P/CIR/2025/087",
@@ -4689,8 +4548,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_19_1_Adoption_of_Standard.pdf",
-      "original_filename": "page_1_19_1_Adoption_of_Standard.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
+      "original_filename": "page_1_20_1_Adoption_of_Standard.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749641449497.pdf",
       "source_page": 1,
@@ -4700,7 +4559,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/adoption-of-standardised-validated-and-exclusive-upi-ids-for-payment-collection-by-sebi-registered-intermediaries-from-investors_94535.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 37,
+      "td_index": 39,
       "cell_content": "Adoption of Standardised, Validated and Exclusive UPI IDs for Payment Collection by SEBI Registered ",
       "circular_date": "Jun 11, 2025",
       "circular_number": "SEBI/HO/DEPA-II/DEPA-II_SRG/P/CIR/2025/86",
@@ -4711,8 +4570,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_20_1_Extension_of_timelin.pdf",
-      "original_filename": "page_1_20_1_Extension_of_timelin.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
+      "original_filename": "page_1_21_1_Extension_of_timelin.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749532586359.pdf",
       "source_page": 1,
@@ -4722,7 +4581,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/extension-of-timeline-of-additional-liquidation-period-for-vcfs-migrating-to-sebi-alternative-investment-funds-regulations-2012_94433.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 39,
+      "td_index": 41,
       "cell_content": "Extension of timeline of additional liquidation period for VCFs migrating to SEBI (Alternative Inves",
       "circular_date": "Jun 06, 2025",
       "circular_number": "94433",
@@ -4732,8 +4591,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_21_1_Framework_for_Enviro.pdf",
-      "original_filename": "page_1_21_1_Framework_for_Enviro.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
+      "original_filename": "page_1_22_1_Framework_for_Enviro.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749120913845.pdf",
       "source_page": 1,
@@ -4743,7 +4602,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/framework-for-environment-social-and-governance-esg-debt-securities-other-than-green-debt-securities-_94424.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 41,
+      "td_index": 43,
       "cell_content": "Framework for Environment, Social and Governance (ESG) Debt Securities (other than green debt securi",
       "circular_date": "Jun 05, 2025",
       "circular_number": "SEBI/HO/DDHS/DDHS-POD-1/P/CIR/2025/84",
@@ -4754,8 +4613,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_22_1_Limited_relaxation_f.pdf",
-      "original_filename": "page_1_22_1_Limited_relaxation_f.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
+      "original_filename": "page_1_23_1_Limited_relaxation_f.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1749120408803.pdf",
       "source_page": 1,
@@ -4765,7 +4624,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/limited-relaxation-from-compliance-with-certain-provisions-of-the-sebi-listing-obligations-and-disclosure-requirements-regulations-2015_94423.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 43,
+      "td_index": 45,
       "cell_content": "Limited relaxation from compliance with certain provisions of the SEBI (Listing Obligations and Disc",
       "circular_date": "Jun 05, 2025",
       "circular_number": "SEBI/HO/DDHS/DDHS-PoD-1/P/CIR/2025/83",
@@ -4776,8 +4635,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_23_1_Margin_obligations_t.pdf",
-      "original_filename": "page_1_23_1_Margin_obligations_t.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
+      "original_filename": "page_1_24_1_Margin_obligations_t.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748947174736.pdf",
       "source_page": 1,
@@ -4787,7 +4646,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/margin-obligations-to-be-given-by-way-of-pledge-re-pledge-in-the-depository-system_94363.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 45,
+      "td_index": 47,
       "cell_content": "Margin obligations to be given by way of Pledge/Re-pledge in the Depository System",
       "circular_date": "Jun 03, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/82",
@@ -4798,8 +4657,8 @@
       "has_iframe": true
     },
     {
-      "file_path": "test_enhanced_metadata\\page_1_24_1_Investor_Charter_for.pdf",
-      "original_filename": "page_1_24_1_Investor_Charter_for.pdf",
+      "file_path": "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
+      "original_filename": "page_1_25_1_Investor_Charter_for.pdf",
       "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
       "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748864324710.pdf",
       "source_page": 1,
@@ -4809,7 +4668,7 @@
       "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-research-analysts_94355.html",
       "page": 1,
       "table_index": 0,
-      "td_index": 47,
+      "td_index": 49,
       "cell_content": "Investor Charter for Research Analysts",
       "circular_date": "Jun 02, 2025",
       "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/81",
@@ -4818,59 +4677,37 @@
       "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/81",
       "url_circular_id": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/81",
       "has_iframe": true
-    },
-    {
-      "file_path": "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
-      "original_filename": "page_1_25_1_Investor_Charter_for.pdf",
-      "source_url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-      "pdf_url": "https://www.sebi.gov.in/sebi_data/attachdocs/jun-2025/1748863758785.pdf",
-      "source_page": 1,
-      "link_text": "Investor Charter for Investment Advisers",
-      "file_size": 628485,
-      "text": "Investor Charter for Investment Advisers",
-      "url": "https://www.sebi.gov.in/legal/circulars/jun-2025/investor-charter-for-investment-advisers_94354.html",
-      "page": 1,
-      "table_index": 0,
-      "td_index": 49,
-      "cell_content": "Investor Charter for Investment Advisers",
-      "circular_date": "Jun 02, 2025",
-      "circular_number": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-      "circular_month_year": "jun-2025",
-      "circular_month_year_full": "June 2025",
-      "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-      "url_circular_id": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/80",
-      "has_iframe": true
     }
   ],
   "all_file_paths": [
-    "test_enhanced_metadata\\page_1_1_1_Use_of_liquid_mutual.pdf",
-    "test_enhanced_metadata\\page_1_2_1_Transaction_charges_.pdf",
-    "test_enhanced_metadata\\page_1_3_1_Review_of_Framework_.pdf",
-    "test_enhanced_metadata\\page_1_4_1_Ease_of_doing_busine.pdf",
-    "test_enhanced_metadata\\page_1_5_1_Review__Appeal_or_Wa.pdf",
-    "test_enhanced_metadata\\page_1_6_1_Rights_of_Persons_wi.pdf",
-    "test_enhanced_metadata\\page_1_7_1_Extension_of_timelin.pdf",
-    "test_enhanced_metadata\\page_1_8_1_Operational_Efficien.pdf",
-    "test_enhanced_metadata\\page_1_9_1_Extension_of_timelin.pdf",
-    "test_enhanced_metadata\\page_1_10_1_Monitoring_of_Minimu.pdf",
-    "test_enhanced_metadata\\page_1_11_1_Frequently_Asked_Que.pdf",
-    "test_enhanced_metadata\\page_1_12_1_Ease_of_Doing_Invest.pdf",
-    "test_enhanced_metadata\\page_1_13_1_Extension_towards_Ad.pdf",
-    "test_enhanced_metadata\\page_1_14_1_Industry_Standards_o.pdf",
-    "test_enhanced_metadata\\page_1_15_1_Timelines_for_rebala.pdf",
-    "test_enhanced_metadata\\page_1_16_1_Investor_Charter_Inf.pdf",
-    "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Rea.pdf",
-    "test_enhanced_metadata\\page_1_18_1_Review_of_provisions.pdf",
-    "test_enhanced_metadata\\page_1_19_1_Adoption_of_Standard.pdf",
-    "test_enhanced_metadata\\page_1_20_1_Extension_of_timelin.pdf",
-    "test_enhanced_metadata\\page_1_21_1_Framework_for_Enviro.pdf",
-    "test_enhanced_metadata\\page_1_22_1_Limited_relaxation_f.pdf",
-    "test_enhanced_metadata\\page_1_23_1_Margin_obligations_t.pdf",
-    "test_enhanced_metadata\\page_1_24_1_Investor_Charter_for.pdf",
+    "test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
+    "test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
+    "test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
+    "test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
+    "test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
+    "test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
+    "test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
+    "test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
+    "test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
+    "test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
+    "test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
+    "test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
+    "test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
+    "test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
+    "test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
+    "test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
+    "test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
+    "test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
+    "test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
+    "test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
+    "test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
+    "test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
+    "test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
+    "test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
     "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf"
   ],
   "pdf_processing": {
-    "processing_timestamp": "2025-08-16T16:51:07.390113",
+    "processing_timestamp": "2025-08-18T16:44:37.703563",
     "processed_files_count": 25,
     "total_pdf_files": 25,
     "processing_method": "pdfplumber + PyPDF2 fallback"

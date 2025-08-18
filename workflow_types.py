@@ -19,6 +19,9 @@ class WorkflowState(TypedDict):
     scraping_result: Dict[str, Any]
     processing_result: Dict[str, Any]
     analysis_result: Dict[str, Any]
+    database_result: Dict[str, Any]
+    workflow_documents: List[Dict[str, Any]]
+    ai_assignments: List[Dict[str, Any]]
     
     # Workflow metadata
     current_stage: str
