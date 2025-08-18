@@ -44,24 +44,7 @@ INTERMEDIARIES = [
 ]
 
 def create_analysis_prompt(content: str) -> str:
-    """
-    Create a comprehensive structured prompt for analyzing SEBI document content.
-    
-    This function generates an enhanced prompt that ensures thorough regulatory analysis
-    with detailed extraction of:
-    - Structured key clauses with compliance impact analysis
-    - Comprehensive key metrics with full contextual information  
-    - Detailed actionable items with implementation requirements
-    
-    The prompt is designed to capture every regulatory detail to ensure
-    complete compliance analysis for SEBI regulatory documents.
-    
-    Args:
-        content (str): The SEBI document content to analyze
-        
-    Returns:
-        str: Enhanced analysis prompt for comprehensive regulatory extraction
-    """
+    """Create a structured prompt for analyzing SEBI document content"""
     
     departments_list = "\n".join([f"- {dept}" for dept in DEPARTMENTS])
     intermediaries_list = "\n".join([f"- {inter}" for inter in INTERMEDIARIES])
@@ -79,40 +62,9 @@ Based on the document content, provide a JSON response with the following struct
 {{
     "department": "exact match from the list below or 'Not Specified'",
     "intermediary": ["list of exact matches from the intermediaries list below, or empty array if none apply"],
-    "summary": "concise 2-3 sentence summary of the document's main purpose and key points",
-    "key_clauses": [
-        {{
-            "clause_title": "descriptive title of the regulatory provision",
-            "clause_content": "detailed description of the regulatory clause or requirement",
-            "regulatory_impact": "explanation of how this clause impacts regulated entities",
-            "compliance_level": "mandatory/advisory/conditional",
-            "effective_date": "when this clause becomes effective (if specified)",
-            "penalty_consequences": "penalties or consequences for non-compliance (if mentioned)"
-        }}
-    ],
-    "key_metrics": [
-        {{
-            "metric_type": "type of metric (percentage, amount, timeline, ratio, etc.)",
-            "metric_value": "actual numerical value or range",
-            "metric_description": "detailed context and significance of this metric",
-            "applicable_entities": "which intermediaries or entities this metric applies to",
-            "calculation_method": "how the metric is calculated or determined (if specified)",
-            "reporting_frequency": "how often this metric needs to be reported (if applicable)",
-            "threshold_significance": "what happens when this threshold is met/exceeded"
-        }}
-    ],
-    "actionable_items": [
-        {{
-            "action_title": "clear title of the required action",
-            "action_description": "comprehensive description of what needs to be done",
-            "responsible_parties": "who is responsible for implementing this action",
-            "implementation_timeline": "specific deadlines, timelines, or effective dates",
-            "compliance_requirements": "detailed compliance obligations and standards",
-            "documentation_needed": "required documentation, forms, or submissions",
-            "monitoring_mechanism": "how compliance will be monitored or verified",
-            "non_compliance_consequences": "specific penalties or actions for non-compliance"
-        }}
-    ]
+    "key_clauses": ["list of important regulatory clauses, provisions, or requirements mentioned"],
+    "key_metrics": ["list of numerical metrics, percentages, timelines, or quantitative measures mentioned"],
+    "actionable_items": ["list of specific actions, compliance requirements, or implementation steps required"]
 }}
 
 AVAILABLE DEPARTMENTS (choose exactly one that best matches):
@@ -126,52 +78,13 @@ INSTRUCTIONS:
 
 2. For "intermediary": Include ALL relevant intermediaries from the list above that are mentioned or affected by this document. Use exact names from the list.
 
-3. For "summary": Provide a concise 2-3 sentence summary capturing the document's main purpose, key regulatory changes, or primary subject matter.
+3. For "key_clauses": Extract important regulatory provisions, rules, or legal clauses mentioned in the document (max 10).
 
-4. For "key_clauses": Extract ALL important regulatory provisions, rules, or legal clauses as structured objects. For each clause, provide:
-   - A descriptive title that clearly identifies the provision
-   - Detailed content explaining the regulatory requirement
-   - Analysis of regulatory impact on affected entities
-   - Classification as mandatory, advisory, or conditional
-   - Effective date if specified
-   - Any mentioned penalties or consequences for non-compliance
-   Include every significant regulatory provision - do not summarize or skip important clauses.
+4. For "key_metrics": Extract specific numbers, percentages, timelines, monetary amounts, or quantitative measures (max 10).
 
-5. For "key_metrics": Extract ALL numerical data, quantitative measures, and metrics as structured objects. Include:
-   - Percentages, ratios, monetary amounts, timelines, thresholds
-   - Detailed context explaining the significance of each metric
-   - Which entities or intermediaries the metric applies to
-   - Calculation methodologies if provided
-   - Reporting frequencies and requirements
-   - Consequences of meeting or exceeding thresholds
-   Leave no quantitative data unanalyzed - capture every number with its full context.
+5. For "actionable_items": Extract specific actions, compliance requirements, implementation steps, or obligations mentioned (max 10).
 
-6. For "actionable_items": Extract ALL specific actions, obligations, and implementation requirements as detailed structured objects. For each item, provide:
-   - Clear title describing the required action
-   - Comprehensive description of implementation requirements
-   - Identification of responsible parties or entities
-   - Specific timelines, deadlines, and effective dates
-   - Detailed compliance obligations and standards
-   - Required documentation, forms, or submissions
-   - How compliance will be monitored or verified
-   - Specific consequences for non-compliance
-   Ensure no compliance requirement or implementation step is missed - this is critical for regulatory adherence.
-
-CRITICAL REGULATORY ANALYSIS INSTRUCTIONS:
-- This is a regulatory document analysis where completeness is paramount
-- Every regulatory provision, numerical metric, and action item must be captured
-- Do not summarize or paraphrase - provide complete, detailed information
-- Pay special attention to:
-  * Effective dates and deadlines
-  * Penalty clauses and enforcement mechanisms
-  * Compliance thresholds and reporting requirements
-  * Exemptions, conditions, and special circumstances
-  * Amendment or modification of existing regulations
-  * Transition periods and implementation phases
-- If uncertain about categorization, err on the side of inclusion rather than exclusion
-- Maintain the exact terminology and phrasing used in the regulatory document
-
-Respond only with valid JSON. Ensure all nested objects follow the specified structure exactly.
+Respond only with valid JSON. Ensure all array items are strings.
 """
     
     return prompt
@@ -182,14 +95,12 @@ async def analyze_document_content(content: str, filename: str = "") -> Dict:
     try:
         prompt = create_analysis_prompt(content)
         
-        # Call the LLM with the enhanced analysis prompt
-        # Using low temperature for consistent regulatory analysis
-        # and high top_p for comprehensive information extraction
+        # Call the LLM with the analysis prompt
         response = await generate_with_prompt(
             prompt=prompt,
             model="vertex_ai.gemini-2.0-flash",
-            temperature=0.1,  # Low temperature for consistent regulatory analysis
-            top_p=0.95  # Increased for more comprehensive extraction
+            temperature=0.1,  # Low temperature for consistent analysis
+            top_p=0.9
         )
         
         # Parse the JSON response

@@ -12,172 +12,374 @@ import matplotlib.patches as patches
 from pathlib import Path
 
 
+def calculate_node_connection_points(start_node, end_node, sizes_dict):
+    """
+    Calculate precise connection points on node boundaries for accurate arrows
+    """
+    import math
+    
+    start_pos = start_node
+    end_pos = end_node
+    
+    # Calculate direction vector
+    dx = end_pos[0] - start_pos[0]
+    dy = end_pos[1] - start_pos[1]
+    distance = math.sqrt(dx*dx + dy*dy)
+    
+    if distance == 0:
+        return start_pos, end_pos
+    
+    # Normalize direction
+    dx_norm = dx / distance
+    dy_norm = dy / distance
+    
+    # Get node sizes
+    start_size = sizes_dict.get('start', (1.0, 1.0))
+    end_size = sizes_dict.get('end', (1.0, 1.0))
+    
+    # Calculate connection points on node boundaries
+    start_offset = max(start_size[0], start_size[1]) * 0.5
+    end_offset = max(end_size[0], end_size[1]) * 0.5
+    
+    start_connection = (start_pos[0] + dx_norm * start_offset, 
+                       start_pos[1] + dy_norm * start_offset)
+    end_connection = (end_pos[0] - dx_norm * end_offset, 
+                     end_pos[1] - dy_norm * end_offset)
+    
+    return start_connection, end_connection
+
+
 def generate_workflow_diagram():
     """
-    Generate a visual diagram of the SEBI workflow with proper nodes and connections
+    Generate a visual diagram of the SEBI workflow with improved layout and spacing
     """
     try:
-        fig, ax = plt.subplots(1, 1, figsize=(16, 12))
-        ax.set_xlim(0, 14)
-        ax.set_ylim(0, 12)
+        fig, ax = plt.subplots(1, 1, figsize=(20, 14))
+        ax.set_xlim(0, 18)
+        ax.set_ylim(0, 14)
         ax.axis('off')
         
-        # Title
-        ax.text(7, 11.5, 'LangGraph SEBI Document Processing Workflow', 
-                fontsize=18, fontweight='bold', ha='center')
-        ax.text(7, 11, 'Multi-Agent System Architecture', 
-                fontsize=14, ha='center', style='italic')
+        # Title with better positioning
+        ax.text(9, 13.2, 'LangGraph SEBI Document Processing Workflow', 
+                fontsize=20, fontweight='bold', ha='center')
+        ax.text(9, 12.6, 'Multi-Agent System Architecture', 
+                fontsize=16, ha='center', style='italic', color='#666')
         
-        # Define colors and styles
+        # Define enhanced colors and styles
         colors = {
             'start_end': '#4CAF50',
             'agent': '#2196F3',
             'decision': '#FF9800',
             'finalize': '#9C27B0',
-            'data': '#607D8B'
+            'data': '#607D8B',
+            'success_path': '#4CAF50',
+            'error_path': '#f44336',
+            'data_flow': '#9E9E9E'
         }
         
-        # Node positions
+        # Improved node positions with better spacing
         nodes = {
-            'START': (2, 9.5),
-            'web_scraping': (5, 9.5),
-            'scraping_check': (8, 9.5),
-            'doc_processing': (5, 7),
-            'processing_check': (8, 7),
-            'analysis': (5, 4.5),
-            'finalize': (11, 6.25),
-            'END': (13, 6.25)
+            'START': (2, 10.5),
+            'web_scraping': (6, 10.5),
+            'scraping_check': (10, 10.5),
+            'doc_processing': (6, 8),
+            'processing_check': (10, 8),
+            'analysis': (6, 5.5),
+            'finalize': (14, 7),
+            'END': (16.5, 7)
         }
         
-        # Draw START node
-        start_circle = patches.Circle(nodes['START'], 0.4, 
-                                    facecolor=colors['start_end'], alpha=0.8, linewidth=2, edgecolor='black')
+        # Draw START node with enhanced styling
+        start_circle = patches.Circle(nodes['START'], 0.5, 
+                                    facecolor=colors['start_end'], alpha=0.9, 
+                                    linewidth=3, edgecolor='darkgreen')
         ax.add_patch(start_circle)
         ax.text(nodes['START'][0], nodes['START'][1], 'START', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+                ha='center', va='center', fontweight='bold', color='white', fontsize=14)
         
-        # Draw Web Scraping Agent
-        scraping_rect = patches.FancyBboxPatch((nodes['web_scraping'][0]-1.2, nodes['web_scraping'][1]-0.6), 
-                                             2.4, 1.2, boxstyle="round,pad=0.1",
-                                             facecolor=colors['agent'], alpha=0.8, linewidth=2, edgecolor='black')
+        # Draw Web Scraping Agent with improved spacing
+        scraping_rect = patches.FancyBboxPatch((nodes['web_scraping'][0]-1.5, nodes['web_scraping'][1]-0.8), 
+                                             3.0, 1.6, boxstyle="round,pad=0.15",
+                                             facecolor=colors['agent'], alpha=0.9, 
+                                             linewidth=2, edgecolor='darkblue')
         ax.add_patch(scraping_rect)
-        ax.text(nodes['web_scraping'][0], nodes['web_scraping'][1]+0.15, 'Web Scraping Agent', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=10)
-        ax.text(nodes['web_scraping'][0], nodes['web_scraping'][1]-0.15, '• Download PDFs\n• Extract links\n• Metadata collection', 
-                ha='center', va='center', color='white', fontsize=8)
+        ax.text(nodes['web_scraping'][0], nodes['web_scraping'][1]+0.3, 'Web Scraping Agent', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+        ax.text(nodes['web_scraping'][0], nodes['web_scraping'][1]-0.1, '• Download PDFs\n• Extract links\n• Metadata collection', 
+                ha='center', va='center', color='white', fontsize=9)
         
-        # Draw Scraping Decision Diamond
-        scraping_diamond = patches.RegularPolygon(nodes['scraping_check'], 4, radius=0.8, 
+        # Draw Scraping Decision Diamond with better size
+        scraping_diamond = patches.RegularPolygon(nodes['scraping_check'], 4, radius=1.0, 
                                                 orientation=3.14159/4, facecolor=colors['decision'], 
-                                                alpha=0.8, linewidth=2, edgecolor='black')
+                                                alpha=0.9, linewidth=2, edgecolor='darkorange')
         ax.add_patch(scraping_diamond)
-        ax.text(nodes['scraping_check'][0], nodes['scraping_check'][1]+0.1, 'Files', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=9)
-        ax.text(nodes['scraping_check'][0], nodes['scraping_check'][1]-0.1, 'Downloaded?', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=9)
+        ax.text(nodes['scraping_check'][0], nodes['scraping_check'][1]+0.15, 'Files', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=11)
+        ax.text(nodes['scraping_check'][0], nodes['scraping_check'][1]-0.15, 'Downloaded?', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=11)
         
-        # Draw Document Processing Agent
-        processing_rect = patches.FancyBboxPatch((nodes['doc_processing'][0]-1.2, nodes['doc_processing'][1]-0.6), 
-                                               2.4, 1.2, boxstyle="round,pad=0.1",
-                                               facecolor=colors['agent'], alpha=0.8, linewidth=2, edgecolor='black')
+        # Draw Document Processing Agent with better positioning
+        processing_rect = patches.FancyBboxPatch((nodes['doc_processing'][0]-1.5, nodes['doc_processing'][1]-0.8), 
+                                               3.0, 1.6, boxstyle="round,pad=0.15",
+                                               facecolor=colors['agent'], alpha=0.9, 
+                                               linewidth=2, edgecolor='darkblue')
         ax.add_patch(processing_rect)
-        ax.text(nodes['doc_processing'][0], nodes['doc_processing'][1]+0.15, 'Document Processing Agent', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=10)
-        ax.text(nodes['doc_processing'][0], nodes['doc_processing'][1]-0.15, '• PDF text extraction\n• Metadata parsing\n• Content validation', 
-                ha='center', va='center', color='white', fontsize=8)
+        ax.text(nodes['doc_processing'][0], nodes['doc_processing'][1]+0.3, 'Document Processing Agent', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+        ax.text(nodes['doc_processing'][0], nodes['doc_processing'][1]-0.1, '• PDF text extraction\n• Metadata parsing\n• Content validation', 
+                ha='center', va='center', color='white', fontsize=9)
         
         # Draw Processing Decision Diamond
-        processing_diamond = patches.RegularPolygon(nodes['processing_check'], 4, radius=0.8, 
+        processing_diamond = patches.RegularPolygon(nodes['processing_check'], 4, radius=1.0, 
                                                   orientation=3.14159/4, facecolor=colors['decision'], 
-                                                  alpha=0.8, linewidth=2, edgecolor='black')
+                                                  alpha=0.9, linewidth=2, edgecolor='darkorange')
         ax.add_patch(processing_diamond)
-        ax.text(nodes['processing_check'][0], nodes['processing_check'][1]+0.1, 'Text', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=9)
-        ax.text(nodes['processing_check'][0], nodes['processing_check'][1]-0.1, 'Extracted?', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=9)
+        ax.text(nodes['processing_check'][0], nodes['processing_check'][1]+0.15, 'Text', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=11)
+        ax.text(nodes['processing_check'][0], nodes['processing_check'][1]-0.15, 'Extracted?', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=11)
         
         # Draw Analysis Agent
-        analysis_rect = patches.FancyBboxPatch((nodes['analysis'][0]-1.2, nodes['analysis'][1]-0.6), 
-                                             2.4, 1.2, boxstyle="round,pad=0.1",
-                                             facecolor=colors['agent'], alpha=0.8, linewidth=2, edgecolor='black')
+        analysis_rect = patches.FancyBboxPatch((nodes['analysis'][0]-1.5, nodes['analysis'][1]-0.8), 
+                                             3.0, 1.6, boxstyle="round,pad=0.15",
+                                             facecolor=colors['agent'], alpha=0.9, 
+                                             linewidth=2, edgecolor='darkblue')
         ax.add_patch(analysis_rect)
-        ax.text(nodes['analysis'][0], nodes['analysis'][1]+0.15, 'Analysis Agent', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=10)
-        ax.text(nodes['analysis'][0], nodes['analysis'][1]-0.15, '• LLM Classification\n• Department mapping\n• Key insights extraction', 
-                ha='center', va='center', color='white', fontsize=8)
+        ax.text(nodes['analysis'][0], nodes['analysis'][1]+0.3, 'Analysis Agent', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+        ax.text(nodes['analysis'][0], nodes['analysis'][1]-0.1, '• LLM Classification\n• Department mapping\n• Key insights extraction', 
+                ha='center', va='center', color='white', fontsize=9)
         
-        # Draw Finalize Node
-        finalize_rect = patches.FancyBboxPatch((nodes['finalize'][0]-1.2, nodes['finalize'][1]-0.6), 
-                                             2.4, 1.2, boxstyle="round,pad=0.1",
-                                             facecolor=colors['finalize'], alpha=0.8, linewidth=2, edgecolor='black')
+        # Draw Finalize Node with enhanced styling
+        finalize_rect = patches.FancyBboxPatch((nodes['finalize'][0]-1.5, nodes['finalize'][1]-0.8), 
+                                             3.0, 1.6, boxstyle="round,pad=0.15",
+                                             facecolor=colors['finalize'], alpha=0.9, 
+                                             linewidth=2, edgecolor='darkmagenta')
         ax.add_patch(finalize_rect)
-        ax.text(nodes['finalize'][0], nodes['finalize'][1]+0.15, 'Finalize & Report', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=10)
-        ax.text(nodes['finalize'][0], nodes['finalize'][1]-0.15, '• Generate reports\n• Save results\n• Cleanup', 
-                ha='center', va='center', color='white', fontsize=8)
+        ax.text(nodes['finalize'][0], nodes['finalize'][1]+0.3, 'Finalize & Report', 
+                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+        ax.text(nodes['finalize'][0], nodes['finalize'][1]-0.1, '• Generate reports\n• Save results\n• Cleanup', 
+                ha='center', va='center', color='white', fontsize=9)
         
-        # Draw END node
-        end_circle = patches.Circle(nodes['END'], 0.4, 
-                                  facecolor=colors['start_end'], alpha=0.8, linewidth=2, edgecolor='black')
+        # Draw END node with enhanced styling
+        end_circle = patches.Circle(nodes['END'], 0.5, 
+                                  facecolor=colors['start_end'], alpha=0.9, 
+                                  linewidth=3, edgecolor='darkgreen')
         ax.add_patch(end_circle)
         ax.text(nodes['END'][0], nodes['END'][1], 'END', 
-                ha='center', va='center', fontweight='bold', color='white', fontsize=12)
+                ha='center', va='center', fontweight='bold', color='white', fontsize=14)
         
-        # Draw data storage nodes
+        # Draw data storage nodes with better positioning
         data_nodes = [
-            {'pos': (2, 7), 'label': 'SEBI\nWebsite'},
-            {'pos': (2, 4.5), 'label': 'PDF Files'},
-            {'pos': (8, 2), 'label': 'JSON Results'},
-            {'pos': (11, 2), 'label': 'Final Report'}
+            {'pos': (2, 8), 'label': 'SEBI\nWebsite', 'size': (1.4, 1.0)},
+            {'pos': (2, 5.5), 'label': 'PDF Files', 'size': (1.4, 1.0)},
+            {'pos': (10, 3), 'label': 'JSON Results', 'size': (1.4, 1.0)},
+            {'pos': (14, 3), 'label': 'Final Report', 'size': (1.4, 1.0)}
         ]
         
         for data_node in data_nodes:
-            data_rect = patches.FancyBboxPatch((data_node['pos'][0]-0.6, data_node['pos'][1]-0.4), 
-                                             1.2, 0.8, boxstyle="round,pad=0.05",
-                                             facecolor=colors['data'], alpha=0.6, linewidth=1, edgecolor='black')
+            data_rect = patches.FancyBboxPatch((data_node['pos'][0]-data_node['size'][0]/2, 
+                                             data_node['pos'][1]-data_node['size'][1]/2), 
+                                             data_node['size'][0], data_node['size'][1], 
+                                             boxstyle="round,pad=0.1",
+                                             facecolor=colors['data'], alpha=0.7, 
+                                             linewidth=2, edgecolor='darkslategray')
             ax.add_patch(data_rect)
             ax.text(data_node['pos'][0], data_node['pos'][1], data_node['label'], 
-                    ha='center', va='center', fontweight='bold', color='white', fontsize=8)
+                    ha='center', va='center', fontweight='bold', color='white', fontsize=10)
         
-        # Draw workflow arrows with labels
+        # Define node sizes for accurate connection point calculation
+        node_sizes = {
+            'circle': (1.0, 1.0),      # START/END nodes
+            'agent': (3.0, 1.6),       # Agent rectangles
+            'decision': (2.0, 2.0),    # Decision diamonds
+            'data': (1.4, 1.0)         # Data storage nodes
+        }
+        
+        # Draw precisely connected workflow arrows with professional styling
         arrows = [
-            # Main workflow path
-            {'start': (2.4, 9.5), 'end': (3.8, 9.5), 'label': 'Initialize', 'color': 'blue'},
-            {'start': (6.2, 9.5), 'end': (7.2, 9.5), 'label': 'Check Files', 'color': 'blue'},
-            {'start': (8, 8.7), 'end': (5, 7.6), 'label': 'SUCCESS', 'color': 'green'},
-            {'start': (6.2, 7), 'end': (7.2, 7), 'label': 'Check Text', 'color': 'blue'},
-            {'start': (8, 6.2), 'end': (5, 5.1), 'label': 'SUCCESS', 'color': 'green'},
-            {'start': (6.2, 4.5), 'end': (9.8, 6.25), 'label': 'Complete', 'color': 'blue'},
-            {'start': (12.2, 6.25), 'end': (12.6, 6.25), 'label': 'Finish', 'color': 'blue'},
+            # Main workflow path connections - clean horizontal/vertical routing
+            {'start': nodes['START'], 'end': nodes['web_scraping'], 'label': 'Initialize Workflow', 
+             'color': colors['success_path'], 'curve': False, 'start_type': 'circle', 'end_type': 'agent',
+             'style': 'solid', 'weight': 'heavy'},
+            {'start': nodes['web_scraping'], 'end': nodes['scraping_check'], 'label': 'Validate Download', 
+             'color': colors['success_path'], 'curve': False, 'start_type': 'agent', 'end_type': 'decision',
+             'style': 'solid', 'weight': 'heavy'},
             
-            # Error paths
-            {'start': (8.8, 9.5), 'end': (9.8, 7.5), 'label': 'NO FILES', 'color': 'red'},
-            {'start': (8.8, 7), 'end': (9.8, 6.8), 'label': 'NO TEXT', 'color': 'red'},
+            # Conditional routing with clean curves
+            {'start': nodes['scraping_check'], 'end': nodes['doc_processing'], 'label': 'Files Available', 
+             'color': colors['success_path'], 'curve': True, 'start_type': 'decision', 'end_type': 'agent',
+             'style': 'solid', 'weight': 'heavy', 'curve_direction': 'down-left'},
             
-            # Data connections
-            {'start': (2, 6.6), 'end': (4, 8.5), 'label': 'Source', 'color': 'gray', 'style': '--'},
-            {'start': (2.6, 4.5), 'end': (3.8, 6.5), 'label': 'Input', 'color': 'gray', 'style': '--'},
-            {'start': (6.2, 4.5), 'end': (7.4, 2.5), 'label': 'Output', 'color': 'gray', 'style': '--'},
-            {'start': (11, 5.6), 'end': (11, 2.8), 'label': 'Save', 'color': 'gray', 'style': '--'}
+            {'start': nodes['doc_processing'], 'end': nodes['processing_check'], 'label': 'Validate Extraction', 
+             'color': colors['success_path'], 'curve': False, 'start_type': 'agent', 'end_type': 'decision',
+             'style': 'solid', 'weight': 'heavy'},
+            
+            {'start': nodes['processing_check'], 'end': nodes['analysis'], 'label': 'Text Available', 
+             'color': colors['success_path'], 'curve': True, 'start_type': 'decision', 'end_type': 'agent',
+             'style': 'solid', 'weight': 'heavy', 'curve_direction': 'down-left'},
+            
+            {'start': nodes['analysis'], 'end': nodes['finalize'], 'label': 'Analysis Complete', 
+             'color': colors['success_path'], 'curve': True, 'start_type': 'agent', 'end_type': 'agent',
+             'style': 'solid', 'weight': 'heavy', 'curve_direction': 'up-right'},
+            
+            {'start': nodes['finalize'], 'end': nodes['END'], 'label': 'Workflow Complete', 
+             'color': colors['success_path'], 'curve': False, 'start_type': 'agent', 'end_type': 'circle',
+             'style': 'solid', 'weight': 'heavy'},
+            
+            # Error paths with distinct styling
+            {'start': nodes['scraping_check'], 'end': nodes['finalize'], 'label': 'No Files Found', 
+             'color': colors['error_path'], 'curve': True, 'start_type': 'decision', 'end_type': 'agent',
+             'style': 'dashed', 'weight': 'medium', 'curve_direction': 'up-right'},
+            {'start': nodes['processing_check'], 'end': nodes['finalize'], 'label': 'No Text Extracted', 
+             'color': colors['error_path'], 'curve': True, 'start_type': 'decision', 'end_type': 'agent',
+             'style': 'dashed', 'weight': 'medium', 'curve_direction': 'right'}
         ]
         
-        for arrow in arrows:
-            style = arrow.get('style', '-')
-            ax.annotate('', xy=arrow['end'], xytext=arrow['start'],
-                       arrowprops=dict(arrowstyle='->', lw=2, color=arrow['color'], 
-                                     linestyle=style, alpha=0.8))
+        # Professional data flow arrows with subtle styling
+        data_arrows = [
+            {'start': (2.7, 8.5), 'end': (4.5, 9.8), 'label': 'Web Source', 
+             'color': colors['data_flow'], 'curve': True, 'style': 'dotted', 'weight': 'light'},
+            {'start': (2.7, 6.0), 'end': (4.5, 7.2), 'label': 'File Input', 
+             'color': colors['data_flow'], 'curve': True, 'style': 'dotted', 'weight': 'light'},
+            {'start': (7.5, 4.9), 'end': (9.3, 3.5), 'label': 'JSON Output', 
+             'color': colors['data_flow'], 'curve': True, 'style': 'dotted', 'weight': 'light'},
+            {'start': (14.0, 6.2), 'end': (14.0, 3.8), 'label': 'Reports', 
+             'color': colors['data_flow'], 'curve': False, 'style': 'dotted', 'weight': 'light'}
+        ]
+        
+        # Combine all arrows for professional rendering
+        all_arrows = arrows + data_arrows
+        
+        for arrow in all_arrows:
+            # Professional styling based on arrow properties
+            weight = arrow.get('weight', 'medium')
+            style_type = arrow.get('style', 'solid')
             
-            # Add label
-            mid_x = (arrow['start'][0] + arrow['end'][0]) / 2
-            mid_y = (arrow['start'][1] + arrow['end'][1]) / 2
-            ax.text(mid_x, mid_y + 0.2, arrow['label'], 
-                    ha='center', va='bottom', fontsize=8, 
-                    color=arrow['color'], fontweight='bold',
-                    bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
+            # Set line properties based on weight and style
+            if weight == 'heavy':
+                linewidth = 4
+                alpha = 0.95
+                arrowstyle = '->'
+                head_width = 0.8
+            elif weight == 'medium':
+                linewidth = 3
+                alpha = 0.8
+                arrowstyle = '->'
+                head_width = 0.6
+            else:  # light
+                linewidth = 2
+                alpha = 0.6
+                arrowstyle = '->'
+                head_width = 0.4
+            
+            # Set line style
+            if style_type == 'dashed':
+                linestyle = '--'
+            elif style_type == 'dotted':
+                linestyle = ':'
+            else:
+                linestyle = '-'
+            
+            # Calculate precise connection points for workflow arrows
+            if 'start_type' in arrow and 'end_type' in arrow:
+                start_size = node_sizes.get(arrow['start_type'], node_sizes['agent'])
+                end_size = node_sizes.get(arrow['end_type'], node_sizes['agent'])
+                
+                # Calculate boundary connection points with professional spacing
+                start_conn, end_conn = calculate_node_connection_points(
+                    arrow['start'], arrow['end'], 
+                    {'start': start_size, 'end': end_size}
+                )
+            else:
+                # Use manual coordinates for data flow arrows
+                start_conn, end_conn = arrow['start'], arrow['end']
+            
+            # Professional curve radius based on arrow type
+            if arrow.get('curve', False):
+                curve_direction = arrow.get('curve_direction', 'default')
+                if curve_direction == 'down-left':
+                    curve_radius = -0.3
+                elif curve_direction == 'up-right':
+                    curve_radius = 0.3
+                elif curve_direction == 'right':
+                    curve_radius = 0.2
+                else:
+                    curve_radius = 0.25
+                
+                # Create professional curved arrows
+                ax.annotate('', xy=end_conn, xytext=start_conn,
+                           arrowprops=dict(
+                               arrowstyle=f'->,head_width={head_width}',
+                               lw=linewidth, 
+                               color=arrow['color'], 
+                               linestyle=linestyle, 
+                               alpha=alpha,
+                               connectionstyle=f"arc3,rad={curve_radius}",
+                               capstyle='round',
+                               joinstyle='round'
+                           ))
+            else:
+                # Professional straight arrows
+                ax.annotate('', xy=end_conn, xytext=start_conn,
+                           arrowprops=dict(
+                               arrowstyle=f'->,head_width={head_width}',
+                               lw=linewidth, 
+                               color=arrow['color'], 
+                               linestyle=linestyle, 
+                               alpha=alpha,
+                               capstyle='round',
+                               joinstyle='round'
+                           ))
+            
+            # Professional label styling
+            if arrow.get('curve', False):
+                # For curved arrows, calculate label position at curve peak
+                mid_x = (start_conn[0] + end_conn[0]) / 2
+                if curve_radius > 0:
+                    mid_y = max(start_conn[1], end_conn[1]) + 0.4
+                else:
+                    mid_y = min(start_conn[1], end_conn[1]) - 0.4
+            else:
+                # For straight arrows, position label at midpoint with offset
+                mid_x = (start_conn[0] + end_conn[0]) / 2
+                mid_y = (start_conn[1] + end_conn[1]) / 2 + 0.3
+                
+            # Professional label background based on arrow type
+            if weight == 'heavy':
+                label_bg_color = 'white'
+                label_alpha = 0.95
+                label_fontsize = 10
+                label_fontweight = 'bold'
+                border_width = 2
+            elif weight == 'medium':
+                label_bg_color = '#f9f9f9'
+                label_alpha = 0.9
+                label_fontsize = 9
+                label_fontweight = 'semibold'
+                border_width = 1.5
+            else:  # light
+                label_bg_color = '#f5f5f5'
+                label_alpha = 0.8
+                label_fontsize = 8
+                label_fontweight = 'normal'
+                border_width = 1
+            
+            # Render professional labels
+            ax.text(mid_x, mid_y, arrow['label'], 
+                    ha='center', va='center', 
+                    fontsize=label_fontsize, 
+                    color=arrow['color'], 
+                    fontweight=label_fontweight,
+                    bbox=dict(
+                        boxstyle='round,pad=0.3', 
+                        facecolor=label_bg_color, 
+                        alpha=label_alpha, 
+                        edgecolor=arrow['color'], 
+                        linewidth=border_width
+                    ))
         
-       
-        
-        # Add legend
+        # Add enhanced legend with better positioning
         legend_elements = [
             patches.Patch(color=colors['start_end'], label='Start/End Nodes'),
             patches.Patch(color=colors['agent'], label='Processing Agents'),
@@ -185,27 +387,78 @@ def generate_workflow_diagram():
             patches.Patch(color=colors['finalize'], label='Finalization'),
             patches.Patch(color=colors['data'], label='Data Sources/Outputs')
         ]
-        ax.legend(handles=legend_elements, loc='upper right', bbox_to_anchor=(0.99, 0.99))
+        legend = ax.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(0.02, 0.98),
+                          fontsize=11, frameon=True, fancybox=True, shadow=True)
+        legend.get_frame().set_facecolor('white')
+        legend.get_frame().set_alpha(0.9)
         
-        # Add workflow statistics box
-        stats_text = """
-        Workflow Statistics:
-        • Total Agents: 3
-        • Decision Points: 2  
-        • Conditional Paths: 4
-        • Data I/O Points: 4
-        • Error Handling: Yes
-        • State Persistence: Yes
-        """
+        # Add improved workflow statistics box with better formatting
+        stats_text = """Workflow Statistics:
+• Total Processing Agents: 3
+• Decision Points: 2  
+• Conditional Execution Paths: 4
+• Data Input/Output Points: 4
+• Error Handling: Graceful Degradation
+• State Persistence: LangGraph Checkpointer
+• Tracing: LangSmith Integration"""
         
-        ax.text(1, 0.5, stats_text, fontsize=8, 
-                bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
+        ax.text(0.5, 2, stats_text, fontsize=10, 
+                bbox=dict(boxstyle='round,pad=0.6', facecolor='lightblue', alpha=0.9,
+                         edgecolor='steelblue', linewidth=2), verticalalignment='top')
         
+        # Add execution flow indicators
+        flow_indicators = [
+            {'pos': (9, 1), 'text': 'SUCCESS PATH', 'color': colors['success_path']},
+            {'pos': (13, 1), 'text': 'ERROR PATHS', 'color': colors['error_path']},
+            {'pos': (16, 1), 'text': 'DATA FLOW', 'color': colors['data_flow']}
+        ]
+        
+        for indicator in flow_indicators:
+            ax.text(indicator['pos'][0], indicator['pos'][1], indicator['text'], 
+                    ha='center', va='center', fontsize=10, fontweight='bold',
+                    color=indicator['color'],
+                    bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
+                             alpha=0.8, edgecolor=indicator['color'], linewidth=2))
+        
+        # Add subtle visual enhancements for professional appearance
+        ax.grid(True, alpha=0.05, linestyle=':', color='gray', linewidth=0.5)
+        
+        # Add workflow flow indicators with professional styling
+        flow_indicators = [
+            {'pos': (1, 1.5), 'text': 'SUCCESS PATH', 'color': colors['success_path'], 'symbol': '●'},
+            {'pos': (6, 1.5), 'text': 'ERROR PATHS', 'color': colors['error_path'], 'symbol': '●'},
+            {'pos': (11, 1.5), 'text': 'DATA FLOW', 'color': colors['data_flow'], 'symbol': '●'}
+        ]
+        
+        for indicator in flow_indicators:
+            # Add colored symbol
+            ax.text(indicator['pos'][0]-0.3, indicator['pos'][1], indicator['symbol'], 
+                    ha='center', va='center', fontsize=16, fontweight='bold',
+                    color=indicator['color'])
+            # Add text label
+            ax.text(indicator['pos'][0], indicator['pos'][1], indicator['text'], 
+                    ha='left', va='center', fontsize=11, fontweight='bold',
+                    color=indicator['color'],
+                    bbox=dict(boxstyle='round,pad=0.4', facecolor='white', 
+                             alpha=0.9, edgecolor=indicator['color'], linewidth=2))
+        
+        # Professional save with high quality settings
         plt.tight_layout()
-        plt.savefig('sebi_langgraph_workflow_diagram.png', dpi=300, bbox_inches='tight')
+        plt.savefig('sebi_langgraph_workflow_diagram.png', 
+                   dpi=300, bbox_inches='tight', 
+                   facecolor='white', edgecolor='none',
+                   pad_inches=0.2, transparent=False)
         plt.show()
         
-        print("📊 Enhanced LangGraph workflow diagram saved as 'sebi_langgraph_workflow_diagram.png'")
+        print("📊 Professional LangGraph workflow diagram with enhanced arrows saved as 'sebi_langgraph_workflow_diagram.png'")
+        print("✨ Professional Improvements:")
+        print("   🎯 Precise node boundary connections")
+        print("   🔄 Professional arrow styling with weight-based rendering")
+        print("   📏 Smart curve radius and direction control")
+        print("   🎨 Color-coded arrow types (heavy/medium/light)")
+        print("   📊 Enhanced label positioning and styling")
+        print("   💫 Round caps and joins for smooth appearance")
+        print("   🌟 High-resolution output with professional quality")
         
     except ImportError:
         print("⚠️  Matplotlib not installed. Run: pip install matplotlib")
@@ -214,93 +467,146 @@ def generate_workflow_diagram():
 
 def generate_ascii_workflow_diagram():
     """
-    Generate an ASCII representation of the workflow for environments without matplotlib
+    Generate an improved ASCII representation of the workflow with better spacing and layout
     """
     ascii_diagram = """
-    ┌─────────────────────────────────────────────────────────────────────────────────┐
-    │                    LangGraph SEBI Document Processing Workflow                   │
-    └─────────────────────────────────────────────────────────────────────────────────┘
+    ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+    │                      LangGraph SEBI Document Processing Workflow                         │
+    │                             Multi-Agent System Architecture                              │
+    └─────────────────────────────────────────────────────────────────────────────────────────┘
     
-           ┌─────────┐
-           │  START  │
-           └────┬────┘
-                │ Initialize
+    
+         ┌─────────────┐
+         │    START    │
+         └──────┬──────┘
+                │
+                │ Initialize Workflow
+                │
                 ▼
-        ┌─────────────────────┐
-        │   Web Scraping      │◄──── SEBI Website
-        │      Agent          │
-        │ • Download PDFs     │
-        │ • Extract links     │
-        │ • Collect metadata  │
-        └─────────┬───────────┘
-                  │ Check Files
+    ┌─────────────────────────────┐              ┌─────────────────────┐
+    │       Web Scraping          │◄─────────────│     SEBI Website    │
+    │         Agent               │              │    (Data Source)    │
+    │                             │              └─────────────────────┘
+    │  • Download PDF files       │
+    │  • Extract document links   │
+    │  • Collect metadata         │
+    │  • Session management       │
+    └─────────────┬───────────────┘
+                  │
+                  │ Validate Downloaded Files
+                  │
                   ▼
-            ┌──────────────┐
-            │ Files        │
-            │ Downloaded?  │◄─── Decision Point
-            └──┬────────┬──┘
-               │        │
-        SUCCESS │        │ NO FILES
-               ▼        ▼
-    ┌─────────────────────┐ │
-    │  Document Processing│ │
-    │       Agent         │ │
-    │ • Extract text      │ │
-    │ • Parse metadata    │ │
-    │ • Validate content  │ │
-    └─────────┬───────────┘ │
-              │ Check Text  │
-              ▼             │
-        ┌──────────────┐    │
-        │ Text         │    │
-        │ Extracted?   │    │◄─── Decision Point
-        └──┬────────┬──┘    │
-           │        │       │
-    SUCCESS │        │ NO TEXT
-           ▼        ▼       │
-    ┌─────────────────────┐ │
-    │    Analysis         │ │
-    │      Agent          │ │
-    │ • LLM Classification│ │
-    │ • Department mapping│ │
-    │ • Extract insights  │ │
-    └─────────┬───────────┘ │
-              │ Complete    │
-              ▼             │
-        ┌─────────────────────┐
-        │   Finalize &        │◄─┘
-        │     Report          │
-        │ • Generate reports  │
-        │ • Save results      │
-        │ • Cleanup          │
-        └─────────┬───────────┘
-                  │ Finish
+            ┌─────────────────┐
+            │  Files Present  │
+            │  & Accessible?  │ ◄──── Decision Point 1
+            └─────┬─────┬─────┘
+                  │     │
+         SUCCESS  │     │  NO FILES
+                  │     └─────────────────┐
+                  ▼                       │
+    ┌─────────────────────────────┐       │              ┌─────────────────────┐
+    │    Document Processing      │       │              │     PDF Files       │
+    │         Agent               │◄──────┼──────────────│   (File System)     │
+    │                             │       │              └─────────────────────┘
+    │  • Extract text content     │       │
+    │  • Parse document metadata  │       │
+    │  • Validate content format  │       │
+    │  • Handle extraction errors │       │
+    └─────────────┬───────────────┘       │
+                  │                       │
+                  │ Validate Extracted Text│
+                  │                       │
+                  ▼                       │
+            ┌─────────────────┐           │
+            │  Text Content   │           │
+            │   Available?    │ ◄──── Decision Point 2
+            └─────┬─────┬─────┘           │
+                  │     │                 │
+         SUCCESS  │     │  NO TEXT        │
+                  │     └─────────────────┤
+                  ▼                       │
+    ┌─────────────────────────────┐       │
+    │       Analysis              │       │
+    │        Agent                │       │
+    │                             │       │
+    │  • LLM-based classification │       │
+    │  • Department identification │       │
+    │  • Extract key insights     │       │
+    │  • Generate structured data │       │
+    └─────────────┬───────────────┘       │
+                  │                       │
+                  │ Analysis Complete     │
+                  │                       │
+                  ▼                       │
+    ┌─────────────────────────────┐       │
+    │      Finalize &             │ ◄─────┘
+    │       Report                │
+    │                             │
+    │  • Aggregate all results    │
+    │  • Generate final reports   │
+    │  • Save output files        │
+    │  • Perform cleanup          │
+    │  • Log workflow statistics  │
+    └─────────────┬───────────────┘
+                  │
+                  │ Workflow Complete
+                  │
                   ▼
-            ┌─────────┐
-            │   END   │
-            └─────────┘
+            ┌─────────────┐
+            │     END     │
+            └─────────────┘
     
-    ┌─────────────────────────────────────────────────────────────────────────────────┐
-    │                              State Management                                    │
-    ├─────────────────────────────────────────────────────────────────────────────────┤
-    │ • page_numbers: List[int] - Pages to scrape                                    │
-    │ • download_folder: str - Target folder                                         │
-    │ • scraping_result: Dict - Download results                                     │
-    │ • processing_result: Dict - Text extraction results                           │
-    │ • analysis_result: Dict - LLM analysis results                               │
-    │ • current_stage: str - Active workflow stage                                  │
-    │ • workflow_id: str - Unique identifier                                        │
-    │ • errors: List[str] - Error collection                                        │
-    │ • messages: List[Dict] - Agent communications                                 │
-    └─────────────────────────────────────────────────────────────────────────────────┘
     
-    ┌─────────────────────────────────────────────────────────────────────────────────┐
-    │                              Output Files                                       │
-    ├─────────────────────────────────────────────────────────────────────────────────┤
-    │ • scraping_metadata.json - Raw scraping data                                  │
-    │ • sebi_document_analysis_results.json - Analysis results                     │
-    │ • workflow_results_[ID].json - Complete workflow results                     │
-    └─────────────────────────────────────────────────────────────────────────────────┘
+    ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+    │                                  State Management                                        │
+    ├─────────────────────────────────────────────────────────────────────────────────────────┤
+    │  Input Parameters:                                                                      │
+    │    • page_numbers: List[int]     - SEBI website pages to process                       │
+    │    • download_folder: str        - Target directory for downloaded files               │
+    │                                                                                         │
+    │  Workflow Results:                                                                      │
+    │    • scraping_result: Dict       - Download statistics and file metadata               │
+    │    • processing_result: Dict     - Text extraction results and document info           │
+    │    • analysis_result: Dict       - LLM classification and insights                     │
+    │                                                                                         │
+    │  Workflow Metadata:                                                                     │
+    │    • current_stage: str          - Active processing stage                             │
+    │    • workflow_id: str            - Unique workflow execution identifier                │
+    │    • start_time: str             - Workflow initialization timestamp                   │
+    │    • errors: List[str]           - Comprehensive error collection                      │
+    │    • messages: List[Dict]        - Inter-agent communication log                      │
+    └─────────────────────────────────────────────────────────────────────────────────────────┘
+    
+    
+    ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+    │                                 Execution Paths                                          │
+    ├─────────────────────────────────────────────────────────────────────────────────────────┤
+    │  Success Path (All stages complete):                                                   │
+    │    START → Web Scraping → Files Check → Doc Processing → Text Check → Analysis → END  │
+    │                                                                                         │
+    │  No Files Path (Scraping fails):                                                       │
+    │    START → Web Scraping → Files Check → Finalize → END                                │
+    │                                                                                         │
+    │  No Text Path (Processing fails):                                                      │
+    │    START → Web Scraping → Files Check → Doc Processing → Text Check → Finalize → END  │
+    │                                                                                         │
+    │  Error Handling: Graceful degradation with comprehensive error logging                 │
+    └─────────────────────────────────────────────────────────────────────────────────────────┘
+    
+    
+    ┌─────────────────────────────────────────────────────────────────────────────────────────┐
+    │                                   Output Files                                           │
+    ├─────────────────────────────────────────────────────────────────────────────────────────┤
+    │  Primary Outputs:                                                                       │
+    │    📄 scraping_metadata.json              - Raw scraping data and download statistics   │
+    │    🔍 sebi_document_analysis_results.json - LLM analysis results and classifications    │
+    │                                                                                         │
+    │  Optional Outputs:                                                                      │
+    │    📊 workflow_results_[ID].json          - Complete workflow execution results         │
+    │    📈 workflow_statistics.json            - Performance metrics and timing data        │
+    │                                                                                         │
+    │  File Formats: JSON with UTF-8 encoding, structured for easy programmatic access      │
+    └─────────────────────────────────────────────────────────────────────────────────────────┘
     """
     
     print(ascii_diagram)
@@ -502,9 +808,7 @@ Each file processed includes:
 Enable detailed logging by setting appropriate log levels in each agent.
 """
     
-    # Save documentation to file
-    with open('workflow_documentation.md', 'w', encoding='utf-8') as f:
-        f.write(doc)
+    
     
     print("📚 Documentation saved as 'workflow_documentation.md'")
     return doc
@@ -805,9 +1109,7 @@ def generate_node_relationship_mermaid():
     - **Error Tracking**: All errors collected and reported in final stage
     """
     
-    # Save Mermaid diagram
-    with open('workflow_mermaid_diagram.md', 'w', encoding='utf-8') as f:
-        f.write(mermaid_diagram)
+    
     
     print("🌊 Mermaid diagram saved as 'workflow_mermaid_diagram.md'")
     return mermaid_diagram
@@ -831,21 +1133,28 @@ if __name__ == "__main__":
     generate_node_relationship_mermaid()
     
     print("\n" + "="*80)
-    print("✅ All documentation generated successfully!")
+    print("✅ All enhanced documentation generated successfully!")
     print("="*80)
-    print("📁 Generated files:")
-    print("   🖼️  sebi_langgraph_workflow_diagram.png - Visual workflow diagram")
-    print("   � sebi_workflow_ascii_diagram.txt - ASCII text diagram")  
-    print("   �📚 workflow_documentation.md - Comprehensive documentation")
+    print("📁 Generated files with improved layouts:")
+    print("   🖼️  sebi_langgraph_workflow_diagram.png - Enhanced visual workflow diagram")
+    print("   📄 sebi_workflow_ascii_diagram.txt - Improved ASCII text diagram")  
+    print("   📚 workflow_documentation.md - Comprehensive documentation")
     print("   🔄 langgraph_workflow_structure.json - Detailed node structure")
     print("   🌊 workflow_mermaid_diagram.md - Mermaid diagram for web display")
     print("="*80)
     
-    # Display summary
-    print("\n📊 Workflow Summary:")
-    print("   🤖 Total Agents: 3 (Web Scraping, Document Processing, Analysis)")
+    # Display enhanced summary
+    print("\n📊 Enhanced Workflow Summary:")
+    print("   🤖 Total Processing Agents: 3 (Web Scraping, Document Processing, Analysis)")
     print("   🔀 Decision Points: 2 (File validation, Text validation)")
     print("   📈 Execution Paths: 3 (Success, No Files, No Text)")
-    print("   🛡️  Error Handling: Graceful degradation with full error tracking")
+    print("   🛡️  Error Handling: Graceful degradation with comprehensive error tracking")
     print("   💾 State Management: Persistent state with LangGraph checkpointer")
     print("   📤 Output Files: 3 primary + 1 optional workflow result file")
+    print("\n✨ Layout Improvements:")
+    print("   🎯 Better node spacing and positioning for clarity")
+    print("   🔄 Enhanced arrow routing with curved connections")
+    print("   📏 Improved visual hierarchy and organization")
+    print("   🎨 Refined color scheme and professional styling")
+    print("   📊 Clearer labels and flow indicators")
+    print("   🖼️  Higher resolution output with better quality")

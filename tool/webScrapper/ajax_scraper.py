@@ -57,16 +57,7 @@ class SEBIAjaxScraper:
             print(f"⚠️  Warning: Could not initialize session: {e}")
     
     def _extract_date_and_circular_info(self, url: str, html_content: str = None) -> Dict[str, str]:
-        """
-        Extract date and circular number from URL and page content.
         
-        Args:
-            url: The URL of the circular page
-            html_content: HTML content of the page (optional, for more detailed extraction)
-            
-        Returns:
-            Dictionary with extracted date and circular information
-        """
         import re
         from urllib.parse import urlparse
         
@@ -127,15 +118,7 @@ class SEBIAjaxScraper:
         return result
     
     def _extract_date_from_table_cell(self, td_element) -> str:
-        """
-        Extract date from table cell that might contain date information.
-        
-        Args:
-            td_element: BeautifulSoup TD element
-            
-        Returns:
-            Extracted date string or None
-        """
+       
         try:
             # Get all text from the cell
             cell_text = td_element.get_text(strip=True)
@@ -201,15 +184,7 @@ class SEBIAjaxScraper:
             print(f"⚠️  Warning: Could not save metadata JSON: {e}")
     
     def get_page_data(self, page_number: int = 1) -> Optional[str]:
-        """
-        Get data for a specific page using the AJAX endpoint.
         
-        Args:
-            page_number: The page number to fetch (1-based)
-            
-        Returns:
-            HTML content of the page or None if failed
-        """
         try:
             # Correct pagination mapping discovered through testing:
             # Page 1: next='n', nextValue='0'
@@ -413,15 +388,7 @@ class SEBIAjaxScraper:
             return []
     
     def extract_circular_details_from_page(self, url: str) -> Dict[str, str]:
-        """
-        Extract circular number and date from the page content, specifically from div with class 'm_section bottom_space2'.
         
-        Args:
-            url: The URL of the circular page
-            
-        Returns:
-            Dictionary with extracted circular details
-        """
         try:
             resp = self.session.get(url, timeout=30)
             resp.raise_for_status()
@@ -629,16 +596,7 @@ class SEBIAjaxScraper:
             return None
     
     def scrape_multiple_pages(self, max_pages: int = 10, start_page: int = 1) -> Dict[str, Any]:
-        """
-        Scrape multiple pages using the AJAX endpoint.
         
-        Args:
-            max_pages: Maximum number of pages to scrape
-            start_page: Starting page number (1-based)
-            
-        Returns:
-            Dictionary with scraping results
-        """
         print(f"🚀 Starting AJAX scraper for {max_pages} pages")
         print(f"📁 Download folder: {self.download_path.absolute()}")
         print(f"📡 AJAX endpoint: {self.ajax_url}")
@@ -804,15 +762,7 @@ class SEBIAjaxScraper:
         return results
     
     def scrape_single_page(self, page_number: int) -> Dict[str, Any]:
-        """
-        Scrape a single specific page by page number.
         
-        Args:
-            page_number: The specific page number to scrape (1-based)
-            
-        Returns:
-            Dictionary with scraping results for that page
-        """
         print(f"🎯 Scraping single page: {page_number}")
         print(f"📁 Download folder: {self.download_path.absolute()}")
         print(f"📡 AJAX endpoint: {self.ajax_url}")
