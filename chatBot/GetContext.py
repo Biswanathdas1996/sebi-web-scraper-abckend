@@ -28,7 +28,7 @@ def get_documents_by_date_range(time_range_input):
     """
     try:
         # Read the JSON file
-        file_path = os.path.join(os.path.dirname(__file__), 'output', 'sebi_document_analysis_results.json')
+        file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'output', 'sebi_document_analysis_results.json')
         
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -220,7 +220,7 @@ def get_recent_documents(count=10):
         dict: Most recent documents
     """
     try:
-        file_path = os.path.join(os.path.dirname(__file__), 'output', 'sebi_document_analysis_results.json')
+        file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'output', 'sebi_document_analysis_results.json')
         
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
