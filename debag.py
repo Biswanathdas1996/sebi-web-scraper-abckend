@@ -1,3 +1,11 @@
-from tool.classiflire.index import run_analysis
+from chatBot.index import chat_bot_response
+import asyncio
 
-analysis_result = run_analysis()
+
+async def main():
+    """Main test function"""
+    print("=== LLM Module Function Test ===")
+    await chat_bot_response("last 1 month")
+
+if __name__ == "__main__":
+    asyncio.run(main())
