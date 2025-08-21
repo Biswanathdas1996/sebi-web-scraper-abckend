@@ -7,7 +7,15 @@ from langsmith import traceable
 from workflow_types import WorkflowState, log_message, create_message
 
 # Import the document processing functionality
-from tool.fileReader.index import process_test_enhanced_metadata_pdfs
+from tool.fileReader.index import process_test_enhanced_metadata_pdfs, process_documents_for_workflow
+# Import docling processor for enhanced document processing
+try:
+    from tool.fileReader.docling_processor import process_test_enhanced_metadata_with_docling
+    DOCLING_AVAILABLE = True
+    print("✅ Docling processor available for workflow")
+except ImportError:
+    DOCLING_AVAILABLE = False
+    print("⚠️  Docling processor not available, using standard methods")
 
 
 @traceable(name="document_processing_agent")
@@ -30,21 +38,48 @@ def document_processing_agent(state: WorkflowState) -> WorkflowState:
         
         log_message(agent_name, f"Processing {scraping_result.get('total_downloaded_files')} PDF files")
         
-        # Execute document processing
-        processing_result = process_test_enhanced_metadata_pdfs()
+        # Execute enhanced document processing optimized for workflow
+        log_message(agent_name, "🚀 Starting enhanced document processing with docling integration")
+        processing_result = process_documents_for_workflow()
         
         # Update state with results
         state["processing_result"] = processing_result
         
         if processing_result and "pdf_processing" in processing_result:
             processed_count = processing_result["pdf_processing"].get("processed_files_count", 0)
-            state["messages"].append(
-                create_message(
-                    agent_name,
-                    f"Successfully processed {processed_count} PDF files",
-                    "success"
+            total_count = processing_result["pdf_processing"].get("total_pdf_files", 0)
+            processing_method = processing_result["pdf_processing"].get("processing_method", "standard")
+            
+            # Enhanced statistics for docling processing
+            if "processing_stats" in processing_result["pdf_processing"]:
+                stats = processing_result["pdf_processing"]["processing_stats"]
+                docling_successes = stats.get("docling_successes", 0)
+                fallback_used = stats.get("fallback_used", 0)
+                
+                if docling_successes > 0:
+                    state["messages"].append(
+                        create_message(
+                            agent_name,
+                            f"✅ Enhanced processing: {processed_count}/{total_count} files (🚀 {docling_successes} with docling, 🔄 {fallback_used} with fallback)",
+                            "success"
+                        )
+                    )
+                else:
+                    state["messages"].append(
+                        create_message(
+                            agent_name,
+                            f"✅ Standard processing: {processed_count}/{total_count} files using {processing_method}",
+                            "success"
+                        )
+                    )
+            else:
+                state["messages"].append(
+                    create_message(
+                        agent_name,
+                        f"Successfully processed {processed_count}/{total_count} PDF files using {processing_method}",
+                        "success"
+                    )
                 )
-            )
         else:
             state["messages"].append(
                 create_message(agent_name, "Document processing completed", "success")

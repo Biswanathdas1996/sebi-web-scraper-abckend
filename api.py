@@ -76,6 +76,8 @@ def root():
             "files": {
                 "scraping_metadata": "GET /api/scraping-metadata",
                 "analysis_results": "GET /api/analysis-results",
+                "sebi_circular_content": "GET /api/sebi-circular?sebi_circular_ref=<ref>",
+                "sebi_circular_qa": "POST /api/sebi-circular-qa",
                 "download_metadata": "GET /api/download-scraping-metadata",
                 "download_results": "GET /api/download-analysis-results"
             },
@@ -819,6 +821,277 @@ def chat_with_bot():
             "timestamp": datetime.now().isoformat()
         }), 500
 
+@app.route("/api/sebi-circular", methods=["GET"])
+def get_sebi_circular_content():
+    """
+    Get extracted content for a specific SEBI circular reference
+    
+    Query Parameters:
+    - sebi_circular_ref: The SEBI circular reference identifier (e.g., SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118)
+    """
+    try:
+        # Get sebi_circular_ref from query parameters
+        sebi_circular_ref = request.args.get('sebi_circular_ref')
+        
+        if not sebi_circular_ref:
+            return jsonify({
+                "error": "sebi_circular_ref query parameter is required",
+                "status": "missing_parameter",
+                "example": "/api/sebi-circular?sebi_circular_ref=SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118"
+            }), 400
+        # Read the scraping metadata file
+        metadata_file_path = os.path.join("output", "scraping_metadata.json")
+        
+        if not os.path.exists(metadata_file_path):
+            return jsonify({
+                "error": "Scraping metadata file not found",
+                "status": "file_not_found"
+            }), 404
+        
+        # Load the metadata
+        with open(metadata_file_path, 'r', encoding='utf-8') as file:
+            metadata = json.load(file)
+        
+        # Search for the circular reference in all page results and files
+        found_file = None
+        for page_result in metadata.get("page_results", []):
+            for file_info in page_result.get("files", []):
+                if file_info.get("sebi_circular_ref") == sebi_circular_ref:
+                    found_file = file_info
+                    break
+            if found_file:
+                break
+        
+        if not found_file:
+            return jsonify({
+                "error": f"SEBI circular with reference '{sebi_circular_ref}' not found",
+                "status": "not_found",
+                "available_references": [
+                    file_info.get("sebi_circular_ref") 
+                    for page_result in metadata.get("page_results", [])
+                    for file_info in page_result.get("files", [])
+                    if file_info.get("sebi_circular_ref")
+                ]
+            }), 404
+        
+        # Extract the content
+        extracted_content = found_file.get("extracted_content")
+        
+        if not extracted_content:
+            return jsonify({
+                "error": f"No extracted content found for SEBI circular '{sebi_circular_ref}'",
+                "status": "no_content"
+            }), 404
+        
+        # Return the extracted content with metadata
+        response_data = {
+            "status": "success",
+            "sebi_circular_ref": sebi_circular_ref,
+            "circular_date": found_file.get("circular_date"),
+            "circular_number": found_file.get("circular_number"),
+            "document_title": found_file.get("text", ""),
+            "source_url": found_file.get("source_url"),
+            "file_info": {
+                "filename": found_file.get("original_filename"),
+                "file_size": found_file.get("file_size"),
+                "file_path": found_file.get("file_path")
+            },
+            "extracted_content": extracted_content,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        return jsonify(response_data)
+        
+    except json.JSONDecodeError:
+        return jsonify({
+            "error": "Error reading scraping metadata file - invalid JSON format",
+            "status": "json_error"
+        }), 500
+    except Exception as e:
+        return jsonify({
+            "error": f"Error retrieving SEBI circular content: {str(e)}",
+            "status": "server_error"
+        }), 500
+
+@app.route("/api/sebi-circular-qa", methods=["POST"])
+def sebi_circular_qa():
+    """
+    Q&A on a single SEBI circular using extracted content and LLM
+    
+    Expected JSON payload:
+    {
+        "sebi_circular_ref": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",  # required
+        "query": "What are the key compliance requirements?"  # required
+    }
+    """
+    try:
+        # Get request data
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({"error": "Request body must be JSON"}), 400
+        
+        sebi_circular_ref = data.get("sebi_circular_ref")
+        query = data.get("query")
+        
+        if not sebi_circular_ref:
+            return jsonify({
+                "error": "sebi_circular_ref parameter is required",
+                "status": "missing_parameter"
+            }), 400
+        
+        if not query:
+            return jsonify({
+                "error": "query parameter is required", 
+                "status": "missing_parameter"
+            }), 400
+        
+        # Read the scraping metadata file
+        metadata_file_path = os.path.join("output", "scraping_metadata.json")
+        
+        if not os.path.exists(metadata_file_path):
+            return jsonify({
+                "error": "Scraping metadata file not found",
+                "status": "file_not_found"
+            }), 404
+        
+        # Load the metadata
+        with open(metadata_file_path, 'r', encoding='utf-8') as file:
+            metadata = json.load(file)
+        
+        # Search for the circular reference in all page results and files
+        found_file = None
+        for page_result in metadata.get("page_results", []):
+            for file_info in page_result.get("files", []):
+                if file_info.get("sebi_circular_ref") == sebi_circular_ref:
+                    found_file = file_info
+                    break
+            if found_file:
+                break
+        
+        if not found_file:
+            return jsonify({
+                "error": f"SEBI circular with reference '{sebi_circular_ref}' not found",
+                "status": "not_found",
+                "available_references": [
+                    file_info.get("sebi_circular_ref") 
+                    for page_result in metadata.get("page_results", [])
+                    for file_info in page_result.get("files", [])
+                    if file_info.get("sebi_circular_ref")
+                ]
+            }), 404
+        
+        # Extract the content
+        extracted_content = found_file.get("extracted_content")
+        
+        if not extracted_content:
+            return jsonify({
+                "error": f"No extracted content found for SEBI circular '{sebi_circular_ref}'",
+                "status": "no_content"
+            }), 404
+        
+        # Create context for LLM
+        context = {
+            "sebi_circular_ref": sebi_circular_ref,
+            "circular_date": found_file.get("circular_date"),
+            "circular_number": found_file.get("circular_number"),
+            "document_title": found_file.get("text", ""),
+            "source_url": found_file.get("source_url"),
+            "extracted_content": extracted_content
+        }
+        
+        # Create prompt for LLM
+        def create_sebi_circular_qa_prompt(context_data, user_query):
+            context_json = json.dumps(context_data, indent=2)
+            
+            prompt = f"""You are a SEBI regulatory compliance expert. Answer the user's question based on the provided SEBI circular content.
+
+SEBI CIRCULAR CONTEXT:
+{context_json}
+
+USER QUESTION: {user_query}
+
+INSTRUCTIONS:
+- Provide a comprehensive and accurate answer based ONLY on the content provided
+- If the specific information is not available in the document, clearly state "Information not available in this circular"
+- Include relevant quotes or references from the document when applicable
+- Structure your response clearly with headings and bullet points where appropriate
+- If the query asks about compliance requirements, timelines, or specific procedures, be precise and detailed
+- Include any relevant dates, deadlines, or effective dates mentioned in the circular
+
+RESPONSE FORMAT:
+## Answer
+
+[Your precise answer here]
+
+## Key Points
+- [Important points from the circular]
+- [Relevant compliance requirements]
+- [Timeline or deadlines if applicable]
+
+## Document References
+- SEBI Circular Reference: {context_data.get('sebi_circular_ref', 'N/A')}
+- Circular Date: {context_data.get('circular_date', 'N/A')}
+- Document Title: {context_data.get('document_title', 'N/A')}
+
+Note: This response is based solely on the content of the specified SEBI circular. For complete regulatory guidance, please refer to the full circular and consult with compliance experts.
+"""
+            return prompt
+        
+        # Run the LLM analysis in async context
+        async def get_qa_response():
+            prompt = create_sebi_circular_qa_prompt(context, query)
+            
+            # Import the LLM function
+            from tool.LLM.index import call_pwc_genai
+            
+            llm_response = await call_pwc_genai(
+                model="vertex_ai.gemini-2.0-flash", 
+                prompt=prompt
+            )
+            
+            # Extract the result
+            result = llm_response.get('choices', [{}])[0].get('text', '')
+            
+            return result
+        
+        # Execute async function
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            llm_answer = loop.run_until_complete(get_qa_response())
+            
+            response_data = {
+                "status": "success",
+                "sebi_circular_ref": sebi_circular_ref,
+                "query": query,
+                "answer": llm_answer,
+                "document_metadata": {
+                    "circular_date": found_file.get("circular_date"),
+                    "circular_number": found_file.get("circular_number"),
+                    "document_title": found_file.get("text", ""),
+                    "source_url": found_file.get("source_url"),
+                    "filename": found_file.get("original_filename")
+                },
+                "timestamp": datetime.now().isoformat()
+            }
+            
+            return jsonify(response_data)
+            
+        finally:
+            loop.close()
+        
+    except json.JSONDecodeError:
+        return jsonify({
+            "error": "Error reading scraping metadata file - invalid JSON format",
+            "status": "json_error"
+        }), 500
+    except Exception as e:
+        return jsonify({
+            "error": f"Error processing SEBI circular Q&A: {str(e)}",
+            "status": "server_error"
+        }), 500
+
 @app.route("/api/docs", methods=["GET"])
 def get_api_documentation():
     """
@@ -870,6 +1143,23 @@ def get_api_documentation():
                 "description": "Get the SEBI document analysis results JSON file",
                 "parameters": {},
                 "response": "Analysis results content"
+            },
+            "GET /api/sebi-circular": {
+                "description": "Get extracted content for a specific SEBI circular by reference ID",
+                "parameters": {
+                    "sebi_circular_ref": "String (required, query parameter) - SEBI circular reference ID (e.g., SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118)"
+                },
+                "response": "Extracted content including text, markdown, structure, tables, and metadata",
+                "example": "GET /api/sebi-circular?sebi_circular_ref=SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118"
+            },
+            "POST /api/sebi-circular-qa": {
+                "description": "Q&A on a single SEBI circular using extracted content and LLM analysis",
+                "parameters": {
+                    "sebi_circular_ref": "String (required, JSON body) - SEBI circular reference ID",
+                    "query": "String (required, JSON body) - Question about the circular content"
+                },
+                "response": "AI-powered answer based on the circular's extracted content with document metadata",
+                "example": "POST /api/sebi-circular-qa with JSON: {\"sebi_circular_ref\": \"SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118\", \"query\": \"What are the key compliance requirements?\"}"
             },
             "GET /api/download-scraping-metadata": {
                 "description": "Download the scraping metadata JSON file",
@@ -950,6 +1240,8 @@ def get_api_documentation():
             "get_table_schema": "GET /api/database/schema",
             "get_specific_table": "GET /api/database/table/sebi_documents?limit=50&offset=0",
             "get_summary": "GET /api/database/summary",
+            "get_sebi_circular": "GET /api/sebi-circular?sebi_circular_ref=SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118",
+            "sebi_circular_qa": "POST /api/sebi-circular-qa with JSON body: {\"sebi_circular_ref\": \"SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/118\", \"query\": \"What are the key compliance requirements?\"}",
             "trigger_workflow": "POST /api/trigger-workflow with JSON body",
             "check_status": "GET /api/workflow-status/{task_id}",
             "chat_with_bot": "POST /api/chatbot/chat with JSON body: {\"query\": \"For stock broker released for last 1 month\"}"
@@ -979,4 +1271,7 @@ if __name__ == "__main__":
     print("📊 Database summary: http://localhost:8000/api/database/summary")
     print("📋 All tables data: http://localhost:8000/api/database/tables")
     print("🏗️ Database schema: http://localhost:8000/api/database/schema")
+    print("📄 SEBI circular content: http://localhost:8000/api/sebi-circular?sebi_circular_ref=<ref>")
+    print("🤖 SEBI circular Q&A: POST http://localhost:8000/api/sebi-circular-qa")
+    print("📁 Scraping metadata: http://localhost:8000/api/scraping-metadata")
     app.run(host="0.0.0.0", port=8000, debug=True)

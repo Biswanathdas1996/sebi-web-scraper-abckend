@@ -10,6 +10,15 @@ import re
 # LangSmith tracing
 from langsmith import traceable
 
+# Try to import docling for enhanced processing
+try:
+    from .docling_processor import EnhancedPDFProcessor, process_pdfs_with_docling
+    DOCLING_AVAILABLE = True
+    print("✅ Docling integration available - enhanced document processing enabled")
+except ImportError:
+    DOCLING_AVAILABLE = False
+    print("⚠️  Docling not available, using standard PDF processing")
+
 
 def extract_text_from_pdf_pypdf2(pdf_path: str) -> str:
     """
@@ -79,17 +88,37 @@ def extract_text_from_pdf_pdfplumber(pdf_path: str) -> Dict[str, Any]:
         return {"text": "", "tables": [], "metadata": {}}
 
 
-def extract_pdf_data(pdf_path: str, use_advanced_extraction: bool = True) -> Dict[str, Any]:
+def extract_pdf_data(pdf_path: str, use_advanced_extraction: bool = True, use_docling: bool = None) -> Dict[str, Any]:
     """
     Extract comprehensive data from a PDF file.
     
     Args:
         pdf_path: Path to the PDF file
         use_advanced_extraction: If True, use pdfplumber for better extraction
+        use_docling: If True and available, use docling for extraction; 
+                    if None, auto-detect based on availability (defaults to True if available)
     
     Returns:
         Dictionary with extracted text, tables, and metadata
     """
+    # Auto-detect docling usage if not specified - prefer docling when available
+    if use_docling is None:
+        use_docling = DOCLING_AVAILABLE
+    
+    # Use docling if available and requested
+    if use_docling and DOCLING_AVAILABLE:
+        try:
+            processor = EnhancedPDFProcessor(use_docling=True)
+            result = processor.process_pdf(pdf_path)
+            if "error" not in result:
+                print(f"✅ Processed {Path(pdf_path).name} with docling enhanced extraction")
+                return result
+            else:
+                print(f"⚠️  Docling failed for {Path(pdf_path).name}, falling back to standard methods")
+        except Exception as e:
+            print(f"⚠️  Docling processing error: {e}, falling back to standard methods")
+    
+    # Fallback to existing methods
     pdf_path = Path(pdf_path)
     
     if not pdf_path.exists():
@@ -129,17 +158,33 @@ def extract_pdf_data(pdf_path: str, use_advanced_extraction: bool = True) -> Dic
     return extracted_data
 
 
-def process_pdfs_from_folder(folder_path: str, metadata_json_path: str) -> Dict[str, Any]:
+def process_pdfs_from_folder(folder_path: str, metadata_json_path: str, use_docling: bool = None) -> Dict[str, Any]:
     """
     Process all PDFs from a folder and update the metadata JSON file with extracted data.
     
     Args:
         folder_path: Path to the folder containing PDFs
         metadata_json_path: Path to the scraping_metadata.json file
+        use_docling: If True and available, use docling for processing;
+                    if None, auto-detect based on availability (defaults to True if available)
     
     Returns:
         Updated metadata with extracted PDF content
     """
+    # Use docling if available and not explicitly disabled - prefer docling when available
+    if use_docling is None:
+        use_docling = DOCLING_AVAILABLE
+    
+    # If docling is requested and available, use the enhanced processor
+    if use_docling and DOCLING_AVAILABLE:
+        try:
+            print("🚀 Using docling enhanced processor for superior document understanding...")
+            return process_pdfs_with_docling(folder_path, metadata_json_path, use_docling=True)
+        except Exception as e:
+            print(f"⚠️  Docling processing failed: {e}")
+            print("🔄 Falling back to standard PDF processing...")
+    
+    # Fallback to original processing logic
     folder_path = Path(folder_path)
     metadata_path = Path(metadata_json_path)
     
@@ -162,12 +207,13 @@ def process_pdfs_from_folder(folder_path: str, metadata_json_path: str) -> Dict[
     
     print(f"📁 Processing {len(pdf_files)} PDF files from {folder_path}")
     print(f"📄 Metadata file: {metadata_path}")
+    print(f"🔧 Using {'enhanced docling' if use_docling else 'standard'} processing")
     
     for pdf_file in pdf_files:
         print(f"\n🔄 Processing: {pdf_file.name}")
         
         # Extract PDF data
-        extracted_data = extract_pdf_data(str(pdf_file), use_advanced_extraction=True)
+        extracted_data = extract_pdf_data(str(pdf_file), use_advanced_extraction=True, use_docling=use_docling)
         
         if "error" in extracted_data:
             print(f"❌ Failed to process {pdf_file.name}: {extracted_data['error']}")
@@ -225,7 +271,7 @@ def process_pdfs_from_folder(folder_path: str, metadata_json_path: str) -> Dict[
         "processing_timestamp": datetime.now().isoformat(),
         "processed_files_count": processed_count,
         "total_pdf_files": len(pdf_files),
-        "processing_method": "pdfplumber + PyPDF2 fallback"
+        "processing_method": f"{'enhanced_docling' if use_docling else 'standard'} + pdfplumber + PyPDF2 fallback"
     }
     
     # Save updated metadata
@@ -258,19 +304,36 @@ def extract_text_summary(text: str, max_length: int = 500) -> str:
 
 
 @traceable(name="process_test_enhanced_metadata_pdfs", metadata={"tool": "pdf_text_extractor"})
-def process_test_enhanced_metadata_pdfs():
+def process_test_enhanced_metadata_pdfs(use_docling: bool = None):
     """
     Main function to process PDFs from test_enhanced_metadata folder
     and update scraping_metadata.json file.
+    
+    Args:
+        use_docling: Whether to use docling for processing. If None, auto-detect and prefer docling.
     """
-    # Get current working directory and construct paths using pathlib for cross-platform compatibility
+    # Handle different working directories
     current_dir = Path.cwd()
-    test_folder = current_dir / "test_enhanced_metadata"
-    metadata_file = current_dir / "output/scraping_metadata.json"
+    if current_dir.name == "fileReader":
+        # If we're in the fileReader directory, go up two levels
+        base_dir = current_dir.parent.parent
+    else:
+        # If we're in the main directory
+        base_dir = current_dir
+    
+    test_folder = base_dir / "test_enhanced_metadata"
+    metadata_file = base_dir / "output/scraping_metadata.json"
+    
+    # Auto-detect docling usage if not specified - prefer docling when available
+    if use_docling is None:
+        use_docling = DOCLING_AVAILABLE
+        if use_docling:
+            print("🚀 Auto-detected docling availability - using enhanced document processing")
     
     print("🚀 Starting PDF processing for SEBI documents...")
     print(f"📁 PDF folder: {test_folder}")
     print(f"📄 Metadata file: {metadata_file}")
+    print(f"🔧 Processing method: {'🚀 Enhanced with docling' if use_docling else '🔄 Standard fallback'}")
     
     # Validate paths
     if not test_folder.exists():
@@ -281,15 +344,47 @@ def process_test_enhanced_metadata_pdfs():
         print(f"❌ Error: Metadata file not found at {metadata_file}")
         return None
     
-    # Process PDFs
-    result = process_pdfs_from_folder(str(test_folder), str(metadata_file))
+    # Process PDFs with preference for docling
+    result = process_pdfs_from_folder(str(test_folder), str(metadata_file), use_docling=use_docling)
     
     if "error" in result:
         print(f"❌ Processing failed: {result['error']}")
         return None
     
     print(f"\n🎉 PDF processing completed successfully!")
-    print(f"📊 Processed {result['pdf_processing']['processed_files_count']} out of {result['pdf_processing']['total_pdf_files']} PDF files")
+    
+    # Display appropriate statistics based on processing method
+    if "processing_stats" in result.get("pdf_processing", {}):
+        stats = result["pdf_processing"]["processing_stats"]
+        print(f"📊 Enhanced Processing Statistics:")
+        print(f"   📂 Total files: {stats.get('total_files', 0)}")
+        print(f"   ✅ Successfully processed: {stats.get('processed_successfully', 0)}")
+        if use_docling:
+            print(f"   🚀 Docling successes: {stats.get('docling_successes', 0)}")
+            print(f"   🔄 Fallback used: {stats.get('fallback_used', 0)}")
+        print(f"   ❌ Failed: {stats.get('failed_processing', 0)}")
+    else:
+        print(f"📊 Processed {result['pdf_processing']['processed_files_count']} out of {result['pdf_processing']['total_pdf_files']} PDF files")
+    
+    return result
+
+
+@traceable(name="process_documents_for_workflow", metadata={"tool": "enhanced_pdf_processor_workflow"})
+def process_documents_for_workflow():
+    """
+    Specialized function for workflow integration - always tries docling first for best results.
+    This function is optimized for the LangGraph workflow and provides enhanced document processing.
+    """
+    print("🚀 Enhanced Document Processing for Workflow")
+    print("=" * 50)
+    
+    # Force docling usage for workflow to get best possible document understanding
+    if DOCLING_AVAILABLE:
+        print("✅ Docling available - using enhanced document processing")
+        result = process_test_enhanced_metadata_pdfs(use_docling=True)
+    else:
+        print("⚠️  Docling not available - using standard processing with advanced features")
+        result = process_test_enhanced_metadata_pdfs(use_docling=False)
     
     return result
 
@@ -495,29 +590,69 @@ def validate_pdf_paths(metadata_json_path: str) -> Dict[str, Any]:
     return validation_results
 
 
-# Convenience function for quick testing
-def test_single_pdf(pdf_filename: str):
+# Convenience function for quick testing with docling option
+def test_single_pdf(pdf_filename: str, use_docling: bool = None):
     """
     Test extraction on a single PDF file from the test_enhanced_metadata folder.
+    
+    Args:
+        pdf_filename: Name of the PDF file to test
+        use_docling: Whether to use docling for extraction
     """
+    # Handle different working directories
     current_dir = Path.cwd()
-    pdf_path = current_dir / "test_enhanced_metadata" / pdf_filename
+    if current_dir.name == "fileReader":
+        # If we're in the fileReader directory, go up two levels
+        base_dir = current_dir.parent.parent
+    else:
+        # If we're in the main directory
+        base_dir = current_dir
+    
+    pdf_path = base_dir / "test_enhanced_metadata" / pdf_filename
+    
+    print(f"🔍 Looking for PDF at: {pdf_path}")
     
     if not pdf_path.exists():
         print(f"❌ PDF file not found: {pdf_path}")
         return None
     
+    # Auto-detect docling usage if not specified
+    if use_docling is None:
+        use_docling = DOCLING_AVAILABLE
+    
     print(f"🔍 Testing extraction on: {pdf_filename}")
-    result = extract_pdf_data(str(pdf_path))
+    print(f"🔧 Using {'docling' if use_docling else 'standard'} processing")
+    
+    result = extract_pdf_data(str(pdf_path), use_docling=use_docling)
     
     if "error" in result:
         print(f"❌ Extraction failed: {result['error']}")
         return None
     
     print(f"✅ Extraction successful!")
-    print(f"📄 Text length: {len(result['text'])} characters")
-    print(f"📋 Tables found: {len(result['tables'])}")
-    print(f"📑 Metadata fields: {len(result['metadata'])}")
+    
+    # Display results based on extraction method
+    if result.get("extraction_method") == "docling":
+        stats = result.get('processing_stats', {})
+        print(f"📄 Text length: {stats.get('characters_extracted', 0)} characters")
+        print(f"📋 Tables found: {stats.get('tables_found', 0)}")
+        print(f"📑 Pages processed: {stats.get('pages_processed', 0)}")
+        print(f"🏗️  Sections found: {stats.get('sections_found', 0)}")
+        
+        # Show markdown preview if available
+        if result.get('markdown'):
+            print(f"\n� Markdown preview:\n{result['markdown'][:200]}...")
+        
+        # Show structure preview
+        structure = result.get('structure', {})
+        if structure.get('headings'):
+            print(f"\n🏗️  Document structure preview:")
+            for heading in structure['headings'][:3]:  # Show first 3 headings
+                print(f"   Level {heading.get('level', 0)}: {heading.get('text', '')}")
+    else:
+        print(f"�📄 Text length: {len(result['text'])} characters")
+        print(f"📋 Tables found: {len(result['tables'])}")
+        print(f"📑 Metadata fields: {len(result['metadata'])}")
     
     # Show first 200 characters of text
     if result['text']:
@@ -558,6 +693,56 @@ if __name__ == "__main__":
         else:
             print("🔍 Path validation completed!")
     
+    elif len(sys.argv) > 1 and sys.argv[1] == "--use-docling":
+        print("🚀 Running PDF processing with docling...")
+        if DOCLING_AVAILABLE:
+            # Run the main processing function with docling
+            process_test_enhanced_metadata_pdfs()
+        else:
+            print("❌ Docling is not available. Please install docling first.")
+            print("   Run: pip install docling docling-core docling-ibm-models")
+    
+    elif len(sys.argv) > 1 and sys.argv[1] == "--no-docling":
+        print("🔄 Running PDF processing without docling...")
+        # Handle different working directories
+        current_dir = Path.cwd()
+        if current_dir.name == "fileReader":
+            # If we're in the fileReader directory, go up two levels
+            base_dir = current_dir.parent.parent
+        else:
+            # If we're in the main directory
+            base_dir = current_dir
+        
+        test_folder = base_dir / "test_enhanced_metadata"
+        metadata_file = base_dir / "output/scraping_metadata.json"
+        result = process_pdfs_from_folder(str(test_folder), str(metadata_file), use_docling=False)
+        
+        if "error" in result:
+            print(f"❌ Processing failed: {result['error']}")
+        else:
+            print("🎉 PDF processing completed successfully!")
+    
+    elif len(sys.argv) > 1 and sys.argv[1] == "--test-single" and len(sys.argv) > 2:
+        pdf_filename = sys.argv[2]
+        use_docling = "--docling" in sys.argv
+        test_single_pdf(pdf_filename, use_docling=use_docling)
+    
     else:
-        # Run the main processing function
+        # Show usage information
+        print("📚 PDF Processing with Docling Integration")
+        print("=" * 50)
+        print("Usage options:")
+        print("  python index.py                         # Auto-detect and use best available method")
+        print("  python index.py --use-docling           # Force use docling (enhanced processing)")
+        print("  python index.py --no-docling            # Force use standard methods")
+        print("  python index.py --test-single <file>    # Test single PDF with standard methods")
+        print("  python index.py --test-single <file> --docling  # Test single PDF with docling")
+        print("  python index.py --refactor-paths        # Fix path mappings in metadata")
+        print("  python index.py --validate-paths        # Validate PDF file paths")
+        print()
+        print(f"Docling status: {'✅ Available' if DOCLING_AVAILABLE else '❌ Not available'}")
+        print()
+        
+        # Run the main processing function with auto-detection
+        print("🚀 Starting PDF processing with auto-detection...")
         process_test_enhanced_metadata_pdfs()
