@@ -5,27 +5,7 @@ from dateutil import parser
 import os
 
 def get_documents_by_date_range(time_range_input):
-    """
-    Filter documents based on circular dates within a specified time range.
     
-    Args:
-        time_range_input (str): Input like "last 1 month", "last 2 months", etc.
-    
-    Returns:
-        dict: Dictionary containing metadata and filtered documents
-        {
-            "metadata": {
-                "total_filtered_documents": int,
-                "filter_criteria": str,
-                "date_range": {
-                    "from": str,
-                    "to": str
-                },
-                "original_total_documents": int
-            },
-            "documents": [list of document objects]
-        }
-    """
     try:
         # Read the JSON file
         file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'output', 'sebi_document_analysis_results.json')
@@ -118,15 +98,7 @@ def parse_time_range(time_range_input):
         return None
 
 def parse_circular_date(date_str):
-    """
-    Parse circular date string in various formats.
     
-    Args:
-        date_str (str): Date string like "Aug 18, 2025" or "Jul 31, 2025"
-    
-    Returns:
-        datetime.datetime: Parsed date or None if parsing fails
-    """
     try:
         # Handle common formats found in the data
         if date_str:
@@ -136,15 +108,7 @@ def parse_circular_date(date_str):
         return None
 
 def get_document_summary(time_range_input):
-    """
-    Get a summary of documents in the specified time range.
     
-    Args:
-        time_range_input (str): Input like "last 1 month", "last 2 months", etc.
-    
-    Returns:
-        dict: Summary information
-    """
     result = get_documents_by_date_range(time_range_input)
     
     if "error" in result:
@@ -180,16 +144,7 @@ def get_document_summary(time_range_input):
     }
 
 def get_documents_by_department(time_range_input, department_name):
-    """
-    Get documents from a specific department within the time range.
     
-    Args:
-        time_range_input (str): Input like "last 1 month", "last 2 months", etc.
-        department_name (str): Name of the department to filter by
-    
-    Returns:
-        dict: Filtered documents from the specified department
-    """
     result = get_documents_by_date_range(time_range_input)
     
     if "error" in result:
@@ -210,15 +165,7 @@ def get_documents_by_department(time_range_input, department_name):
     }
 
 def get_recent_documents(count=10):
-    """
-    Get the most recent documents regardless of time range.
     
-    Args:
-        count (int): Number of recent documents to return
-    
-    Returns:
-        dict: Most recent documents
-    """
     try:
         file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'output', 'sebi_document_analysis_results.json')
         

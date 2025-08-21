@@ -17,24 +17,24 @@ QUERY: {user_prompt}
 
 RESPONSE FORMAT:
 
-## 🎯 EXECUTIVE SUMMARY
+##  EXECUTIVE SUMMARY
 Brief overview of key regulatory changes and business impact.
 
-## 🏢 DEPARTMENTAL IMPACT
+##  DEPARTMENTAL IMPACT
 For each affected department (Compliance, Risk, Trading, Finance, Customer Service):
 **Changes:** Key regulatory updates
 **Actions:** Specific tasks with timelines
 
-## ⏰ ACTION TIMELINE
+##  ACTION TIMELINE
 **Immediate (0-30 days):** Critical compliance items
 **Short-term (1-3 months):** Implementation tasks  
 **Long-term (3+ months):** Strategic initiatives
 
-## � REGULATORY REFERENCES
+##  REGULATORY REFERENCES
 List relevant SEBI circulars with:
 - Title, Number, Date, URL, Key Impact
 
-## 🚨 PRIORITY LEVELS
+##  PRIORITY LEVELS
 🔴 HIGH: Mandatory/deadline-driven
 🟡 MEDIUM: Important improvements
 🟢 LOW: Monitoring required
@@ -44,12 +44,26 @@ GUIDELINES:
 - State "Not specified" if data unavailable
 - Include complete SEBI URLs
 - Focus on actionable insights
-- Prioritize by compliance deadlines"""
+- Prioritize by compliance deadlines
+
+**CRITICAL: ALL relivenet (as per QUERY) regulatory references from the JSON context MUST be included. This is highly sensitive compliance data.**
+
+**MANDATORY VERIFICATION CHECKLIST:**
+✅ All relivenet (as per QUERY) documents from JSON context are listed
+✅ No relivenet (as per QUERY) circular numbers are omitted
+✅ All relivenet (as per QUERY) URLs are complete and accurate
+✅ Every relivenet (as per QUERY) regulatory change is captured
+✅ Cross-referenced with user query requirements
+
+**Note:** If any regulatory reference exists in the context but is not explicitly mentioned in the user query, it MUST still be included if it's relevant to compliance requirements.
+
+
+"""
     
     return prompt_template
 
 
-async def chat_bot_response(prompt, time_range="last 1 month"):
+async def chat_bot_response(prompt):
         
     try:
         # Get relevant documents based on time range
@@ -80,7 +94,6 @@ async def chat_bot_response(prompt, time_range="last 1 month"):
             "response": result,
             "metadata": {
                 "total_documents_analyzed": get_context.get("metadata", {}).get("total_filtered_documents", 0),
-                "time_range": time_range,
                 "date_range": get_context.get("metadata", {}).get("date_range", {}),
                 "status": "success"
             }

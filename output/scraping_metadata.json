@@ -1,5 +1,5 @@
 {
-  "scrape_timestamp": "2025-08-18T16:44:20.406486",
+  "scrape_timestamp": "2025-08-20T20:32:52.786566",
   "scraper_version": "ajax_v2.0",
   "base_url": "https://www.sebi.gov.in",
   "ajax_endpoint": "https://www.sebi.gov.in/sebiweb/ajax/home/getnewslistinfo.jsp",
@@ -395,8 +395,8 @@
               "filename": "page_1_1_1_Extension_of_timelin.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_1_1_Extension_of_timelin.pdf",
               "file_size": 392812,
-              "last_modified": "2025-08-18T16:43:34.735032",
-              "extraction_timestamp": "2025-08-18T16:44:28.254206"
+              "last_modified": "2025-08-20T20:32:13.092072",
+              "extraction_timestamp": "2025-08-20T20:33:00.882065"
             },
             "extraction_method": "pdfplumber"
           }
@@ -466,8 +466,8 @@
               "filename": "page_1_2_1_Use_of_liquid_mutual.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_2_1_Use_of_liquid_mutual.pdf",
               "file_size": 504409,
-              "last_modified": "2025-08-18T16:43:36.835448",
-              "extraction_timestamp": "2025-08-18T16:44:34.254538"
+              "last_modified": "2025-08-20T20:32:14.624693",
+              "extraction_timestamp": "2025-08-20T20:33:07.088133"
             },
             "extraction_method": "pdfplumber"
           }
@@ -509,8 +509,8 @@
               "filename": "page_1_3_1_Transaction_charges_.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_3_1_Transaction_charges_.pdf",
               "file_size": 54375,
-              "last_modified": "2025-08-18T16:43:38.136858",
-              "extraction_timestamp": "2025-08-18T16:44:34.469859"
+              "last_modified": "2025-08-20T20:32:15.886201",
+              "extraction_timestamp": "2025-08-20T20:33:07.305313"
             },
             "extraction_method": "pdfplumber"
           }
@@ -552,8 +552,8 @@
               "filename": "page_1_4_1_Review_of_Framework_.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_4_1_Review_of_Framework_.pdf",
               "file_size": 651380,
-              "last_modified": "2025-08-18T16:43:40.786904",
-              "extraction_timestamp": "2025-08-18T16:44:34.620186"
+              "last_modified": "2025-08-20T20:32:17.524316",
+              "extraction_timestamp": "2025-08-20T20:33:07.448672"
             },
             "extraction_method": "pdfplumber"
           }
@@ -626,8 +626,8 @@
               "filename": "page_1_5_1_Ease_of_doing_busine.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_5_1_Ease_of_doing_busine.pdf",
               "file_size": 404683,
-              "last_modified": "2025-08-18T16:43:42.735737",
-              "extraction_timestamp": "2025-08-18T16:44:34.883218"
+              "last_modified": "2025-08-20T20:32:19.049508",
+              "extraction_timestamp": "2025-08-20T20:33:07.722256"
             },
             "extraction_method": "pdfplumber"
           }
@@ -669,8 +669,8 @@
               "filename": "page_1_6_1_Review__Appeal_or_Wa.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_6_1_Review__Appeal_or_Wa.pdf",
               "file_size": 198090,
-              "last_modified": "2025-08-18T16:43:44.334965",
-              "extraction_timestamp": "2025-08-18T16:44:35.386305"
+              "last_modified": "2025-08-20T20:32:20.369436",
+              "extraction_timestamp": "2025-08-20T20:33:08.219004"
             },
             "extraction_method": "pdfplumber"
           }
@@ -792,8 +792,8 @@
               "filename": "page_1_7_1_Rights_of_Persons_wi.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_7_1_Rights_of_Persons_wi.pdf",
               "file_size": 994904,
-              "last_modified": "2025-08-18T16:43:47.035385",
-              "extraction_timestamp": "2025-08-18T16:44:35.635622"
+              "last_modified": "2025-08-20T20:32:22.204855",
+              "extraction_timestamp": "2025-08-20T20:33:08.488364"
             },
             "extraction_method": "pdfplumber"
           }
@@ -860,8 +860,8 @@
               "filename": "page_1_8_1_Extension_of_timelin.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_8_1_Extension_of_timelin.pdf",
               "file_size": 687956,
-              "last_modified": "2025-08-18T16:43:49.186947",
-              "extraction_timestamp": "2025-08-18T16:44:37.136995"
+              "last_modified": "2025-08-20T20:32:23.891091",
+              "extraction_timestamp": "2025-08-20T20:33:10.018178"
             },
             "extraction_method": "pdfplumber"
           }
@@ -937,8 +937,8 @@
               "filename": "page_1_9_1_Operational_Efficien.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_9_1_Operational_Efficien.pdf",
               "file_size": 60084,
-              "last_modified": "2025-08-18T16:43:50.440382",
-              "extraction_timestamp": "2025-08-18T16:44:37.369388"
+              "last_modified": "2025-08-20T20:32:25.138294",
+              "extraction_timestamp": "2025-08-20T20:33:10.357722"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1011,8 +1011,8 @@
               "filename": "page_1_10_1_Extension_of_timelin.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_10_1_Extension_of_timelin.pdf",
               "file_size": 297145,
-              "last_modified": "2025-08-18T16:43:52.085758",
-              "extraction_timestamp": "2025-08-18T16:44:20.437719"
+              "last_modified": "2025-08-20T20:32:26.577987",
+              "extraction_timestamp": "2025-08-20T20:32:52.824066"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1054,8 +1054,8 @@
               "filename": "page_1_11_1_Monitoring_of_Minimu.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_11_1_Monitoring_of_Minimu.pdf",
               "file_size": 198512,
-              "last_modified": "2025-08-18T16:43:53.544070",
-              "extraction_timestamp": "2025-08-18T16:44:20.619479"
+              "last_modified": "2025-08-20T20:32:27.954514",
+              "extraction_timestamp": "2025-08-20T20:32:53.064402"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1218,8 +1218,8 @@
               "filename": "page_1_12_1_Frequently_Asked_Que.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_12_1_Frequently_Asked_Que.pdf",
               "file_size": 680648,
-              "last_modified": "2025-08-18T16:43:55.736070",
-              "extraction_timestamp": "2025-08-18T16:44:20.968111"
+              "last_modified": "2025-08-20T20:32:29.622576",
+              "extraction_timestamp": "2025-08-20T20:32:53.477223"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1315,8 +1315,8 @@
               "filename": "page_1_13_1_Ease_of_Doing_Invest.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_13_1_Ease_of_Doing_Invest.pdf",
               "file_size": 96963,
-              "last_modified": "2025-08-18T16:43:57.035304",
-              "extraction_timestamp": "2025-08-18T16:44:22.803419"
+              "last_modified": "2025-08-20T20:32:30.893952",
+              "extraction_timestamp": "2025-08-20T20:32:55.676298"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1358,8 +1358,8 @@
               "filename": "page_1_14_1_Extension_towards_Ad.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_14_1_Extension_towards_Ad.pdf",
               "file_size": 388099,
-              "last_modified": "2025-08-18T16:43:58.836447",
-              "extraction_timestamp": "2025-08-18T16:44:23.187223"
+              "last_modified": "2025-08-20T20:32:32.405139",
+              "extraction_timestamp": "2025-08-20T20:32:56.056075"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1401,8 +1401,8 @@
               "filename": "page_1_15_1_Industry_Standards_o.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_15_1_Industry_Standards_o.pdf",
               "file_size": 677638,
-              "last_modified": "2025-08-18T16:44:01.036177",
-              "extraction_timestamp": "2025-08-18T16:44:23.388879"
+              "last_modified": "2025-08-20T20:32:34.064726",
+              "extraction_timestamp": "2025-08-20T20:32:56.242776"
             },
             "extraction_method": "pdfplumber"
           }
@@ -1444,8 +1444,8 @@
               "filename": "page_1_16_1_Timelines_for_rebala.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_16_1_Timelines_for_rebala.pdf",
               "file_size": 225832,
-              "last_modified": "2025-08-18T16:44:02.588863",
-              "extraction_timestamp": "2025-08-18T16:44:23.771029"
+              "last_modified": "2025-08-20T20:32:35.415762",
+              "extraction_timestamp": "2025-08-20T20:32:56.638785"
             },
             "extraction_method": "pdfplumber"
           }
@@ -2048,8 +2048,8 @@
               "filename": "page_1_17_1_Investor_Charter_Inf.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_17_1_Investor_Charter_Inf.pdf",
               "file_size": 355199,
-              "last_modified": "2025-08-18T16:44:04.336484",
-              "extraction_timestamp": "2025-08-18T16:44:23.903373"
+              "last_modified": "2025-08-20T20:32:36.873569",
+              "extraction_timestamp": "2025-08-20T20:32:56.762414"
             },
             "extraction_method": "pdfplumber"
           }
@@ -2561,8 +2561,8 @@
               "filename": "page_1_18_1_Investor_Charter_Rea.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_18_1_Investor_Charter_Rea.pdf",
               "file_size": 320252,
-              "last_modified": "2025-08-18T16:44:05.986642",
-              "extraction_timestamp": "2025-08-18T16:44:26.087210"
+              "last_modified": "2025-08-20T20:32:38.467193",
+              "extraction_timestamp": "2025-08-20T20:32:58.874220"
             },
             "extraction_method": "pdfplumber"
           }
@@ -2741,8 +2741,8 @@
               "filename": "page_1_19_1_Review_of_provisions.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_19_1_Review_of_provisions.pdf",
               "file_size": 665437,
-              "last_modified": "2025-08-18T16:44:08.087459",
-              "extraction_timestamp": "2025-08-18T16:44:28.053661"
+              "last_modified": "2025-08-20T20:32:40.524769",
+              "extraction_timestamp": "2025-08-20T20:33:00.685346"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3323,8 +3323,8 @@
               "filename": "page_1_20_1_Adoption_of_Standard.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_20_1_Adoption_of_Standard.pdf",
               "file_size": 956887,
-              "last_modified": "2025-08-18T16:44:10.585307",
-              "extraction_timestamp": "2025-08-18T16:44:28.433990"
+              "last_modified": "2025-08-20T20:32:42.849245",
+              "extraction_timestamp": "2025-08-20T20:33:01.064733"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3365,8 +3365,8 @@
               "filename": "page_1_21_1_Extension_of_timelin.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_21_1_Extension_of_timelin.pdf",
               "file_size": 198814,
-              "last_modified": "2025-08-18T16:44:12.086654",
-              "extraction_timestamp": "2025-08-18T16:44:30.354944"
+              "last_modified": "2025-08-20T20:32:44.294146",
+              "extraction_timestamp": "2025-08-20T20:33:03.072171"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3408,8 +3408,8 @@
               "filename": "page_1_22_1_Framework_for_Enviro.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_22_1_Framework_for_Enviro.pdf",
               "file_size": 486146,
-              "last_modified": "2025-08-18T16:44:13.988282",
-              "extraction_timestamp": "2025-08-18T16:44:30.518880"
+              "last_modified": "2025-08-20T20:32:46.111686",
+              "extraction_timestamp": "2025-08-20T20:33:03.248837"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3451,8 +3451,8 @@
               "filename": "page_1_23_1_Limited_relaxation_f.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_23_1_Limited_relaxation_f.pdf",
               "file_size": 144013,
-              "last_modified": "2025-08-18T16:44:15.402378",
-              "extraction_timestamp": "2025-08-18T16:44:32.386399"
+              "last_modified": "2025-08-20T20:32:47.497506",
+              "extraction_timestamp": "2025-08-20T20:33:05.139191"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3537,8 +3537,8 @@
               "filename": "page_1_24_1_Margin_obligations_t.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_24_1_Margin_obligations_t.pdf",
               "file_size": 483979,
-              "last_modified": "2025-08-18T16:44:17.286140",
-              "extraction_timestamp": "2025-08-18T16:44:32.735262"
+              "last_modified": "2025-08-20T20:32:49.627523",
+              "extraction_timestamp": "2025-08-20T20:33:05.381340"
             },
             "extraction_method": "pdfplumber"
           }
@@ -3790,8 +3790,8 @@
               "filename": "page_1_25_1_Investor_Charter_for.pdf",
               "full_path": "D:\\langchain\\LangGraph\\test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf",
               "file_size": 718036,
-              "last_modified": "2025-08-18T16:44:19.385585",
-              "extraction_timestamp": "2025-08-18T16:44:33.134306"
+              "last_modified": "2025-08-20T20:32:51.771850",
+              "extraction_timestamp": "2025-08-20T20:33:05.906062"
             },
             "extraction_method": "pdfplumber"
           }
@@ -4707,7 +4707,7 @@
     "test_enhanced_metadata\\page_1_25_1_Investor_Charter_for.pdf"
   ],
   "pdf_processing": {
-    "processing_timestamp": "2025-08-18T16:44:37.703563",
+    "processing_timestamp": "2025-08-20T20:33:10.565980",
     "processed_files_count": 25,
     "total_pdf_files": 25,
     "processing_method": "pdfplumber + PyPDF2 fallback"

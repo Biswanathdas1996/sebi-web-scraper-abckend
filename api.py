@@ -17,8 +17,11 @@ from langsmith_config import get_langsmith_config
 from tool.database.index import db_manager, initialize_database
 from tool.database.sebi_analysis_schema import sebi_db_manager
 
+# Import chat bot functionality
+from chatBot.index import chat_bot_response
+
 # Database connection URL
-DATABASE_URL = "postgresql://neondb_owner:npg_2aZoeNujTmA5@ep-bold-dawn-adz91n9q.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = "postgresql://neondb_owner:npg_Gyfsvm73xnHF@ep-round-fog-aeqh1bw4-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all domains and routes
@@ -81,6 +84,9 @@ def root():
                 "schema": "GET /api/database/schema",
                 "specific_table": "GET /api/database/table/<table_name>",
                 "summary": "GET /api/database/summary"
+            },
+            "chatbot": {
+                "chat": "POST /api/chatbot/chat"
             }
         }
     })
@@ -759,6 +765,60 @@ def get_database_summary():
             "timestamp": datetime.now().isoformat()
         }), 500
 
+# Chatbot API endpoint
+
+@app.route("/api/chatbot/chat", methods=["POST"])
+def chat_with_bot():
+    """
+    Chat with the SEBI regulatory compliance bot
+    
+    Expected JSON payload:
+    {
+        "query": "For stock broker released for last 1 month",  # required
+        "time_range": "last 1 month"  # optional, default: "last 1 month"
+    }
+    """
+    try:
+        # Get request data
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({"error": "Request body must be JSON"}), 400
+        
+        query = data.get("query")
+        
+        if not query:
+            return jsonify({"error": "Query parameter is required"}), 400
+        
+        # Run the chat bot response in async context
+        async def get_chat_response():
+            return await chat_bot_response(query)
+        
+        # Execute async function
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            response = loop.run_until_complete(get_chat_response())
+            
+            # Add request information to response
+            response["request_info"] = {
+                "query": query,
+                
+                "timestamp": datetime.now().isoformat()
+            }
+            
+            return jsonify(response)
+            
+        finally:
+            loop.close()
+            
+    except Exception as e:
+        return jsonify({
+            "error": f"Chat bot request failed: {str(e)}",
+            "status": "failed",
+            "timestamp": datetime.now().isoformat()
+        }), 500
+
 @app.route("/api/docs", methods=["GET"])
 def get_api_documentation():
     """
@@ -855,6 +915,22 @@ def get_api_documentation():
             }
         },
         
+        "chatbot_endpoints": {
+            "POST /api/chatbot/chat": {
+                "description": "Chat with the SEBI regulatory compliance bot for analysis and insights",
+                "parameters": {
+                    "query": "String (required) - The question or request to ask the bot",
+                    "time_range": "String (optional, default: 'last 1 month') - Time range for document filtering"
+                },
+                "response": "Structured analysis response with regulatory insights and recommendations",
+                "example_queries": [
+                    "For stock broker released for last 1 month",
+                    "What are the compliance requirements for mutual funds?",
+                    "Show me recent changes in trading regulations"
+                ]
+            }
+        },
+        
         "table_descriptions": {
             "teams": "Team management data for organizing document assignments",
             "documents": "Document metadata and processing information for general workflow",
@@ -875,7 +951,8 @@ def get_api_documentation():
             "get_specific_table": "GET /api/database/table/sebi_documents?limit=50&offset=0",
             "get_summary": "GET /api/database/summary",
             "trigger_workflow": "POST /api/trigger-workflow with JSON body",
-            "check_status": "GET /api/workflow-status/{task_id}"
+            "check_status": "GET /api/workflow-status/{task_id}",
+            "chat_with_bot": "POST /api/chatbot/chat with JSON body: {\"query\": \"For stock broker released for last 1 month\"}"
         },
         
         "response_format": {

@@ -7,6 +7,39 @@ from ..LLM.index import generate_with_prompt, parse_json_response
 # LangSmith tracing
 from langsmith import traceable
 
+teams = [
+  {
+    "id": "148ab232-7196-4e85-8a30-d28a33d51003",
+    "name": "Finance",
+    "type": "finance",
+    "description": "Manages financial compliance and reporting requirements"
+  },
+  {
+    "id": "1bbaf0a8-4690-4d70-a918-2ce6e46f3b2b",
+    "name": "Executive",
+    "type": "executive",
+    "description": "Executive oversight and strategic decisions"
+  },
+  {
+    "id": "ac9c0edf-6c0e-4ec0-ab02-6405843702f2",
+    "name": "Operations",
+    "type": "operations",
+    "description": "Handles day-to-day operational activities and implementations"
+  },
+  {
+    "id": "c5cf11f5-d691-4cf9-b986-5a6f62409b29",
+    "name": "Risk Management",
+    "type": "risk_management",
+    "description": "Manages operational and strategic risks"
+  },
+  {
+    "id": "f0cad2c1-77a0-432e-a458-2603d214fb82",
+    "name": "Legal & Compliance",
+    "type": "legal_compliance",
+    "description": "Handles legal matters, regulatory compliance, and policy interpretation"
+  }
+]
+
 # Define the available options for classification
 DEPARTMENTS = [
     "Alternative Investment Fund and Foreign Portfolio Investors Department",
@@ -51,7 +84,7 @@ def create_analysis_prompt(content: str) -> str:
     with detailed extraction of:
     - Structured key clauses with compliance impact analysis
     - Comprehensive key metrics with full contextual information  
-    - Detailed actionable items with implementation requirements
+    - Detailed actionable items with implementation requirements and team assignments
     
     The prompt is designed to capture every regulatory detail to ensure
     complete compliance analysis for SEBI regulatory documents.
@@ -65,6 +98,7 @@ def create_analysis_prompt(content: str) -> str:
     
     departments_list = "\n".join([f"- {dept}" for dept in DEPARTMENTS])
     intermediaries_list = "\n".join([f"- {inter}" for inter in INTERMEDIARIES])
+    teams_list = "\n".join([f"- {team['name']} ({team['type']}): {team['description']}" for team in teams])
     
     prompt = f"""
 You are an expert analyst specializing in SEBI (Securities and Exchange Board of India) regulatory documents. 
@@ -78,6 +112,7 @@ Based on the document content, provide a JSON response with the following struct
 
 {{
     "department": "exact match from the list below or 'Not Specified'",
+
     "intermediary": ["list of exact matches from the intermediaries list below, or empty array if none apply"],
     "summary": "concise 2-3 sentence summary of the document's main purpose and key points",
     "key_clauses": [
@@ -110,7 +145,13 @@ Based on the document content, provide a JSON response with the following struct
             "compliance_requirements": "detailed compliance obligations and standards",
             "documentation_needed": "required documentation, forms, or submissions",
             "monitoring_mechanism": "how compliance will be monitored or verified",
-            "non_compliance_consequences": "specific penalties or actions for non-compliance"
+            "non_compliance_consequences": "specific penalties or actions for non-compliance",
+            "assigned_team": {{
+                "id": "team UUID from the teams list",
+                "name": "exact team name from the teams list",
+                "type": "team type from the teams list",
+                "description": "team description from the teams list"
+            }}
         }}
     ]
 }}
@@ -120,6 +161,9 @@ AVAILABLE DEPARTMENTS (choose exactly one that best matches):
 
 AVAILABLE INTERMEDIARIES (choose all that apply from this list):
 {intermediaries_list}
+
+AVAILABLE TEAMS (assign the most appropriate team for each actionable item):
+{teams_list}
 
 INSTRUCTIONS:
 1. For "department": Select the EXACT department name from the list above that best matches the issuing authority or subject matter. If no clear match, use "Not Specified".
@@ -155,7 +199,15 @@ INSTRUCTIONS:
    - Required documentation, forms, or submissions
    - How compliance will be monitored or verified
    - Specific consequences for non-compliance
+   - Assigned team: Select the most appropriate team from the teams list and include the complete team object (id, name, type, description)
    Ensure no compliance requirement or implementation step is missed - this is critical for regulatory adherence.
+
+7. For "assigned_team" in actionable items: Analyze the nature of each actionable item and assign it to the most appropriate team. Include the COMPLETE team object with all fields (id, name, type, description) exactly as provided in the teams list:
+   - Finance (id: 148ab232-7196-4e85-8a30-d28a33d51003): For financial compliance, reporting requirements, monetary obligations
+   - Executive (id: 1bbaf0a8-4690-4d70-a918-2ce6e46f3b2b): For strategic decisions, high-level policy changes, board-level approvals
+   - Operations (id: ac9c0edf-6c0e-4ec0-ab02-6405843702f2): For day-to-day implementation, operational procedures, system changes
+   - Risk Management (id: c5cf11f5-d691-4cf9-b986-5a6f62409b29): For risk assessment, mitigation strategies, compliance monitoring
+   - Legal & Compliance (id: f0cad2c1-77a0-432e-a458-2603d214fb82): For legal interpretations, regulatory compliance, policy documentation
 
 CRITICAL REGULATORY ANALYSIS INSTRUCTIONS:
 - This is a regulatory document analysis where completeness is paramount

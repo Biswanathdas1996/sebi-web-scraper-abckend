@@ -11,3 +11,5 @@ langchain
 langchain-core
 flask
 flask-cors
+asyncpg
+aiohttp
