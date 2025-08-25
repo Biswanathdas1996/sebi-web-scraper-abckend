@@ -761,7 +761,7 @@ class SEBIAjaxScraper:
         
         return results
     
-    def scrape_single_page(self, page_number: int) -> Dict[str, Any]:
+    def scrape_single_page(self, page_number: int, save_metadata: bool = True) -> Dict[str, Any]:
         
         print(f"🎯 Scraping single page: {page_number}")
         print(f"📁 Download folder: {self.download_path.absolute()}")
@@ -891,8 +891,9 @@ class SEBIAjaxScraper:
             "file_paths": [f["file_path"] if isinstance(f, dict) else str(f) for f in downloaded_files]  # Backward compatibility
         }
         
-        # Save metadata JSON file
-        self._save_metadata_json(results)
+        # Save metadata JSON file only if requested (to avoid overwriting when called from scrape_specific_pages)
+        if save_metadata:
+            self._save_metadata_json(results)
         
         print(f"\n📊 PAGE {page_number} SUMMARY:")
         print(f"🔗 Links found: {len(page_links)}")
@@ -932,7 +933,7 @@ class SEBIAjaxScraper:
             print(f"\n{'='*20} PAGE {page_num} {'='*20}")
             
             try:
-                page_result = self.scrape_single_page(page_num)
+                page_result = self.scrape_single_page(page_num, save_metadata=False)
                 all_results.append(page_result)
                 
                 if page_result["success"]:
@@ -953,7 +954,7 @@ class SEBIAjaxScraper:
                 print(f"❌ Error scraping page {page_num}: {e}")
                 failed_pages.append(page_num)
         
-        # Combined results
+        # Combined results - formatted for both single and multiple page compatibility
         combined_results = {
             "pages_requested": page_numbers,
             "pages_processed": len([r for r in all_results if r["success"]]),
@@ -961,10 +962,19 @@ class SEBIAjaxScraper:
             "total_links": len(all_links),
             "total_downloaded_files": len(all_downloaded_files),
             "download_path": str(self.download_path.absolute()),
+            
+            # Main data structures for compatibility with existing API
+            "links": all_links,  # All links from all pages combined
+            "files": all_downloaded_files,  # All files from all pages combined
+            "file_paths": [f["file_path"] if isinstance(f, dict) else str(f) for f in all_downloaded_files],  # Backward compatibility
+            
+            # Detailed page-by-page results
             "page_results": all_results,
+            
+            # Legacy aliases for backward compatibility
             "all_links": all_links,
-            "all_files": all_downloaded_files,  # Now contains detailed file info
-            "all_file_paths": [f["file_path"] if isinstance(f, dict) else str(f) for f in all_downloaded_files]  # Backward compatibility
+            "all_files": all_downloaded_files,
+            "all_file_paths": [f["file_path"] if isinstance(f, dict) else str(f) for f in all_downloaded_files]
         }
         
         # Save metadata JSON file
